@@ -1,69 +1,98 @@
-# React + TypeScript + Vite
+# 📌 Portfolio de Victor Moni
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bem-vindo ao meu portfólio pessoal!  
+Um projeto front-end construído com **React**, **TypeScript** e **Vite**, com design elegante e deploy contínuo via **Vercel**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Demonstração ao vivo
 
-## Expanding the ESLint configuration
+Acesse o site em produção:  
+👉 [**victormoni.dev**](https://victormoni.dev)  
+👉 [**victormoni-portifolio.vercel.app**](https://victormoni-portifolio.vercel.app)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🛠 Tecnologias utilizadas
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- **Framework**: React + TypeScript  
+- **Bundler**: Vite  
+- **Deploy**: Vercel  
+- **Outros**: ESLint, configuração TS, arquivos de build e assets  
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+## 📂 Estrutura do projeto
+
+```
+/public            — arquivos estáticos, como favicon e assets
+/src               — código-fonte React (componentes, estilos, etc.)
+README.md          — este arquivo
+index.html         — template HTML principal
+package.json       — dependências e scripts
+tsconfig.json      — configuração TypeScript
+eslint.config.js   — regras de lint
+vite.config.ts     — configuração do Vite
+vercel.json        — configurações de deploy no Vercel
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## ⚡ Scripts úteis
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+# Instalar dependências
+npm install
+
+# Iniciar servidor de desenvolvimento
+npm run dev
+
+# Gerar build de produção
+npm run build
+
+# Visualizar build localmente
+npm run preview
 ```
+
+*(Adapte conforme os scripts definidos no `package.json`.)*
+
+---
+
+## ✨ Funcionalidades
+
+- Design moderno e responsivo para portfólio pessoal  
+- Componentização com React e tipagem segura com TypeScript  
+- Build otimizada com Vite  
+- Deploy automático com preview no Vercel  
+
+---
+
+## 🤝 Como contribuir
+
+1. Faça um **fork** deste repositório  
+2. Crie uma branch com sua feature:  
+   ```bash
+   git checkout -b minha-feature
+   ```
+3. Realize alterações e commit:  
+   ```bash
+   git commit -m "Minha feature"
+   ```
+4. Envie para o seu fork:  
+   ```bash
+   git push origin minha-feature
+   ```
+5. Abra um **Pull Request** aqui descrevendo suas mudanças  
+
+---
+
+## 👨‍💻 Sobre o autor
+
+Sou **Victor Moni**, desenvolvedor Full Stack apaixonado por tecnologia e criação de aplicações modernas.  
+Busco sempre aprender, evoluir e compartilhar conhecimento.  
+
+🌐 [Portfolio](https://victormoni.dev)  
+💼 [LinkedIn](https://linkedin.com/in/victormoni)  
+📂 [GitHub](https://github.com/victormoni)  
+
+---
