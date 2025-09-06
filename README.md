@@ -1,95 +1,95 @@
-# 📌 Portfolio de Victor Moni
+# 📌 Victor Moni's Portfolio
 
-Bem-vindo ao meu portfólio pessoal!  
-Um projeto front-end construído com **React**, **TypeScript** e **Vite**, com design elegante e deploy contínuo via **Vercel**.
+Welcome to my personal portfolio!  
+A front-end project built with **React**, **TypeScript**, and **Vite**, featuring an elegant design and continuous deployment via **Vercel**.
 
 ---
 
-## 🚀 Demonstração ao vivo
+## 🚀 Live Demo
 
-Acesse o site em produção:  
+Check out the live site:  
 👉 [**victormoni.dev**](https://victormoni.dev)  
 👉 [**victormoni-portifolio.vercel.app**](https://victormoni-portifolio.vercel.app)
 
 ---
 
-## 🛠 Tecnologias utilizadas
+## 🛠 Technologies Used
 
 - **Framework**: React + TypeScript  
 - **Bundler**: Vite  
-- **Deploy**: Vercel  
-- **Outros**: ESLint, configuração TS, arquivos de build e assets  
+- **Deployment**: Vercel  
+- **Others**: ESLint, TypeScript config, build files, and assets  
 
 ---
 
-## 📂 Estrutura do projeto
+## 📂 Project Structure
 
 ```
-/public            — arquivos estáticos, como favicon e assets
-/src               — código-fonte React (componentes, estilos, etc.)
-README.md          — este arquivo
-index.html         — template HTML principal
-package.json       — dependências e scripts
-tsconfig.json      — configuração TypeScript
-eslint.config.js   — regras de lint
-vite.config.ts     — configuração do Vite
-vercel.json        — configurações de deploy no Vercel
+/public            — static files such as favicon and assets
+/src               — React source code (components, styles, etc.)
+README.md          — this file
+index.html         — main HTML template
+package.json       — dependencies and scripts
+tsconfig.json      — TypeScript configuration
+eslint.config.js   — linting rules
+vite.config.ts     — Vite configuration
+vercel.json        — Vercel deployment settings
 ```
 
 ---
 
-## ⚡ Scripts úteis
+## ⚡ Useful Scripts
 
 ```bash
-# Instalar dependências
+# Install dependencies
 npm install
 
-# Iniciar servidor de desenvolvimento
+# Start development server
 npm run dev
 
-# Gerar build de produção
+# Build for production
 npm run build
 
-# Visualizar build localmente
+# Preview production build locally
 npm run preview
 ```
 
-*(Adapte conforme os scripts definidos no `package.json`.)*
+*(Adjust according to the scripts defined in `package.json`.)*
 
 ---
 
-## ✨ Funcionalidades
+## ✨ Features
 
-- Design moderno e responsivo para portfólio pessoal  
-- Componentização com React e tipagem segura com TypeScript  
-- Build otimizada com Vite  
-- Deploy automático com preview no Vercel  
-
----
-
-## 🤝 Como contribuir
-
-1. Faça um **fork** deste repositório  
-2. Crie uma branch com sua feature:  
-   ```bash
-   git checkout -b minha-feature
-   ```
-3. Realize alterações e commit:  
-   ```bash
-   git commit -m "Minha feature"
-   ```
-4. Envie para o seu fork:  
-   ```bash
-   git push origin minha-feature
-   ```
-5. Abra um **Pull Request** aqui descrevendo suas mudanças  
+- Modern and responsive design for personal portfolio  
+- Component-based architecture with React and type safety using TypeScript  
+- Optimized builds with Vite  
+- Automatic deployment and preview with Vercel  
 
 ---
 
-## 👨‍💻 Sobre o autor
+## 🤝 How to Contribute
 
-Sou **Victor Moni**, desenvolvedor Full Stack apaixonado por tecnologia e criação de aplicações modernas.  
-Busco sempre aprender, evoluir e compartilhar conhecimento.  
+1. Fork this repository  
+2. Create a new branch for your feature:  
+   ```bash
+   git checkout -b my-feature
+   ```
+3. Make your changes and commit:  
+   ```bash
+   git commit -m "My feature"
+   ```
+4. Push to your fork:  
+   ```bash
+   git push origin my-feature
+   ```
+5. Open a **Pull Request** here describing your changes  
+
+---
+
+## 👨‍💻 About the Author
+
+I am **Victor Moni**, a Full Stack Developer passionate about technology and building modern applications.  
+Always learning, improving, and sharing knowledge.  
 
 🌐 [Portfolio](https://victormoni.dev)  
 💼 [LinkedIn](https://linkedin.com/in/victormoni)  
