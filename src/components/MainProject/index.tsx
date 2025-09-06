@@ -13,7 +13,7 @@ const content = {
   id: "1",
   title: "ShopEasy",
   coverImage: cover,
-  description: "ShopEasy is an e-commerce boilerplate with Angular frontend, Spring Boot backend, MySQL database, Kafka events, monitoring via Prometheus/ELK, and deployment using Docker Compose or Kubernetes, serving as a modern and scalable foundation for online stores.",
+  description: "ShopEasy is an e-commerce boilerplate with Angular frontend, Spring Boot backend, MySQL database, Kafka events, ELK stack integration, and deployment using Docker Compose or Kubernetes, serving as a modern and scalable foundation for online stores.",
   note: "This project is a portfolio and learning base, currently with a simplified checkout and some mock data. Future improvements include payment gateway, persistent cart, and CI/CD pipeline. It can be adapted to other databases or cloud providers.",
   startDate: "2025-04",
   finishDate: "Present",
