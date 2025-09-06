@@ -9,7 +9,7 @@ A front-end project built with **React**, **TypeScript**, and **Vite**, featurin
 
 Check out the live site:  
 👉 [**victormoni.dev**](https://victormoni.dev)  
-👉 [**victormoni-portifolio.vercel.app**](https://victormoni-portifolio.vercel.app)
+👉 [**victormoni.vercel.app**](https://victormoni.vercel.app)
 
 ---
 
