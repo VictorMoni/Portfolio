@@ -5,13 +5,13 @@ import image from '../../assets/notebook.png'
 
 const About = () => {
     const [currentExperience, setCurrentExperience] = useState<string>(
-        "Full-Stack Developer with three years of experience in web applications and microservices. Strong background in Spring Boot, Angular, and Next.js, with DevOps practices. Currently pursuing a postgraduate degree in Cloud Computing, fluent in English, with a track record of delivering MVPs and optimizing digital processes."
+        "Full Stack Developer with two years of experience in web applications and microservices. Solid expertise in Spring Boot, Angular and Next.js, with hands-on DevOps practices. Currently pursuing a postgraduate degree in Cloud Computing, fluent in English, with a proven track record of delivering MVPs and optimizing digital processes."
     );
 
     const experiences = [
         {
-            title: "Full Stack Developer - Search Price",
-            description: "Developed a responsive, mobile-first web application with Next.js. Implemented dark/light mode and custom hooks for state management. Integrated with Java Spring Boot API and continuous deployment on Vercel. Applied best practices in accessibility, performance, and componentization.",
+            title: "Frontend Developer - Search Price",
+            description: "Developed a responsive, mobile-first web application with Next.js. Implemented dark/light mode and custom hooks for state management. Integrated with Node.js API and continuous deployment on Vercel. Applied best practices in accessibility, performance, and componentization.",
             date: "06/2025 - 07/2025",
             highlight: "Collaboration",
             tags: ["Start-up", "NextJs", "Angular", "Spring Boot", "Scrum", "MVP" ]
@@ -27,7 +27,7 @@ const About = () => {
 
     const currentExp = experiences.find(exp => exp.description === currentExperience) || {
         title: "Career Overview",
-        date: "3 Years as a Full Stack Developer",
+        date: "2 Years of experience",
         icon: <Zap className="w-5 h-5" />,
         highlight: "Overview",
         tags: ["Spring Boot","Next.js", "Angular","React.js", "JavaScript", "TypeScript", ]
@@ -80,7 +80,7 @@ const About = () => {
                     ))}
 
                     <ExperienceBox
-                        onClick={() => setCurrentExperience("Full-Stack Developer with three years of experience in web applications and microservices. Strong background in Spring Boot, Angular, and Next.js, with DevOps practices. Currently pursuing a postgraduate degree in Cloud Computing, fluent in English, with a track record of delivering MVPs and optimizing digital processes.")}
+                        onClick={() => setCurrentExperience("Full Stack Developer with two years of experience in web applications and microservices. Solid expertise in Spring Boot, Angular and Next.js, with hands-on DevOps practices. Currently pursuing a postgraduate degree in Cloud Computing, fluent in English, with a proven track record of delivering MVPs and optimizing digital processes.")}
                         isActive={!experiences.find(exp => exp.description === currentExperience)}
                         isOverview
                     >
@@ -90,7 +90,7 @@ const About = () => {
                         <BoxDescription>
                             Summary of my career as a developer, highlighting my key skills and most relevant experiences.
                         </BoxDescription>
-                        <BoxDate>3 Years</BoxDate>
+                        <BoxDate>2 Years</BoxDate>
                     </ExperienceBox>
                 </ExperienceContainer>
             </Content>
