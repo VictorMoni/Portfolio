@@ -1,14 +1,10 @@
 import styled from "styled-components"
+import codepen from '../../assets/codepen.png'
+import dailydev from '../../assets/daily-dev.svg'
 import github from '../../assets/github.svg'
 import linkedin from '../../assets/linkedin.png'
-import reddit from '../../assets/reddit.svg'
-import dailydev from '../../assets/daily-dev.svg'
 import stackoverflow from '../../assets/stackoverflow.svg'
-import facebook from '../../assets/facebook.svg'
-import codepen from '../../assets/codepen.png'
-import instagram from '../../assets/instagram.svg'
-import devto from '../../assets/devto.svg'
-import discord from '../../assets/discord.svg'
+
 
 export const SocialFooter = () => {
     return (
@@ -48,19 +44,6 @@ export const SocialFooter = () => {
                             </SocialLink>
 
                             <SocialLink
-                                href="https://www.reddit.com/user/victor-moni"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="reddit"
-                            >
-                                <img src={reddit} alt="Reddit" />
-                                <div className="social-info">
-                                    <span className="social-name">Reddit</span>
-                                    <span className="social-desc">Discussions and tips</span>
-                                </div>
-                            </SocialLink>
-
-                            <SocialLink
                                 href="https://app.daily.dev/victormoni"
                                 target="_blank"
                                 rel="noopener noreferrer"
@@ -86,19 +69,6 @@ export const SocialFooter = () => {
                                 </div>
                             </SocialLink>
 
-                               <SocialLink
-                                href="https://www.facebook.com/vabmoni"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="facebook"
-                            >
-                                <img src={facebook} alt="Facebook" />
-                                <div className="social-info">
-                                    <span className="social-name">Facebook</span>
-                                    <span className="social-desc">Personal network</span>
-                                </div>
-                            </SocialLink>
-
                             <SocialLink
                                 href="https://codepen.io/victormoni"
                                 target="_blank"
@@ -109,45 +79,6 @@ export const SocialFooter = () => {
                                 <div className="social-info">
                                     <span className="social-name">Codepen</span>
                                     <span className="social-desc">Demos and experiments</span>
-                                </div>
-                            </SocialLink>
-
-                            <SocialLink
-                                href="https://www.instagram.com/vabmoni"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="instagram"
-                            >
-                                <img src={instagram} alt="Instagram" />
-                                <div className="social-info">
-                                    <span className="social-name">Instagram</span>
-                                    <span className="social-desc">Personal network</span>
-                                </div>
-                            </SocialLink>
-
-                             <SocialLink
-                                href="https://discordapp.com/users/victormoni"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="discord"
-                            >
-                                <img src={discord} alt="Discord" />
-                                <div className="social-info">
-                                    <span className="social-name">Discord</span>
-                                    <span className="social-desc">Community and support</span>
-                                </div>
-                            </SocialLink>
-
-                            <SocialLink
-                                href="https://dev.to/victormoni"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="devto"
-                            >
-                                <img src={devto} alt="dev.to" />
-                                <div className="social-info">
-                                    <span className="social-name">dev.to</span>
-                                    <span className="social-desc">Articles and posts</span>
                                 </div>
                             </SocialLink>
                         </SocialGrid>
@@ -323,11 +254,6 @@ const SocialLink = styled.a`
         box-shadow: 0 20px 40px rgba(0, 119, 181, 0.3);
     }
 
-    &.reddit:hover {
-        border-color: #FF4500;
-        box-shadow: 0 20px 40px rgba(255, 68, 0, 0.68);
-    }
-
     &.dailydev:hover {
         border-color: #b9b9b9ff;
         box-shadow: 0 20px 40px rgba(255, 255, 255, 0.2);
@@ -338,31 +264,10 @@ const SocialLink = styled.a`
         box-shadow: 0 20px 40px rgba(244, 130, 36, 0.4);
     }
 
-    &.facebook:hover {
-        border-color: #16A4FB;
-        box-shadow: 0 20px 40px rgba(22, 163, 251, 0.45);
-    }
-
     &.codepen:hover {
         border-color: #FFFFFF;
         box-shadow: 0 20px 40px rgba(255, 255, 255, 0.32);
     }
-
-    &.instagram:hover {
-        border-color: #D33D93;
-        box-shadow: 0 20px 40px rgba(211, 61, 146, 0.47);
-    }
-
-    &.discord:hover {
-        border-color: #889AF8;
-        box-shadow: 0 20px 40px rgba(136, 155, 248, 0.52);
-    }
-
-      &.devto:hover {
-       border-color: #FFFFFF;
-       box-shadow: 0 20px 40px rgba(255, 255, 255, 0.32);
-    }
-
 
     @media (max-width: 768px) {
         padding: 20px;
