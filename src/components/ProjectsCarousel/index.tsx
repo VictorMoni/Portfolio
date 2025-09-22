@@ -69,7 +69,7 @@ export const CarouselContainer2 = () => {
           cover={otherProjectImage2}
           category="Personal Project"
           title="TodoApp"
-          description="This is a straightforward to-do app built with React and Vite, designed to help you manage your daily tasks efficiently. You can easily add new tasks, update existing ones, or remove them as needed, all through a clean and user-friendly interface."
+          description="This is a straightforward to-do app designed to help you manage your daily tasks efficiently. You can easily add new tasks, update existing ones, or remove them as needed, all through a clean and user-friendly interface."
           rating={4}
           lastUpdated="07/22/2025 - 01:09"
           isFavorite={false}
