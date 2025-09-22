@@ -1,9 +1,9 @@
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import React, { useRef } from "react";
 import styled, { keyframes } from "styled-components";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import otherProjectImage from '../../assets/todoapp.png'
-import otherProjectImage2 from '../../assets/taskyhub.png'
-import otherProjectImage3 from '../../assets/pocketwise.png'
+import otherProjectImage from '../../assets/sankhya.png';
+import otherProjectImage3 from '../../assets/taskyhub.png';
+import otherProjectImage2 from '../../assets/todoapp.png';
 import { Project } from "../Project";
 
 export const CarouselContainer2 = () => {
@@ -53,40 +53,43 @@ export const CarouselContainer2 = () => {
         onMouseUp={handleMouseLeaveOrUp}
         onMouseMove={handleMouseMove}
       >
-        <Project
+
+       <Project
           cover={otherProjectImage}
           category="Personal Project"
-          title="TodoApp"
-          description="This is a straightforward to-do app built with React and Vite, designed to help you manage your daily tasks efficiently. You can easily add new tasks, update existing ones, or remove them as needed, all through a clean and user-friendly interface."
+          title="Sankhya"
+          description="Full-Stack app in Angular + Spring Boot with MySQL, Docker, and CI/CD. Product catalog, cart, and orders integrated with Flyway and automated tests."
           rating={5}
-          lastUpdated="07/22/2025 - 01:09"
+          lastUpdated="09/20/2025 - 09:00"
+          repoLink="https://github.com/victormoni/Sankhya"
           isFavorite={true}
-          repoLink="https://github.com/victormoni/TodoApp"
-          liveLink="https://production-todo.vercel.app"
         />
 
         <Project
           cover={otherProjectImage2}
           category="Personal Project"
+          title="TodoApp"
+          description="This is a straightforward to-do app built with React and Vite, designed to help you manage your daily tasks efficiently. You can easily add new tasks, update existing ones, or remove them as needed, all through a clean and user-friendly interface."
+          rating={4}
+          lastUpdated="07/22/2025 - 01:09"
+          isFavorite={false}
+          repoLink="https://github.com/victormoni/TodoApp"
+          liveLink="https://production-todo.vercel.app"
+        />
+
+        <Project
+          cover={otherProjectImage3}
+          category="Personal Project"
           title="TaskyHub"
           description="Next.js & TypeScript task manager with Google Auth, recurring tasks, dark mode, batch operations, and import/export support."
-          rating={4}
+          rating={3}
           lastUpdated="06/07/2025 - 05:00"
           liveLink="https://taskyhub.vercel.app"
           repoLink="https://github.com/victormoni/TaskyHub"
           isFavorite={false}
         />
 
-       <Project
-          cover={otherProjectImage3}
-          category="Personal Project"
-          title="PocketWise (In Development)"
-          description="PocketWise is a modern personal finance management application built with React, TypeScript, and Vite. Through an intuitive dashboard, users can track their income, expenses, and balances in real time, set financial goals, and gain insights into their financial habits."
-          rating={3}
-          lastUpdated="06/18/2025 - 03:00"
-          repoLink="https://github.com/victormoni/PocketWise"
-          isFavorite={false}
-        />
+
     </ScrollArea>
 
       <ArrowButton position="right" onClick={() => handleScroll("right")}>
