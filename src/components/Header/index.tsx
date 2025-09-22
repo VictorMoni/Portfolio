@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { Home, User, Folder, Users } from "lucide-react";
+import { Folder, Home, User, Users } from "lucide-react";
+import { useEffect, useState } from "react";
 import styled, { css } from "styled-components";
 
 export default function Header(){
@@ -12,7 +12,7 @@ export default function Header(){
             const sections = ["home", "about", "projects", "socialmedia"];
             const scrollPosition = window.scrollY + 100;
 
-            for (let id of sections) {
+            for (const id of sections) {
                 const el = document.getElementById(id);
                 if (el) {
                     const offsetTop = el.offsetTop;
