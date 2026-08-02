@@ -1,20 +1,25 @@
-import styled from "styled-components"
-import backgroundVideo from '../../assets/main-banner.png'
-import githubIcon from '../../assets/github.png'
-import linkedinIcon from '../../assets/linkedin.png'
-import whatsappIcon from '../../assets/whatsapp.png'
-import Projects from "../Projects"
-import { useEffect, useState } from "react"
-import resume from '../../assets/resume.pdf'
-import { TechSlider } from "../TechSlider"
-import About from "../About"
-import { SocialFooter } from "../SocialMedia"
-import { Background } from "../BackgroundEclipse"
+import { useEffect, useState } from "react";
+import styled, { keyframes } from "styled-components";
+import githubIcon from '../../assets/github.png';
+import linkedinIcon from '../../assets/linkedin.png';
+import backgroundVideo from '../../assets/main-banner.png';
+import whatsappIcon from '../../assets/whatsapp.png';
+import About from "../About";
+import { Background } from "../BackgroundEclipse";
+import Projects from "../Projects";
+import { SocialFooter } from "../SocialMedia";
+import { TechSlider } from "../TechSlider";
 
 interface MouseMovements {
     clientX: number;
     clientY: number;
 }
+
+const curriculumUrl =
+  "https://drive.google.com/file/d/1rNLEny2TgxbY6d6ASpLnipbGo2YWuISH";
+
+const resumeUrl =
+  "https://drive.google.com/file/d/1ZakvZK_1uRrCiVU7DuDbkPOcv_Ptg47b";
 
 export const Main = () => {
     const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
@@ -53,11 +58,29 @@ export const Main = () => {
                 <div className="info">
                     <p>My name is</p>
                     <h1>Victor Moni</h1>
-                    <span> &gt; Full Stack Developer</span>
+                    <TerminalText>
+                      &gt; Full Stack Developer
+                   </TerminalText>
                     <div className="cv-style">
-                        <a href={resume} className="download-cv links" download>Download Resume</a>
+                        <a
+                            href={curriculumUrl}
+                            className="download-cv links"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Currículo
+                        </a>
+
+                      <a
+                        href={resumeUrl}
+                        className="download-cv links"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Resume
+                    </a>
                     </div>
-                </div>
+                 </div>
 
                 <div className="arrow">
                     <p>↓</p>
@@ -87,6 +110,35 @@ export const Main = () => {
     )
 }
 
+const terminalTyping = keyframes`
+    0% {
+        width: 0;
+    }
+
+    40% {
+        width: 245px;
+    }
+
+    70% {
+        width: 245px;
+    }
+
+    100% {
+        width: 0;
+    }
+`;
+
+const terminalCursor = keyframes`
+    0%,
+    100% {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: var(--primary-light);
+    }
+`;
+
 const CursorDot = styled.div`
     width: 5px;
     height: 5px;
@@ -102,6 +154,28 @@ const CursorDot = styled.div`
         display: none;
     }
 `
+
+const TerminalText = styled.span`
+    display: block;
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+
+    color: var(--primary-light);
+    font-family: inherit;
+    font-size: 24px;
+    font-weight: 500;
+
+    border-right: 3px solid var(--primary-light);
+
+    animation:
+        ${terminalTyping} 6s steps(22) infinite,
+        ${terminalCursor} 0.7s step-end infinite;
+
+    @media (max-width: 380px) {
+        font-size: 15px;
+    }
+`;
 
 const CursorOutline = styled.div`
     width: 30px;
@@ -169,44 +243,48 @@ const Introduction = styled.main`
         color: var(--primary-light);
         font-size: 24px;
     }
-    .info *{
-        animation: fade-up 0.5s 0.4s backwards;
+   .info p,
+   .info h1,
+   .info .cv-style {
+      animation: fade-up 0.5s 0.4s backwards;
     }
-    .info .cv-style{
-        margin-top: 25px;
-    }
-    .info .links{
-        background: var(--primary);
-        color: white;
-        width: 100%;
-        max-width: fit-content;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: 2px solid var(--primary);
-        border-radius: 5px;
-        font-weight: 600;
-        padding: 12px 24px;
-        margin: 10px 0;
-        cursor: pointer;
-        animation: fade-up 0.5s 0.4s backwards;
-        transition: 0.15s ease-in;
-        &:hover{
-            background: var(--primary-light);
-        }
-    }
+   .info .cv-style {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 25px;
+   }
+   .info .links {
+      background: var(--primary);
+      color: white;
+      width: auto;
+      max-width: fit-content;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      border: 2px solid var(--primary);
+      border-radius: 5px;
+
+      font-weight: 600;
+      padding: 12px 24px;
+      margin: 10px 0;
+
+      cursor: pointer;
+      animation: fade-up 0.5s 0.4s backwards;
+      transition: 0.15s ease-in;
+
+      &:hover {
+          background: var(--primary-light);
+          border-color: var(--primary-light);
+      }
+  }
+
     .info .links img{
         width: 20px;
         height: 20px;
         margin-right: 10px;
-    }
-    .links.second-cta {
-      background: transparent;
-      border: 2px solid var(--primary);
-
-      &:hover {
-        background: var(--primary);
-        }
     }
 
     .arrow {
@@ -237,38 +315,86 @@ const Introduction = styled.main`
         height: 50px;
     }
 
-    @media (max-width: 1024px) {
-        padding: 40px 20px;
+   @media (max-width: 1024px) {
+    padding: 40px 20px;
+}
+
+@media (max-width: 768px) {
+    background-position: 60%;
+    padding: 40px 20px 10px;
+
+    .info h1 {
+        font-size: 40px;
     }
 
-    @media(max-width: 768px){
-        background-position: 60%;
-        padding: 40px 10px 10px 10px;
-
-        .info h1{
-            font-size: 40px;
-        }
-
-        .arrow {
-            left: 43%;
-        }
+    .info .cv-style {
+        display: flex;
+        align-items: center;
+        gap: 12px;
     }
-    @media(max-width: 380px){
+
+    .arrow {
+        left: 43%;
+    }
+}
+
+@media (max-width: 450px) {
+    padding: 40px 16px 10px;
+
+    .info {
+        width: 100%;
+    }
+
+    .info .cv-style {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        width: 100%;
+        margin-top: 25px;
+    }
+
+    .info .links {
+        width: 100%;
+        max-width: 220px;
+        margin: 0;
+    }
+
+    .social-media .logo {
+        padding: 7px;
+    }
+
+    .social-media .logo img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 380px) {
     background-image: url(${backgroundVideo});
-        &::after {
-            background-color: rgba(0, 0, 0, 0.2);
-        }
 
-        .info h1{
-            font-size: 32px;
-        }
-        .info span{
-            font-size: 15px;
-        }
-        .info p{
-            font-size: 20px;
-        }
+    &::after {
+        background-color: rgba(0, 0, 0, 0.2);
     }
+
+    .info h1 {
+        font-size: 32px;
+    }
+
+    .info span {
+        font-size: 15px;
+    }
+
+    .info p {
+        font-size: 20px;
+    }
+
+    .info .links {
+        max-width: 190px;
+        padding: 10px 18px;
+        font-size: 14px;
+    }
+}
 `
 
 const BackgroundPrompt = styled.div`

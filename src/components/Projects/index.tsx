@@ -55,12 +55,12 @@ const OtherProjectsSection = styled.div`
 `;
 
 const Header = styled.div`
-    margin-bottom: 60px;
+    margin-bottom: 40px;
     animation: ${fadeIn} 0.8s ease-out;
 `;
 
 const Title = styled.h2`
-    font-size: 48px;
+    font-size: 40px;
     font-weight: 700;
     margin-bottom: 10px;
     background: var(--primary-light);

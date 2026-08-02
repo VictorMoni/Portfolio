@@ -1,28 +1,35 @@
 import styled, { keyframes } from "styled-components";
-import react from "../../assets/react.svg";
-import spring from "../../assets/spring.svg";
-import typescript from "../../assets/typescript.svg";
-import javascript from "../../assets/javascript.svg";
-import nextjs from "../../assets/nextjs.svg";
-import css from "../../assets/css.svg";
 import angular from "../../assets/angular.svg";
-import postgresql from "../../assets/postgresql.svg";
-import tailwindcss from "../../assets/tailwindcss.svg";
-import html5 from "../../assets/html5.svg";
-import java from "../../assets/java.svg";
-import mysql from "../../assets/mysql.svg";
-import vitejs from "../../assets/vitejs.svg";
-import git from "../../assets/git.svg";
-import intellijidea from "../../assets/intellijidea.svg";
 import atlassian from "../../assets/atlassian.svg";
+import csharp from "../../assets/csharp.svg";
+import css from "../../assets/css.svg";
+import dbeaver from "../../assets/dbeaver.svg";
 import docker from "../../assets/docker.svg";
+import figma from "../../assets/figma.svg";
+import git from "../../assets/git.svg";
+import grafana from "../../assets/grafana.svg";
+import html5 from "../../assets/html5.svg";
+import intellijidea from "../../assets/intellijidea.svg";
+import java from "../../assets/java.svg";
+import javascript from "../../assets/javascript.svg";
 import kubernetes from "../../assets/kubernetes.svg";
-import vscode from "../../assets/vscode.svg";
-import mongodb from "../../assets/mongodb.svg";
+import linuxmint from "../../assets/linuxmint.svg";
+import microsoftsqlserver from "../../assets/microsoftsqlserver.svg";
+import oracle from "../../assets/oracle.svg";
+import postgresql from "../../assets/postgresql.svg";
+import rabbitmq from "../../assets/rabbitmq.svg";
 import sass from "../../assets/sass.svg";
+import spring from "../../assets/spring.svg";
+import tailwindcss from "../../assets/tailwindcss.svg";
+import typescript from "../../assets/typescript.svg";
+import ubuntu from "../../assets/ubuntu.svg";
+import uml from "../../assets/uml.svg";
+import visualbasic from "../../assets/visualbasic.svg";
+import visualstudio from "../../assets/visualstudio.svg";
+import vscode from "../../assets/vscode.svg";
+import windows11 from "../../assets/windows11.svg";
 
-const logos = [intellijidea, java, spring, vscode, typescript, nextjs, vitejs, react, angular,
-  tailwindcss, javascript, css, sass, html5, git, docker, kubernetes, mysql, postgresql, mongodb, atlassian];
+const logos = [intellijidea, oracle, java, spring, grafana, vscode, rabbitmq, typescript,  visualbasic, dbeaver, linuxmint,  angular, microsoftsqlserver, uml, tailwindcss, visualstudio, ubuntu, javascript, csharp, windows11, css, sass, html5, git, docker, kubernetes, postgresql, atlassian, figma];
 
 export const TechSlider = () => {
     // Criamos múltiplas cópias para garantir um loop suave
@@ -58,7 +65,7 @@ const SliderWrapper = styled.div`
   position: relative;
   bottom: 0;
   user-select: none;
-  padding: 40px 0;
+  padding: 25px 0;
 
   @media (max-width: 768px) {
     padding: 20px 0;
@@ -78,8 +85,8 @@ const SliderContent = styled.div`
 
 const TechBox = styled.div`
   background: #1A1A1A;
-  width: 100px;
-  height: 100px;
+  width: 65px;
+  height: 65px;
   opacity: 0.6;
   border-radius: 12px;
   display: flex;

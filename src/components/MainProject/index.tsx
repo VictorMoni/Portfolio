@@ -1,12 +1,12 @@
-import styled from "styled-components";
 import { Code2, SquareDashedMousePointer } from "lucide-react";
-import Star from '../../assets/stars.png'
-import UnfilledStar from '../../assets/unfilledstars.png'
+import styled from "styled-components";
+import cover from "../../assets/desktop.png";
 import ProjectImage1 from "../../assets/shopeasy1.png";
 import ProjectImage2 from "../../assets/shopeasy2.png";
 import ProjectImage3 from "../../assets/shopeasy3.png";
 import ProjectImage4 from "../../assets/shopeasy4.png";
-import cover from "../../assets/desktop.png";
+import Star from '../../assets/stars.png';
+import UnfilledStar from '../../assets/unfilledstars.png';
 import MediaGallery from "../MediaGallery";
 
 const content = {
@@ -32,10 +32,10 @@ const content = {
 const Section = styled.section`
   position: relative;
   min-height: 100vh;
-  padding: 60px 150px;
+  padding: 50px 150px;
+  padding-top: 80px;
   width: 100%;
   color: white;
-  padding-top: 150px;
   overflow: hidden;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
   background: linear-gradient(to bottom right, #0f0f0f, black);
@@ -106,13 +106,13 @@ const Header = styled.div`
   gap: 0.25rem;
 
   h1 {
-    font-size: 2rem;
+    font-size: 40px;
     font-weight: bold;
     color: white;
     text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
 
     @media (min-width: 1024px) {
-      font-size: 3rem;
+      font-size: 40px;
     }
   }
 
@@ -146,7 +146,7 @@ const Description = styled.p`
   color: #d1d5db;
   margin-bottom: 1.5rem;
   line-height: 1.6;
-  font-size: 1.3rem;
+  font-size: 19px;
   max-width: 42rem;
 `;
 

@@ -1,37 +1,146 @@
+import { Calendar } from 'lucide-react';
 import { useState } from "react";
 import styled, { keyframes } from "styled-components";
-import { Calendar, Zap } from 'lucide-react';
-import image from '../../assets/notebook.png'
-
+import image from '../../assets/notebook.png';
 const About = () => {
-    const [currentExperience, setCurrentExperience] = useState<string>(
-        "Full Stack Developer with two years of experience in web applications and microservices. Solid expertise in Spring Boot, Angular and Next.js, with hands-on DevOps practices. Currently pursuing a postgraduate degree in Cloud Computing, fluent in English, with a proven track record of delivering MVPs and optimizing digital processes."
-    );
+   const experiences = [
+    {
+        id: 1,
+        title: "Junior Full Stack Developer",
+        company: "Sysopen",
+        description:
+            "Supported, maintained, and enhanced the Recupera system using VB.NET, ASP.NET WebForms, C#, and Angular. Implemented bug fixes, improvements, and new features according to client requirements. Supported solutions used by companies such as Ambev, Aegea, Jeitto, and Porto Seguro. Created and optimized queries, stored procedures, and scripts in SQL Server and Oracle, performed testing of REST APIs and SOAP services using SoapUI, and used Azure DevOps/TFS for version control and work item management.",
+        date: "10/2025 - 07/2026",
+        highlight: "Full Stack Development",
+        tags: [
+            "VB.NET",
+            "ASP.NET WebForms",
+            "C#",
+            "Angular",
+            "SQL Server",
+            "Oracle",
+            "REST APIs",
+            "SOAP",
+            "Azure DevOps"
+        ]
+    },
+    {
+        id: 2,
+        title: "Frontend Developer",
+        company: "Search Price",
+        description:
+            "Developed a responsive web application focused on user experience. Implemented light and dark modes, created custom hooks for state management, integrated APIs developed in Node.js, and configured continuous deployment on Vercel. Applied best practices in accessibility, performance, and component-based architecture.",
+        date: "02/2024 - 07/2025",
+        highlight: "Frontend Development",
+        tags: [
+            "JavaScript",
+            "TypeScript",
+            "Node.js",
+            "HTML5",
+            "CSS3",
+            "Next.js"
+        ]
+    },
+    {
+        id: 3,
+        title: "Marketplace Operations",
+        company: "Entrepreneur",
+        description:
+            "Managed sales operations across Mercado Livre, Shopee, Amazon, and Magalu marketplaces. Created product listings, issued invoices, managed pricing, and defined commercial strategies. Automated processes and conducted strategic planning, achieving average monthly revenue of BRL 130,000.",
+        date: "06/2021 - 01/2024",
+        highlight: "Entrepreneurship",
+        tags: [
+            "Marketplaces",
+            "Sales",
+            "Process Automation",
+            "Pricing",
+            "Invoices",
+            "Logistics",
+            "Financial Management",
+            "Strategic Planning"
+        ]
+    },
+    {
+        id: 4,
+        title: "Junior Java Developer",
+        company: "Foursys",
+        description:
+            "Developed REST APIs using Java and Spring Boot for microservices at Next digital bank. Performed API testing and documentation in the development environment and participated in Scrum ceremonies and technical discussions related to backend development.",
+        date: "02/2021 - 05/2021",
+        highlight: "Backend Development",
+        tags: [
+            "Java",
+            "Spring Boot",
+            "REST APIs",
+            "Microservices",
+            "Oracle",
+            "API Testing",
+            "Scrum"
+        ]
+    },
+    {
+        id: 5,
+        title: "Systems Technician",
+        company: "BRQ",
+        description:
+            "Maintained and supported legacy systems for Itaú Unibanco. Performed tests to validate features and identify defects and participated in technical training and professional development activities.",
+        date: "08/2019 - 02/2020",
+        highlight: "Systems Support",
+        tags: [
+            "Legacy Systems",
+            "Systems Support",
+            "Functional Testing",
+            "Defect Analysis",
+            "Financial Systems",
+            "Itaú Unibanco"
+        ]
+    },
+    {
+        id: 6,
+        title: "Information Technology Intern",
+        company: "Itaú Unibanco",
+        description:
+            "Supported the change management lifecycle for the Mobile Engineering team. Analyzed and reported KPIs, application crashes, and operational reports using tools such as GitLab, Jenkins, Splunk, AppDynamics, and Crashlytics.",
+        date: "06/2018 - 12/2018",
+        highlight: "Mobile Engineering",
+        tags: [
+            "GitLab",
+            "Jenkins",
+            "Splunk",
+            "AppDynamics",
+            "Crashlytics",
+            "KPIs",
+            "Application Monitoring",
+            "Change Management"
+        ]
+    }
+];
 
-    const experiences = [
-        {
-            title: "Frontend Developer - Search Price",
-            description: "Developed a responsive, mobile-first web application with Next.js. Implemented dark/light mode and custom hooks for state management. Integrated with Node.js API and continuous deployment on Vercel. Applied best practices in accessibility, performance, and componentization.",
-            date: "06/2025 - 07/2025",
-            highlight: "Collaboration",
-            tags: ["Start-up", "NextJs", "Angular", "Spring Boot", "Scrum", "MVP" ]
-        },
-        {
-            title: "E-commerce Manager - Own Company",
-            description: "Managed sales on Mercado Livre, Shopee, Amazon, and Magalu. Coordinated a team for customer service and logistics. Created listings, issued invoices, and developed commercial strategies.",
-            date: "06/2021 - 01/2024",
-            highlight: "Leadership",
-            tags: ["Leadership", "Sales", "Marketplaces", "Invoices",  "Logistics", "Comercial Strategies"]
-        }
-    ];
+    const overview = {
+    title: "Career Overview",
+    company: "",
+    description:
+        "Full Stack Developer with experience in developing, maintaining, and supporting web applications, REST APIs, SOAP services, and microservices. Skilled in .NET, VB.NET, C#, Java with Spring Boot, Angular, SQL Server, and Oracle.",
+    date: "4 Years in Technology",
+    highlight: "Overview",
+    tags: [
+        "C#",
+        "VB.NET",
+        "ASP.NET",
+        "Spring Boot",
+        "Java",
+        "Angular",
+        "SQL Server",
+        "Oracle"
+    ]
+};
+    const [currentExperienceId, setCurrentExperienceId] =
+        useState<number | null>(null);
 
-    const currentExp = experiences.find(exp => exp.description === currentExperience) || {
-        title: "Career Overview",
-        date: "2 Years of experience",
-        icon: <Zap className="w-5 h-5" />,
-        highlight: "Overview",
-        tags: ["Spring Boot","Next.js", "Angular","React.js", "JavaScript", "TypeScript", ]
-    };
+    const currentExp =
+        experiences.find(
+            experience => experience.id === currentExperienceId
+        ) ?? overview;
 
     return (
         <AboutSection id="about">
@@ -44,7 +153,10 @@ const About = () => {
                 <MainInfo>
                     <ExperienceHeader>
                         <div>
-                            <ExperienceTitle>{currentExp.title}</ExperienceTitle>
+                          <ExperienceTitle>{currentExp.title}</ExperienceTitle>
+                          {currentExp.company && (
+                              <ExperienceCompany>{currentExp.company}</ExperienceCompany>
+                          )}
                             <ExperienceDate>
                                 <Calendar size={20} />
                                 {currentExp.date}
@@ -52,47 +164,65 @@ const About = () => {
                         </div>
                     </ExperienceHeader>
 
-                    <Description>{currentExperience}</Description>
+                    <Description>
+                        {currentExp.description}
+                    </Description>
 
-                    {currentExp.tags && (
-                        <TagsContainer>
-                            {currentExp.tags.map((tag, index) => (
-                                <Tag key={index}>{tag}</Tag>
-                            ))}
-                        </TagsContainer>
-                    )}
-
+                    <TagsContainer>
+                        {currentExp.tags.map((tag, index) => (
+                            <Tag key={`${tag}-${index}`}>
+                                {tag}
+                            </Tag>
+                        ))}
+                    </TagsContainer>
                 </MainInfo>
 
-                <ExperienceContainer>
+                  <ExperienceContainer>
                     <SectionTitle>Experiences</SectionTitle>
-                    {experiences.map((experience, index) => (
-                        <ExperienceBox
-                            key={index}
-                            onClick={() => setCurrentExperience(experience.description)}
-                            isActive={currentExperience === experience.description}
-                        >
+
+                    <ExperiencesScroll>
+                        {experiences.map((experience) => (
+                            <ExperienceBox
+                                key={experience.id}
+                                onClick={() =>
+                                    setCurrentExperienceId(experience.id)
+                                }
+                                isActive={
+                                    currentExperienceId === experience.id
+                                }
+                            >
                             <BoxHeader>
-                                <BoxTitle>{experience.title}</BoxTitle>
-                            </BoxHeader>
-                            <BoxDate>{experience.date.split(' - ')[0]}</BoxDate>
-                        </ExperienceBox>
-                    ))}
+                              <BoxText>
+                                  <BoxTitle>{experience.title}</BoxTitle>
+                                  <BoxCompany>{experience.company}</BoxCompany>
+                              </BoxText>
+                          </BoxHeader>
+
+                                <BoxDate>
+                                    {experience.date}
+                                </BoxDate>
+                            </ExperienceBox>
+                        ))}
+                    </ExperiencesScroll>
 
                     <ExperienceBox
-                        onClick={() => setCurrentExperience("Full Stack Developer with two years of experience in web applications and microservices. Solid expertise in Spring Boot, Angular and Next.js, with hands-on DevOps practices. Currently pursuing a postgraduate degree in Cloud Computing, fluent in English, with a proven track record of delivering MVPs and optimizing digital processes.")}
-                        isActive={!experiences.find(exp => exp.description === currentExperience)}
+                        onClick={() => setCurrentExperienceId(null)}
+                        isActive={currentExperienceId === null}
                         isOverview
                     >
                         <BoxHeader>
                             <BoxTitle>Overview</BoxTitle>
                         </BoxHeader>
+
                         <BoxDescription>
-                            Summary of my career as a developer, highlighting my key skills and most relevant experiences.
+                            Summary of my career as a developer,
+                            highlighting my key skills and most relevant experiences.
                         </BoxDescription>
-                        <BoxDate>2 Years</BoxDate>
+
+                        <BoxDate>4+ Years in Technology</BoxDate>
                     </ExperienceBox>
                 </ExperienceContainer>
+
             </Content>
         </AboutSection>
     );
@@ -110,12 +240,59 @@ const slideIn = keyframes`
     to { transform: translateX(0); opacity: 1; }
 `;
 
+const ExperiencesScroll = styled.div`
+    max-height: 205px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 8px;
+    margin-bottom: 12px;
+
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary) transparent;
+
+    &::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: var(--primary);
+        border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background: var(--primary-light);
+    }
+`;
+
+const ExperienceCompany = styled.p`
+    margin: 6px 0 0;
+    font-size: 20px;
+    font-weight: 500;
+    color: #f0f0f0;
+`;
+
+const BoxText = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+`;
+
+const BoxCompany = styled.p`
+    margin: 4px 0 0;
+    font-size: 14px;
+    font-weight: 400;
+    color: #9ca3af;
+`;
+
 const AboutSection = styled.section`
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 60px 150px;
-  padding-top: 150px;
+  padding: 80px 140px;
   min-height: 100vh;
   color: white;
   overflow: hidden;
@@ -180,7 +357,7 @@ const Header = styled.div`
 `;
 
 const Title = styled.h2`
-    font-size: 48px;
+    font-size: 43px;
     font-weight: 700;
     margin-bottom: 10px;
     background: var(--primary-light);
@@ -222,7 +399,7 @@ const ExperienceHeader = styled.div`
 `;
 
 const ExperienceTitle = styled.h3`
-    font-size: 32px;
+    font-size: 30px;
     margin: 0;
     // color: var(--primary-light);
     color: white;
@@ -239,7 +416,7 @@ const ExperienceDate = styled.span`
 `;
 
 const Description = styled.p`
-    font-size: 20px;
+    font-size: 16px;
     line-height: 1.7;
     margin-bottom: 30px;
     color: #e5e7eb;
@@ -262,11 +439,11 @@ const Tag = styled.span`
     font-weight: 500;
 `;
 
-
 const ExperienceContainer = styled.div`
     flex: 1;
     display: flex;
     flex-direction: column;
+    min-width: 0;
     animation: ${slideIn} 0.8s ease-out 0.4s both;
 `;
 
@@ -325,8 +502,8 @@ const ExperienceBox = styled.div<{ isActive?: boolean; isOverview?: boolean }>`
 
 const BoxHeader = styled.div`
     display: flex;
-    align-items: center;
-    gap: 15px;
+    flex-direction: column;
+    align-items: flex-start;
     margin-bottom: 15px;
 `;
 
