@@ -145,7 +145,7 @@ const Description = styled.p`
   color: #d1d5db;
   margin-bottom: 1.5rem;
   line-height: 1.6;
-  font-size: 19px;
+  font-size: 18px;
   max-width: 42rem;
 `;
 
