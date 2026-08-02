@@ -15,9 +15,6 @@ interface MouseMovements {
     clientY: number;
 }
 
-const curriculumUrl =
-  "https://drive.google.com/file/d/1rNLEny2TgxbY6d6ASpLnipbGo2YWuISH";
-
 const resumeUrl =
   "https://drive.google.com/file/d/1ZakvZK_1uRrCiVU7DuDbkPOcv_Ptg47b";
 
@@ -62,16 +59,7 @@ export const Main = () => {
                       &gt; Full Stack Developer
                    </TerminalText>
                     <div className="cv-style">
-                        <a
-                            href={curriculumUrl}
-                            className="download-cv links"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            Currículo
-                        </a>
-
-                      <a
+                       <a
                         href={resumeUrl}
                         className="download-cv links"
                         target="_blank"
