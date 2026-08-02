@@ -1,10 +1,10 @@
 import styled from "styled-components"
-import codepen from '../../assets/codepen.png'
 import dailydev from '../../assets/daily-dev.svg'
+import discord from '../../assets/discord.svg'
 import github from '../../assets/github.svg'
+import googledev from '../../assets/googledev.svg'
 import linkedin from '../../assets/linkedin.png'
 import stackoverflow from '../../assets/stackoverflow.svg'
-
 
 export const SocialFooter = () => {
     return (
@@ -70,17 +70,42 @@ export const SocialFooter = () => {
                             </SocialLink>
 
                             <SocialLink
-                                href="https://codepen.io/victormoni"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="codepen"
-                            >
-                                <img src={codepen} alt="Codepen" />
-                                <div className="social-info">
-                                    <span className="social-name">Codepen</span>
-                                    <span className="social-desc">Demos and experiments</span>
-                                </div>
-                            </SocialLink>
+                              href="https://me.developers.google.com/u/victormoni"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="googledev"
+                          >
+                              <img src={googledev} alt="Google Developers" />
+
+                              <div className="social-info">
+                                  <span className="social-name">
+                                      Google Developers
+                                  </span>
+
+                                  <span className="social-desc">
+                                      Developer profile and achievements
+                                  </span>
+                              </div>
+                          </SocialLink>
+
+                          <SocialLink
+                              href="https://discord.com/users/victormoni"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="discord"
+                          >
+                              <img src={discord} alt="Discord" />
+
+                              <div className="social-info">
+                                  <span className="social-name">
+                                      Discord
+                                  </span>
+
+                                  <span className="social-desc">
+                                      Communities and networking
+                                  </span>
+                              </div>
+                          </SocialLink>
                         </SocialGrid>
                     </SocialSection>
 
@@ -106,7 +131,7 @@ const SectionTransition = styled.div`
 const FooterContainer = styled.footer`
     background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
     color: white;
-    padding: 80px 0 40px;
+    padding: 60px 0 40px;
     position: relative;
 
     &::before {
@@ -139,7 +164,7 @@ const SocialSection = styled.div`
     margin-bottom: 60px;
 
     h2 {
-        font-size: 48px;
+        font-size: 40px;
         margin-bottom: 15px;
         background: linear-gradient(45deg, var(--primary), var(--primary-light));
         -webkit-background-clip: text;
@@ -264,9 +289,16 @@ const SocialLink = styled.a`
         box-shadow: 0 20px 40px rgba(244, 130, 36, 0.4);
     }
 
-    &.codepen:hover {
-        border-color: #FFFFFF;
-        box-shadow: 0 20px 40px rgba(255, 255, 255, 0.32);
+    &.googledev:hover {
+      border-color: #34a853;
+      box-shadow: 0 16px 35px rgba(52, 168, 83, 0.32);
+      transform: translateY(-4px);
+   }
+
+    &.discord:hover {
+        border-color: #5865f2;
+        box-shadow: 0 16px 35px rgba(88, 101, 242, 0.3);
+        transform: translateY(-4px);
     }
 
     @media (max-width: 768px) {
