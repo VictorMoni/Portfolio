@@ -32,8 +32,7 @@ const content = {
 const Section = styled.section`
   position: relative;
   min-height: 100vh;
-  padding: 50px 150px;
-  padding-top: 80px;
+  padding: 80px 150px;
   width: 100%;
   color: white;
   overflow: hidden;
@@ -53,7 +52,7 @@ const Section = styled.section`
   }
 
   @media (max-width: 1024px) {
-    padding: 40px 20px;
+    padding: 80px 20px;
         &::before{
       z-index: 0;
     }
