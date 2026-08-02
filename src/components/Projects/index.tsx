@@ -45,7 +45,7 @@ const Content = styled.div`
 `;
 
 const OtherProjectsSection = styled.div`
-  margin-top: 60px;
+  margin: 35px 0;
   min-height: 100vh;
   padding: 0px 150px;
 

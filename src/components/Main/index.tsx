@@ -339,7 +339,7 @@ const Introduction = styled.main`
 }
 
 @media (max-width: 450px) {
-    padding: 40px 16px 10px;
+    padding: 60px 30px;
 
     .info {
         width: 100%;
@@ -356,7 +356,7 @@ const Introduction = styled.main`
 
     .info .links {
         width: 100%;
-        max-width: 220px;
+        max-width: 160px;
         margin: 0;
     }
 
@@ -390,7 +390,7 @@ const Introduction = styled.main`
     }
 
     .info .links {
-        max-width: 190px;
+        max-width: 130px;
         padding: 10px 18px;
         font-size: 14px;
     }

@@ -340,7 +340,7 @@ background-image:
   }
 
   @media (max-width: 1024px) {
-    padding: 40px 20px;
+    padding: 60px 20px;
 
     &::before,
     &::after {
