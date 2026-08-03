@@ -104,11 +104,11 @@ const terminalTyping = keyframes`
     }
 
     40% {
-        width: 245px;
+        width: var(--terminal-width);
     }
 
     70% {
-        width: 245px;
+        width: var(--terminal-width);
     }
 
     100% {
@@ -144,8 +144,11 @@ const CursorDot = styled.div`
 `
 
 const TerminalText = styled.span`
+    --terminal-width: 245px;
+
     display: block;
     width: 0;
+    max-width: max-content;
     overflow: hidden;
     white-space: nowrap;
 
@@ -160,8 +163,15 @@ const TerminalText = styled.span`
         ${terminalTyping} 6s steps(22) infinite,
         ${terminalCursor} 0.7s step-end infinite;
 
+    @media (max-width: 450px) {
+        --terminal-width: 178px;
+        font-size: 17px;
+    }
+
     @media (max-width: 380px) {
+        --terminal-width: 157px;
         font-size: 15px;
+        border-right-width: 2px;
     }
 `;
 
