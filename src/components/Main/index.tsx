@@ -148,7 +148,7 @@ const TerminalText = styled.span`
 
     display: block;
     width: 0;
-    max-width: max-content;
+    max-width: 100%;
     overflow: hidden;
     white-space: nowrap;
 
@@ -164,13 +164,13 @@ const TerminalText = styled.span`
         ${terminalCursor} 0.7s step-end infinite;
 
     @media (max-width: 450px) {
-        --terminal-width: 178px;
-        font-size: 17px;
+        --terminal-width: 245px;
+        font-size: 24px;
     }
 
     @media (max-width: 380px) {
-        --terminal-width: 157px;
-        font-size: 15px;
+        --terminal-width: 183px;
+        font-size: 18px;
         border-right-width: 2px;
     }
 `;
@@ -239,7 +239,6 @@ const Introduction = styled.main`
     }
     .info span{
         color: var(--primary-light);
-        font-size: 24px;
     }
    .info p,
    .info h1,
@@ -377,10 +376,6 @@ const Introduction = styled.main`
 
     .info h1 {
         font-size: 32px;
-    }
-
-    .info span {
-        font-size: 15px;
     }
 
     .info p {
