@@ -239,11 +239,11 @@ const slideIn = keyframes`
 `;
 
 const ExperiencesScroll = styled.div`
-    max-height: 250px;
+    max-height: 240px;
     overflow-y: auto;
     overflow-x: hidden;
     padding-right: 8px;
-    margin-bottom: 15px;
+    margin-bottom: 13px;
 
     scrollbar-width: thin;
     scrollbar-color: var(--primary) transparent;
