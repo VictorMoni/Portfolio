@@ -9,7 +9,7 @@ const About = () => {
         title: "Junior Full Stack Developer",
         company: "Sysopen",
         description:
-            "Supported, maintained, and enhanced the Recupera system using VB.NET, ASP.NET WebForms, C#, and Angular. Implemented bug fixes, improvements, and new features according to client requirements. Supported solutions used by companies such as Ambev, Aegea, Jeitto, and Porto Seguro. Created and optimized queries, stored procedures, and scripts in SQL Server and Oracle, performed testing of REST APIs and SOAP services using SoapUI, and used Azure DevOps/TFS for version control and work item management.",
+            "Supported, maintained, and enhanced the Recupera system using VB.NET, ASP.NET WebForms, C#, and Angular. Implemented bug fixes, improvements, and new features according to client requirements.\n\n Supported solutions used by companies such as Ambev, Aegea, Jeitto, and Porto Seguro. Created and optimized queries, stored procedures, and scripts in SQL Server and Oracle, performed testing of REST APIs and SOAP services using SoapUI, and used Azure DevOps/TFS for version control and work item management.",
         date: "10/2025 - 07/2026",
         highlight: "Full Stack Development",
         tags: [
@@ -121,7 +121,7 @@ const About = () => {
     company: "",
     description:
         "Full Stack Developer with experience in developing, maintaining, and supporting web applications, REST APIs, SOAP services, and microservices. Skilled in .NET, VB.NET, C#, Java with Spring Boot, Angular, SQL Server, and Oracle.",
-    date: "4 Years in Technology",
+    date: "3 Years in Technology",
     highlight: "Overview",
     tags: [
         "C#",
@@ -177,51 +177,49 @@ const About = () => {
                     </TagsContainer>
                 </MainInfo>
 
-                  <ExperienceContainer>
-                    <SectionTitle>Experiences</SectionTitle>
+                 <ExperienceContainer>
+                  <SectionTitle>Experience</SectionTitle>
 
-                    <ExperiencesScroll>
-                        {experiences.map((experience) => (
-                            <ExperienceBox
-                                key={experience.id}
-                                onClick={() =>
-                                    setCurrentExperienceId(experience.id)
-                                }
-                                isActive={
-                                    currentExperienceId === experience.id
-                                }
-                            >
-                            <BoxHeader>
-                              <BoxText>
-                                  <BoxTitle>{experience.title}</BoxTitle>
-                                  <BoxCompany>{experience.company}</BoxCompany>
-                              </BoxText>
-                          </BoxHeader>
+                  <ExperienceBox
+                      onClick={() => setCurrentExperienceId(null)}
+                      isActive={currentExperienceId === null}
+                      isOverview
+                  >
+                      <BoxHeader>
+                          <BoxTitle>Overview</BoxTitle>
+                      </BoxHeader>
 
-                                <BoxDate>
-                                    {experience.date}
-                                </BoxDate>
-                            </ExperienceBox>
-                        ))}
-                    </ExperiencesScroll>
+                      <BoxDescription>
+                          Summary of my career as a developer,
+                          highlighting my key skills and most relevant experiences.
+                      </BoxDescription>
 
-                    <ExperienceBox
-                        onClick={() => setCurrentExperienceId(null)}
-                        isActive={currentExperienceId === null}
-                        isOverview
-                    >
-                        <BoxHeader>
-                            <BoxTitle>Overview</BoxTitle>
-                        </BoxHeader>
+                      <BoxDate>3 Years in Technology</BoxDate>
+                  </ExperienceBox>
 
-                        <BoxDescription>
-                            Summary of my career as a developer,
-                            highlighting my key skills and most relevant experiences.
-                        </BoxDescription>
+                  <ExperiencesScroll>
+                      {experiences.map((experience) => (
+                          <ExperienceBox
+                              key={experience.id}
+                              onClick={() =>
+                                  setCurrentExperienceId(experience.id)
+                              }
+                              isActive={
+                                  currentExperienceId === experience.id
+                              }
+                          >
+                              <BoxHeader>
+                                  <BoxText>
+                                      <BoxTitle>{experience.title}</BoxTitle>
+                                      <BoxCompany>{experience.company}</BoxCompany>
+                                  </BoxText>
+                              </BoxHeader>
 
-                        <BoxDate>4+ Years in Technology</BoxDate>
-                    </ExperienceBox>
-                </ExperienceContainer>
+                              <BoxDate>{experience.date}</BoxDate>
+                          </ExperienceBox>
+                      ))}
+                  </ExperiencesScroll>
+              </ExperienceContainer>
 
             </Content>
         </AboutSection>
@@ -425,6 +423,7 @@ const Description = styled.p`
     line-height: 1.7;
     margin-bottom: 30px;
     color: #e5e7eb;
+    white-space: pre-line;
 `;
 
 const TagsContainer = styled.div`
@@ -452,15 +451,22 @@ const ExperienceContainer = styled.div`
     width: 100%;
     animation: ${slideIn} 0.8s ease-out 0.4s both;
 
+    /* Desktop: alinha Experiences com o título Career */
+    @media (min-width: 1025px) {
+        margin-top: -137px;
+    }
+
+    /* Celular e tablet: mantém a posição atual */
     @media (max-width: 1024px) {
         order: 1;
+        margin-top: 0;
     }
 `;
 
 const SectionTitle = styled.h3`
     font-size: 24px;
+    margin-top: 0;
     margin-bottom: 20px;
-    color: #f3f4f6;
     color: var(--primary-light);
     font-weight: 600;
 `;
