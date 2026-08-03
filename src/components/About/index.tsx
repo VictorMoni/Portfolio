@@ -388,7 +388,12 @@ const Content = styled.div`
 
 const MainInfo = styled.div`
     flex: 1.2;
+    width: 100%;
     animation: ${slideIn} 0.8s ease-out 0.2s both;
+
+    @media (max-width: 1024px) {
+        order: 2;
+    }
 `;
 
 const ExperienceHeader = styled.div`
@@ -444,7 +449,12 @@ const ExperienceContainer = styled.div`
     display: flex;
     flex-direction: column;
     min-width: 0;
+    width: 100%;
     animation: ${slideIn} 0.8s ease-out 0.4s both;
+
+    @media (max-width: 1024px) {
+        order: 1;
+    }
 `;
 
 const SectionTitle = styled.h3`
