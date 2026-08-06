@@ -6,7 +6,7 @@ const About = () => {
    const experiences = [
     {
         id: 1,
-        title: "Junior Full Stack Developer",
+        title: "Full Stack Developer",
         company: "Sysopen",
         description:
             "Supported, maintained, and enhanced the Recupera system using VB.NET, ASP.NET WebForms, C#, and Angular. Implemented bug fixes, improvements, and new features according to client requirements.\n\n Supported solutions used by companies such as Ambev, Aegea, Jeitto, and Porto Seguro. Created and optimized queries, stored procedures, and scripts in SQL Server and Oracle, performed testing of REST APIs and SOAP services using SoapUI, and used Azure DevOps/TFS for version control and work item management.",
