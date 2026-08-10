@@ -70,10 +70,9 @@ const About = () => {
         highlight: "Systems Support",
         tags: [
             "Legacy Systems",
-            "Systems Support",
-            "Functional Testing",
-            "Defect Analysis",
-            "Financial Systems",
+            "Java Training",
+            "Version Control",
+            "System Support",
             "Itaú Unibanco"
         ]
     },
