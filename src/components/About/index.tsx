@@ -47,7 +47,7 @@ const About = () => {
         company: "Entrepreneur",
         description:
             "Managed sales operations across Mercado Livre, Shopee, Amazon, and Magalu marketplaces. Created product listings, issued invoices, managed pricing, and defined commercial strategies. Automated processes and conducted strategic planning, achieving average monthly revenue of BRL 130,000.",
-        date: "06/2021 - 01/2024",
+        date: "05/2020 - 01/2024",
         highlight: "Entrepreneurship",
         tags: [
             "Marketplaces",
@@ -62,28 +62,10 @@ const About = () => {
     },
     {
         id: 4,
-        title: "Junior Java Developer",
-        company: "Foursys",
-        description:
-            "Developed REST APIs using Java and Spring Boot for microservices at Next digital bank. Performed API testing and documentation in the development environment and participated in Scrum ceremonies and technical discussions related to backend development.",
-        date: "02/2021 - 05/2021",
-        highlight: "Backend Development",
-        tags: [
-            "Java",
-            "Spring Boot",
-            "REST APIs",
-            "Microservices",
-            "Oracle",
-            "API Testing",
-            "Scrum"
-        ]
-    },
-    {
-        id: 5,
         title: "Systems Technician",
         company: "BRQ",
         description:
-            "Maintained and supported legacy systems for Itaú Unibanco. Performed tests to validate features and identify defects and participated in technical training and professional development activities.",
+            "Maintained and supported legacy systems for Itaú Unibanco.Participated in Java training courses and other technical development programs. Used development, testing, and version control tools in a corporate environment",
         date: "08/2019 - 02/2020",
         highlight: "Systems Support",
         tags: [
@@ -96,11 +78,11 @@ const About = () => {
         ]
     },
     {
-        id: 6,
+        id: 5,
         title: "Information Technology Intern",
         company: "Itaú Unibanco",
         description:
-            "Supported the change management lifecycle for the Mobile Engineering team. Analyzed and reported KPIs, application crashes, and operational reports using tools such as GitLab, Jenkins, Splunk, AppDynamics, and Crashlytics.",
+            "Supported the change management process and evolution of internal systems within the Mobile Engineering team. Analyzed crashes, logs, and KPIs to identify issues and improve system stability. Prepared reports and monitored technical performance indicators. \n\n Used GitLab, Jira, Jenkins, Splunk, AppDynamics, and Crashlytics to support technical deliveries. Participated in internal Java training courses, expanding knowledge in application development.",
         date: "06/2018 - 12/2018",
         highlight: "Mobile Engineering",
         tags: [
@@ -120,7 +102,7 @@ const About = () => {
     title: "Career Overview",
     company: "",
     description:
-        "Full Stack Developer with experience in developing, maintaining, and supporting web applications, REST APIs, SOAP services, and microservices. Skilled in .NET, VB.NET, C#, Java with Spring Boot, Angular, SQL Server, and Oracle.",
+        "Full Stack Developer with experience in developing, maintaining, and supporting web applications, REST APIs, SOAP services, and microservices. Experienced in .NET, VB.NET, C#, Java, Spring Boot, Angular, SQL Server, and Oracle.",
     date: "3 Years in Technology",
     highlight: "Overview",
     tags: [
