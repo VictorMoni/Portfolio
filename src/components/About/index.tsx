@@ -1,7 +1,8 @@
 import { Calendar } from 'lucide-react';
 import { useState } from "react";
 import styled, { keyframes } from "styled-components";
-import image from '../../assets/notebook.png';
+
+import image from '../../assets/career-background-black.webp';
 const About = () => {
    const experiences = [
     {
@@ -97,38 +98,18 @@ const About = () => {
     }
 ];
 
-    const overview = {
-    title: "Full Stack .NET Developer",
-    company: "",
-    description:
-        "I build and improve software that supports real business operations. My focus is full stack .NET development, connecting C#, VB.NET, and ASP.NET applications with Angular interfaces, REST and SOAP/WCF integrations, and SQL Server and Oracle databases.\n\nMy experience includes enterprise projects for Ambev, Aegea, Jeitto, and Porto Seguro, alongside Next.js web development and running my own e-commerce business. That combination helps me connect technical decisions with the needs of the people using the software.\n\nI hold a bachelor’s degree in Information Systems and a postgraduate qualification in Cloud Computing, and I am currently pursuing postgraduate studies in Information Security. I bring advanced English skills and a practical focus on maintainable code, reliable integrations, and solving problems.",
-    date: "In technology since 2018",
-    highlight: "Overview",
-    tags: [
-        "C#",
-        "VB.NET",
-        "ASP.NET",
-        "Angular",
-        "Next.js",
-        "SQL Server",
-        "Oracle",
-        "REST & SOAP/WCF",
-        "Cloud Computing",
-        "Information Security"
-    ]
-};
     const [currentExperienceId, setCurrentExperienceId] =
-        useState<number | null>(null);
+        useState<number>(1);
 
     const currentExp =
         experiences.find(
             experience => experience.id === currentExperienceId
-        ) ?? overview;
+        ) ?? experiences[0];
 
     return (
         <AboutSection id="about">
             <Header>
-                <Title>About Me</Title>
+                <Title>Career</Title>
                 <Subtitle>Enterprise applications, reliable integrations, and a business perspective.</Subtitle>
             </Header>
 
@@ -161,33 +142,19 @@ const About = () => {
                 </MainInfo>
 
                  <ExperienceContainer>
-                  <SectionTitle>Experience</SectionTitle>
 
-                  <ExperienceBox
-                      onClick={() => setCurrentExperienceId(null)}
-                      isActive={currentExperienceId === null}
-                      isOverview
-                  >
-                      <BoxHeader>
-                          <BoxTitle>Overview</BoxTitle>
-                      </BoxHeader>
 
-                      <BoxDescription>
-                          My approach to enterprise software, shaped by .NET development,
-                          cloud studies, and hands-on business experience.
-                      </BoxDescription>
-
-                      <BoxDate>{overview.date}</BoxDate>
-                  </ExperienceBox>
-
+                  <SectionTitle>Professional Experience</SectionTitle>
                   <ExperiencesScroll>
                       {experiences.map((experience) => (
                           <ExperienceBox
                               key={experience.id}
+                              type="button"
+                              aria-pressed={currentExperienceId === experience.id}
                               onClick={() =>
                                   setCurrentExperienceId(experience.id)
                               }
-                              isActive={
+                              $isActive={
                                   currentExperienceId === experience.id
                               }
                           >
@@ -205,6 +172,7 @@ const About = () => {
               </ExperienceContainer>
 
             </Content>
+
         </AboutSection>
     );
 };
@@ -222,7 +190,8 @@ const slideIn = keyframes`
 `;
 
 const ExperiencesScroll = styled.div`
-    max-height: 240px;
+    max-height: 420px;
+    @media (max-width: 768px) { max-height: 360px; }
     overflow-y: auto;
     overflow-x: hidden;
     padding-right: 8px;
@@ -271,61 +240,35 @@ const BoxCompany = styled.p`
 
 const AboutSection = styled.section`
   position: relative;
+  isolation: isolate;
   display: flex;
   flex-direction: column;
   padding: 80px 140px;
   min-height: 100vh;
   color: white;
   overflow: hidden;
-  background: linear-gradient(to right, #012846, #000);
+  background-color: #08090b;
 
   &::before {
     content: '';
     position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 50%;
-    background-repeat: no-repeat;
+    inset: -8px;
+    z-index: -1;
+    pointer-events: none;
+    background-image:
+      linear-gradient(90deg, rgba(5, 7, 10, 0.96) 0%, rgba(5, 7, 10, 0.88) 38%, rgba(5, 7, 10, 0.28) 75%, rgba(5, 7, 10, 0.18) 100%),
+      url(${image});
     background-size: cover;
     background-position: center right;
-background-image:
-  linear-gradient(to right, rgba(0, 0, 0, 0.9), transparent 80%),
-  url(${image});
-    opacity: 0.3;
-    pointer-events: none;
-    z-index: 1;
-  }
-
-
-&::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-
-  background:
-    linear-gradient(to bottom, #000 1px, transparent 50px),
-    linear-gradient(to top, #000 1px, transparent 50px),
-    linear-gradient(to left, rgba(0, 0, 0, 0.5), transparent 0%);
-
-  z-index: 3;
-  pointer-events: none;
-}
-
-  > * {
-    position: relative;
-    z-index: 3;
+    filter: blur(2px);
   }
 
   @media (max-width: 1024px) {
     padding: 60px 20px;
-
-    &::before,
-    &::after {
-      display: none;
+    &::before {
+      background-image:
+        linear-gradient(rgba(5, 7, 10, 0.82), rgba(5, 7, 10, 0.88)),
+        url(${image});
     }
   }
 `;
@@ -425,6 +368,11 @@ const Tag = styled.span`
 `;
 
 const ExperienceContainer = styled.div`
+    background: rgba(2, 16, 28, 0.72);
+    padding: 24px;
+    border: 1px solid rgba(77, 149, 180, 0.25);
+    border-radius: 12px;
+    box-sizing: border-box;
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -434,7 +382,7 @@ const ExperienceContainer = styled.div`
 
     /* Desktop: alinha Experiences com o título Career */
     @media (min-width: 1025px) {
-        margin-top: -137px;
+        margin-top: 0;
     }
 
     /* Celular e tablet: mantém a posição atual */
@@ -452,48 +400,28 @@ const SectionTitle = styled.h3`
     font-weight: 600;
 `;
 
-const ExperienceBox = styled.div<{ isActive?: boolean; isOverview?: boolean }>`
-    background: ${props => props.isActive
-        ? 'linear-gradient(135deg, transparent, #022742ff)'
-        : 'transparent'
-    };
-    border-left: 1px solid ${props => props.isActive
-        ? 'var(--primary)'
-        : '#044574ff;'
-    };
+const ExperienceBox = styled.button<{ $isActive?: boolean }>`
+    display: block;
+    width: 100%;
+    text-align: left;
+    font: inherit;
+    color: inherit;
+    appearance: none;
+    border: 0;
+    border-radius: 0;
+    border-left: 3px solid ${({ $isActive }) => $isActive ? 'var(--primary-light)' : '#29404f'};
     padding: 24px;
-    // border-radius: 16px;
+    background: ${({ $isActive }) => $isActive ? 'rgba(0, 146, 200, 0.12)' : 'transparent'};
     cursor: pointer;
-    transition: all 0.5s ease;
-    position: relative;
-    overflow: hidden;
-
-    ${props => props.isOverview && `
-        border: 1px solid #044574ff;
-    `}
-
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 100%;
-        width: 2px;
-        background: ${props => props.isActive
-            ? 'linear-gradient(90deg, var(--primary), #0662a3ff)'
-            : 'transparent'
-        };
-        transition: all 0.5s ease;
-    }
+    transition: background-color 0.2s ease, border-color 0.2s ease;
 
     &:hover {
-        // transform: translateX(-4px);
-        border-color: var(--primary);
+        background: ${({ $isActive }) => $isActive ? 'rgba(0, 146, 200, 0.16)' : 'rgba(255, 255, 255, 0.04)'};
+    }
 
-        &::before {
-            background: linear-gradient(90deg, var(--primary), #0662a3ff);
-        }
+    &:focus-visible {
+        outline: 2px solid var(--primary-light);
+        outline-offset: -2px;
     }
 `;
 
@@ -512,12 +440,6 @@ const BoxTitle = styled.h4`
     font-weight: 600;
 `;
 
-const BoxDescription = styled.p`
-    font-size: 14px;
-    color: #9ca3af;
-    line-height: 1.5;
-    margin-bottom: 15px;
-`;
 
 const BoxDate = styled.span`
     font-size: 12px;

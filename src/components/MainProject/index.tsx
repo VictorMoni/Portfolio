@@ -1,25 +1,23 @@
 import { Code2, SquareDashedMousePointer } from "lucide-react";
 import styled from "styled-components";
-import cover from "../../assets/desktop.png";
-import ProjectImage1 from "../../assets/shopeasy1.png";
-import ProjectImage2 from "../../assets/shopeasy2.png";
-import ProjectImage3 from "../../assets/shopeasy3.png";
-import ProjectImage4 from "../../assets/shopeasy4.png";
-import Star from '../../assets/stars.png';
-import UnfilledStar from '../../assets/unfilledstars.png';
+import cover from "../../assets/shopeasy-background-black.webp";
+import ProjectImage1 from "../../assets/shopeasy1.webp";
+import ProjectImage2 from "../../assets/shopeasy2.webp";
+import ProjectImage3 from "../../assets/shopeasy3.webp";
+import ProjectImage4 from "../../assets/shopeasy4.webp";
 import MediaGallery from "../MediaGallery";
 
 const content = {
   id: "1",
   title: "ShopEasy",
   coverImage: cover,
-  description: "ShopEasy is an e-commerce boilerplate with Angular frontend, Spring Boot backend, MySQL database, Kafka events, ELK stack integration, and deployment using Docker Compose or Kubernetes, serving as a modern and scalable foundation for online stores.",
+  description: "A full-stack e-commerce foundation connecting an Angular storefront to a Spring Boot REST API and MySQL. Combines JWT authentication, product and order management, and Kafka order events, with ELK logging and containerized deployment through Docker Compose or Kubernetes.",
   note: "This project is a portfolio and learning base, currently with a simplified checkout and some mock data. Future improvements include payment gateway, persistent cart, and CI/CD pipeline. It can be adapted to other databases or cloud providers.",
   startDate: "2025-04",
   finishDate: "Present",
   repoLink: "https://github.com/victormoni/ShopEasy",
   demoLink: null,
-  rating: 5,
+  technologies: ["Angular", "Spring Boot", "MySQL", "Kafka", "Docker", "Kubernetes"],
 
   categories: [
     { categoryId: "1", category: { name: "Startup" } },
@@ -31,7 +29,7 @@ const content = {
 
 const Section = styled.section`
   position: relative;
-  padding: 80px 150px;
+  padding: 110px 150px 80px;
   width: 100%;
   color: white;
   overflow: hidden;
@@ -51,27 +49,33 @@ const Section = styled.section`
   }
 
   @media (max-width: 1024px) {
-    padding: 80px 20px;
+    padding: 110px 20px 80px;
         &::before{
-      z-index: 0;
+      z-index: 3;
     }
  }
 `;
 
-const BackgroundBlur = styled.div<{ bg?: string }>`
+const ProjectBackground = styled.div<{ $bg?: string }>`
   position: absolute;
   inset: 0;
-  background-image: ${({ bg }) => (bg ? `url(${bg})` : "none")};
+  background-image: ${({ $bg }) => ($bg ? `linear-gradient(90deg, rgba(0,0,0,0.78), rgba(0,0,0,0.3)), url(${$bg})` : "none")};
   background-size: cover;
-  background-position: top;
-  opacity: 0.395;
-  filter: blur(8px);
-  transform: scale(1.05);
+  background-position: center;
+  opacity: 1;
+  filter: blur(3px);
+  transform: scale(1.01);
 `;
 
 const Container = styled.div`
+  padding: 32px;
+  background: #080808;
+  border: 1px solid #292d33;
+  border-radius: 16px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+  @media (max-width: 600px) { padding: 20px; }
   position: relative;
-  z-index: 0;
+  z-index: 3;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -86,6 +90,7 @@ const Container = styled.div`
 
 const Content = styled.div`
   flex: 1;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -147,6 +152,14 @@ const Description = styled.p`
   max-width: 42rem;
 `;
 
+const ProjectScope = styled.p`
+  margin-top: 24px;
+  color: #b8c1cc;
+  font-size: 14px;
+  line-height: 1.6;
+  strong { display: block; color: #fff; margin-bottom: 6px; }
+`;
+
 const Footer = styled.div`
   font-size: 0.75rem;
   color: #6b7280;
@@ -164,7 +177,8 @@ const ActionMethods = styled.div`
     display: flex;
     gap: 0.5rem;
     margin-top: 1.5rem;
-    width: fit-content;
+    width: 100%;
+    flex-wrap: wrap;
 
     .links {
     display: inline-flex;
@@ -182,6 +196,14 @@ const ActionMethods = styled.div`
         }
     }
 
+    .links.disabled,
+    .links.disabled:hover {
+      background: #2e2e2e;
+      color: #999;
+      border: 2px solid #2e2e2e;
+      cursor: not-allowed;
+    }
+
     .links.secondary {
       background: transparent;
       border: 2px solid var(--primary);
@@ -197,16 +219,19 @@ const ActionMethods = styled.div`
     }
 `
 
-const Stars = styled.div`
-  font-size: 1rem;
-  color: #ffcc00;
-  margin-bottom: 8px;
-`;
-
-const StarImg = styled.img`
-  width: 25px;
-  height: 25px;
-  margin-right: 4px;
+const Technologies = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+  span {
+    padding: 5px 10px;
+    border: 1px solid #23536b;
+    border-radius: 6px;
+    background: #10212b;
+    color: #bce6fa;
+    font-size: 0.85rem;
+  }
 `;
 
 const DisabledButton = styled.span`
@@ -229,7 +254,7 @@ const DisabledButton = styled.span`
 export default function MainProject() {
   return (
     <Section>
-      <BackgroundBlur bg={content.coverImage || ""} />
+      <ProjectBackground $bg={content.coverImage || ""} />
       <Container>
         <Content>
           {content.finishDate && (
@@ -243,38 +268,31 @@ export default function MainProject() {
 
           {content.description && <Description>{content.description}</Description>}
 
-          <Stars>
-            {Array.from({ length: 5 }, (_, i) => (
-              <StarImg
-                key={i}
-                src={i < content.rating ? Star : UnfilledStar}
-                alt={i < content.rating ? "Filled star" : "Unfilled star"}
-              />
-            ))}
-          </Stars>
+<Technologies aria-label="Technologies">{content.technologies.map(technology => <span key={technology}>{technology}</span>)}</Technologies>
 
           <ActionMethods>
             {content.demoLink ? (
-              <a href={content.demoLink} className="links" target="BLANK" rel="noopener noreferrer">
+              <a href={content.demoLink} className="links" target="_blank" rel="noopener noreferrer">
                 <SquareDashedMousePointer size={18} />
-                Demonstration
+                Live demo
               </a>
             ) : (
-              <DisabledButton className="links disabled">
+              <DisabledButton className="links disabled" aria-disabled="true">
                 <SquareDashedMousePointer size={18} />
-                No Demonstration
+                Demo unavailable
               </DisabledButton>
             )}
 
-            <a href={content.repoLink} className="links secondary" target="BLANK" rel="noopener noreferrer">
+            <a href={content.repoLink} className="links secondary" target="_blank" rel="noopener noreferrer">
               <Code2 size={18} />
-              Repository
+              View repository
             </a>
 
           </ActionMethods>
 
+          <ProjectScope><strong>Architecture &amp; scope</strong>JWT authentication and Kafka order events connect the storefront to the backend. Docker Compose and Kubernetes support deployment. This learning project uses a simplified checkout and some mock data; payment integration remains planned.</ProjectScope>
           <Footer>
-            <span>Recent project created +2 months ago</span>
+            <span>Portfolio project · In development</span>
           </Footer>
         </Content>
         <Content>

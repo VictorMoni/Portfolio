@@ -1,12 +1,13 @@
 "use client";
 
-import { Folder, Home, User, Users } from "lucide-react";
+import { Folder, GraduationCap, Home, User, Users } from "lucide-react";
 import { useEffect, useState } from "react";
 import styled, { css } from "styled-components";
 
 const navigationItems = [
     { id: "home", label: "Home", icon: Home },
-    { id: "about", label: "About", icon: User },
+    { id: "about", label: "Career", icon: User },
+    { id: "education", label: "Education", icon: GraduationCap },
     { id: "projects", label: "Projects", icon: Folder },
     { id: "socialmedia", label: "Social media", icon: Users },
 ];
@@ -140,6 +141,9 @@ export const NavItem = styled.a<NavItemProps>`
   }
 
   @media(max-width: 768px){
-    padding: 0.3rem;
+    padding: 0.65rem;
+    min-width: 44px;
+    min-height: 44px;
+    justify-content: center;
   }
 `;

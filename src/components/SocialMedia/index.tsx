@@ -49,9 +49,9 @@ export const SocialFooter = () => {
                                 rel="noopener noreferrer"
                                 className="dailydev"
                             >
-                                <img src={dailydev} alt="DailyDev" />
+                                <img src={dailydev} alt="Daily.dev" />
                                 <div className="social-info">
-                                    <span className="social-name">daily.dev</span>
+                                    <span className="social-name">Daily.dev</span>
                                     <span className="social-desc">Reads and bookmarks</span>
                                 </div>
                             </SocialLink>
@@ -110,7 +110,7 @@ export const SocialFooter = () => {
                     </SocialSection>
 
                     <FooterBottom>
-                        <p>&copy; 2025 Victor Moni. Full Stack Developer</p>
+                        <p>Victor Moni &middot; Full Stack Developer &middot; 2026</p>
                         <span>Built with ❤️ and lots of code</span>
                     </FooterBottom>
                 </FooterContent>

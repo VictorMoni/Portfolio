@@ -8,6 +8,7 @@ describe('ProjectsCarousel', () => {
     const user = userEvent.setup()
     render(<ProjectsCarousel />)
     const scrollArea = screen.getByRole('heading', { name: 'Sankhya' }).closest('article')!.parentElement!
+    vi.spyOn(scrollArea.querySelector('article')!, 'getBoundingClientRect').mockReturnValue({ width: 326 } as DOMRect)
     const scrollBy = vi.fn()
     scrollArea.scrollBy = scrollBy
 

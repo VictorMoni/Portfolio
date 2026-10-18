@@ -2,9 +2,10 @@ import { useEffect, useState } from "react";
 import styled, { keyframes } from "styled-components";
 import githubIcon from '../../assets/github.png';
 import linkedinIcon from '../../assets/linkedin.png';
-import backgroundVideo from '../../assets/main-banner.png';
+import backgroundVideo from '../../assets/main-banner.webp';
 import whatsappIcon from '../../assets/whatsapp.png';
 import About from "../About";
+import Education from "../Education";
 import { Background } from "../BackgroundEclipse";
 import Projects from "../Projects";
 import { SocialFooter } from "../SocialMedia";
@@ -56,8 +57,10 @@ export const Main = () => {
                     <p>My name is</p>
                     <h1>Victor Moni</h1>
                     <TerminalText>
-                      &gt; Full Stack Developer
-                   </TerminalText>
+                      <span className="terminal-measure" aria-hidden="true">&gt; .NET Full Stack Developer&nbsp;</span>
+                      <span className="terminal-typing">&gt; .NET Full Stack Developer</span>
+                    </TerminalText>
+                    <IntroSummary>I build reliable .NET applications with a practical business mindset, while expanding my knowledge of cloud and security.</IntroSummary>
                     <div className="cv-style">
                        <a
                         href={resumeUrl}
@@ -67,6 +70,7 @@ export const Main = () => {
                     >
                         Resume
                     </a>
+                    <a href="#socialmedia" className="links contact-link">Contact me</a>
                     </div>
                  </div>
 
@@ -80,7 +84,7 @@ export const Main = () => {
                     <a href="https://www.linkedin.com/in/victormoni" className="logo" target="_blank" rel="noopener noreferrer">
                         <img src={linkedinIcon} alt="linkedin icon" />
                     </a>
-                    <a href="https://wa.me/5511943936479" className="logo" target="_blank" rel="noopener norefereer">
+                    <a href="https://wa.me/5511943936479" className="logo" target="_blank" rel="noopener noreferrer">
                         <img src={whatsappIcon} alt="whatsapp icon" />
                     </a>
                 </div>
@@ -88,6 +92,7 @@ export const Main = () => {
             <SectionTransition />
             <TechSlider />
             <About />
+            <Education />
             <Projects />
             <SocialFooter />
             <BackgroundPrompt>
@@ -98,17 +103,25 @@ export const Main = () => {
     )
 }
 
+const IntroSummary = styled.p`
+  max-width: min(540px, calc(100vw - 110px));
+  margin: 18px 0 24px;
+  color: #d1d5db;
+  font-size: 16px !important;
+  line-height: 1.6;
+`;
+
 const terminalTyping = keyframes`
     0% {
         width: 0;
     }
 
     40% {
-        width: var(--terminal-width);
+        width: 100%;
     }
 
     70% {
-        width: var(--terminal-width);
+        width: 100%;
     }
 
     100% {
@@ -144,34 +157,40 @@ const CursorDot = styled.div`
 `
 
 const TerminalText = styled.span`
-    --terminal-width: 245px;
-
+    position: relative;
     display: block;
-    width: 0;
+    width: max-content;
     max-width: 100%;
-    overflow: hidden;
     white-space: nowrap;
-
     color: var(--primary-light);
     font-family: inherit;
     font-size: 24px;
     font-weight: 500;
 
-    border-right: 3px solid var(--primary-light);
+    .terminal-measure {
+        visibility: hidden;
+    }
 
-    animation:
-        ${terminalTyping} 6s steps(22) infinite,
-        ${terminalCursor} 0.7s step-end infinite;
+    .terminal-typing {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 0;
+        overflow: hidden;
+        border-right: 3px solid var(--primary-light);
+        animation:
+            ${terminalTyping} 6s steps(26) infinite,
+            ${terminalCursor} 0.7s step-end infinite;
+    }
 
     @media (max-width: 450px) {
-        --terminal-width: 245px;
-        font-size: 24px;
+        font-size: 20px;
     }
 
     @media (max-width: 380px) {
-        --terminal-width: 183px;
         font-size: 18px;
-        border-right-width: 2px;
+        .terminal-typing { border-right-width: 2px; }
     }
 `;
 
@@ -197,7 +216,10 @@ const Introduction = styled.main`
   display: flex;
   align-items: center;
   padding: 0 150px;
-  height: 78vh;
+  min-height: 78vh;
+  height: auto;
+  padding-top: 120px;
+  padding-bottom: 70px;
   margin-bottom: 0;
   position: relative;
   z-index: 1;
@@ -278,7 +300,17 @@ const Introduction = styled.main`
       }
   }
 
-    .info .links img{
+    .info .contact-link {
+      background: #111111;
+      border-color: var(--primary);
+      color: #ededed;
+      &:hover {
+          background: #1c1c1c;
+          border-color: var(--primary-light);
+      }
+   }
+   .info .cv-style { flex-wrap: wrap; }
+   .info .links img{
         width: 20px;
         height: 20px;
         margin-right: 10px;
@@ -336,7 +368,7 @@ const Introduction = styled.main`
 }
 
 @media (max-width: 450px) {
-    padding: 60px 30px;
+    padding: 110px 60px 60px 24px;
 
     .info {
         width: 100%;
