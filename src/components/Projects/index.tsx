@@ -1,4 +1,5 @@
 import styled, { keyframes } from "styled-components";
+import sideProjectsBackground from "../../assets/side-projects-background.webp";
 import MainProject from "../MainProject";
 import { ProjectsCarousel } from "../ProjectsCarousel";
 
@@ -11,7 +12,7 @@ const Projects = () => {
         <OtherProjectsSection>
           <Header>
             <Title>Side Projects</Title>
-            <Subtitle>Other projects that I made</Subtitle>
+            <Subtitle>Java and TypeScript projects that complement my enterprise .NET experience</Subtitle>
           </Header>
           <ProjectsCarousel />
         </OtherProjectsSection>
@@ -43,12 +44,29 @@ const Content = styled.div`
 `;
 
 const OtherProjectsSection = styled.div`
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   padding: 60px 150px;
-  background: #0e0f11;
+  background: #07090c;
 
-    @media (max-width: 1024px) {
-      padding: 40px 20px;
-    }
+  &::before {
+    content: '';
+    position: absolute;
+    inset: -8px;
+    z-index: -1;
+    pointer-events: none;
+    background-image:
+      linear-gradient(90deg, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.35)),
+      url(${sideProjectsBackground});
+    background-size: cover;
+    background-position: center;
+    filter: blur(2px);
+  }
+
+  @media (max-width: 1024px) {
+    padding: 40px 20px;
+  }
 `;
 
 const Header = styled.div`

@@ -1,28 +1,27 @@
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { describe, expect, it, vi } from 'vitest'
+import { describe, expect, it } from 'vitest'
 import { Project } from './index'
 
 const project = {
   cover: '/cover.png',
-  category: 'Personal Project',
   title: 'Example app',
-  lastUpdated: '09/20/2025',
+  lastUpdated: '2025-09-20',
 }
 
 describe('Project', () => {
   it('renders project details and working external actions', () => {
-    render(<Project {...project} description="A useful app" rating={4}
+    render(<Project {...project} description="A useful app" technologies={["React", "TypeScript"]}
       repoLink="https://github.com/example/app" liveLink="https://example.com" />)
 
     expect(screen.getByRole('heading', { name: project.title })).toBeVisible()
     expect(screen.getByRole('img', { name: project.title })).toHaveAttribute('src', project.cover)
     expect(screen.getByText('A useful app')).toBeVisible()
-    expect(screen.getByLabelText('4 out of 5 stars')).toBeInTheDocument()
-    expect(screen.getByText(`Last update: ${project.lastUpdated}`)).toBeVisible()
+    expect(screen.getByLabelText('Technologies')).toHaveTextContent('React')
+    expect(screen.getByText("Sep 20, 2025")).toBeVisible()
     for (const [name, url] of [
-      ['Repository', 'https://github.com/example/app'],
-      ['Demonstration', 'https://example.com'],
+      ['View repository', 'https://github.com/example/app'],
+      ['Live demo', 'https://example.com'],
     ]) {
       const link = screen.getByRole('link', { name })
       expect(link).toHaveAttribute('href', url)
@@ -33,26 +32,29 @@ describe('Project', () => {
 
   it('marks unavailable demonstrations as disabled without creating a link', () => {
     render(<Project {...project} repoLink="https://github.com/example/app" />)
-    expect(screen.getByText('No Demonstration')).toHaveAttribute('aria-disabled', 'true')
-    expect(screen.queryByRole('link', { name: /demonstration/i })).not.toBeInTheDocument()
+    expect(screen.getByText('Demo unavailable')).toHaveAttribute('aria-disabled', 'true')
+    expect(screen.queryByRole('link', { name: /live demo/i })).not.toBeInTheDocument()
     expect(screen.queryByLabelText(/out of 5 stars/)).not.toBeInTheDocument()
+  })
+
+  it('expands and collapses the full description accessibly', async () => {
+    const user = userEvent.setup()
+    render(<Project {...project} description="Complete project description" engineeringFocus="Checkout architecture" />)
+    const toggle = screen.getByRole('button', { name: 'View details' })
+    expect(toggle).toHaveAttribute('aria-expanded', 'false')
+    expect(document.getElementById(toggle.getAttribute('aria-controls')!)).toHaveTextContent('Complete project description')
+    expect(screen.queryByText('Checkout architecture')).not.toBeInTheDocument()
+    await user.click(toggle)
+    expect(screen.getByText('Checkout architecture')).toBeVisible()
+    expect(screen.getByRole('button', { name: 'Show less' })).toHaveAttribute('aria-expanded', 'true')
+    await user.click(screen.getByRole('button', { name: 'Show less' }))
+    expect(screen.getByRole('button', { name: 'View details' })).toHaveAttribute('aria-expanded', 'false')
   })
 
   it('omits actions when no destination is provided', () => {
     render(<Project {...project} />)
     expect(screen.queryByRole('link')).not.toBeInTheDocument()
-    expect(screen.queryByText('No Demonstration')).not.toBeInTheDocument()
+    expect(screen.queryByText('Demo unavailable')).not.toBeInTheDocument()
   })
 
-  it('calls the favorite callback and reflects the favorite state from props', async () => {
-    const user = userEvent.setup()
-    const onFavorite = vi.fn()
-    const { rerender } = render(<Project {...project} onFavorite={onFavorite} />)
-    await user.click(screen.getByRole('button', { name: 'Add project to favorites' }))
-    expect(onFavorite).toHaveBeenCalledTimes(1)
-
-    rerender(<Project {...project} onFavorite={onFavorite} isFavorite />)
-    await user.click(screen.getByRole('button', { name: 'Remove project from favorites' }))
-    expect(onFavorite).toHaveBeenCalledTimes(2)
-  })
 })

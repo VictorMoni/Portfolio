@@ -6,9 +6,10 @@ describe('Portfolio', () => {
   it('renders the introduction and navigation targeting existing sections', () => {
     render(<App />)
     expect(screen.getByRole('heading', { level: 1, name: 'Victor Moni' })).toBeVisible()
+    expect(screen.getByRole('link', { name: 'Contact me' })).toHaveAttribute('href', '#socialmedia')
     const links = within(screen.getByRole('navigation')).getAllByRole('link')
     expect(links.map(link => link.getAttribute('href'))).toEqual([
-      '#home', '#about', '#projects', '#socialmedia',
+      '#home', '#about', '#education', '#projects', '#socialmedia',
     ])
     for (const link of links) {
       const id = link.getAttribute('href')!.slice(1)
@@ -24,7 +25,7 @@ describe('Portfolio', () => {
     for (const title of ['Sankhya', 'TodoApp', 'TaskyHub']) {
       const heading = screen.getByRole('heading', { name: title })
       const card = heading.closest('article')!
-      expect(within(card).getByRole('link', { name: 'Repository' })).toHaveAttribute(
+      expect(within(card).getByRole('link', { name: 'View repository' })).toHaveAttribute(
         'href', `https://github.com/victormoni/${title}`,
       )
     }

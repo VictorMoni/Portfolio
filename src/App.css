@@ -49,3 +49,12 @@
             transform: translateY(0px) scale(1);
         }
     }
+
+/* Align section backgrounds with the viewport; keep menu clearance inside each section. */
+section[id], footer[id] { scroll-margin-top: 0; }
+#about, #education, #socialmedia {
+  padding-top: 110px;
+  min-height: 100vh;
+  min-height: 100svh;
+}
+a:focus-visible, button:focus-visible { outline: 2px solid var(--primary-light); outline-offset: 4px; }

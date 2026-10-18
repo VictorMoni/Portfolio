@@ -7,8 +7,8 @@ describe('Header', () => {
     render(<Header />)
     expect(screen.getByRole('navigation', { name: 'Main navigation' })).toBeVisible()
     for (const [name, href] of [
-      ['Home', '#home'], ['About', '#about'],
-      ['Projects', '#projects'], ['Social media', '#socialmedia'],
+      ['Home', '#home'], ['Career', '#about'],
+      ['Education', '#education'], ['Projects', '#projects'], ['Social media', '#socialmedia'],
     ]) {
       expect(screen.getByRole('link', { name })).toHaveAttribute('href', href)
     }
@@ -25,7 +25,7 @@ describe('Header', () => {
     try {
       render(<Header />)
       fireEvent.scroll(window)
-      expect(screen.getByRole('link', { name: 'About' })).toHaveAttribute('aria-current', 'location')
+      expect(screen.getByRole('link', { name: 'Career' })).toHaveAttribute('aria-current', 'location')
       expect(screen.getByRole('link', { name: 'Home' })).not.toHaveAttribute('aria-current')
     } finally {
       about.remove()

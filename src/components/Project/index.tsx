@@ -2,79 +2,47 @@ import {
   Code2,
   SquareDashedMousePointer
 } from "lucide-react";
-import React from "react";
+import React, { useId, useState } from "react";
 import styled from "styled-components";
-import Heart from "../../assets/heart.png";
-import Star from "../../assets/stars.png";
-import UnfilledHeart from "../../assets/unfilledHeart.png";
-import UnfilledStar from "../../assets/unfilledstars.png";
 
 type CardProjectProps = {
   cover: string;
-  category: string;
+
   title: string;
   description?: string;
-  rating?: number;
+  engineeringFocus?: string;
+  technologies?: string[];
   lastUpdated: string;
   repoLink?: string;
   liveLink?: string;
-  onFavorite?: () => void;
-  isFavorite?: boolean;
 };
 
 export const Project: React.FC<CardProjectProps> = ({
   cover,
-  category,
   title,
   description,
-  rating,
+  technologies = [],
   lastUpdated,
-  onFavorite,
   repoLink,
   liveLink,
-  isFavorite = false
+  engineeringFocus,
 }) => {
+  const [expanded, setExpanded] = useState(false);
+  const descriptionId = useId();
   return (
     <Card>
-      <Cover src={cover} alt={title} />
+      <Cover src={cover} alt={title} loading="lazy" decoding="async" />
 
       <Content>
-        <CategoryRow>
-          <Category>{category}</Category>
-
-          <FavoriteButton
-            type="button"
-            onClick={onFavorite}
-            aria-label={
-              isFavorite
-                ? "Remove project from favorites"
-                : "Add project to favorites"
-            }
-          >
-            <FavoriteIcon
-              src={isFavorite ? Heart : UnfilledHeart}
-              alt=""
-            />
-          </FavoriteButton>
-        </CategoryRow>
-
-        <Title>{title}</Title>
+        <TitleRow>
+          <Title>{title}</Title>
+        </TitleRow>
 
         {description && (
-          <Description>{description}</Description>
+          <><Description id={descriptionId} $expanded={expanded}>{description}</Description><DetailsButton type="button" aria-expanded={expanded} aria-controls={descriptionId} onClick={() => setExpanded(!expanded)}>{expanded ? "Show less" : "View details"}</DetailsButton>{expanded && engineeringFocus && <FocusNote><strong>Engineering focus</strong>{engineeringFocus}</FocusNote>}</>
         )}
 
-        {rating !== undefined && (
-          <Stars aria-label={`${rating} out of 5 stars`}>
-            {Array.from({ length: 5 }, (_, index) => (
-              <StarImg
-                key={index}
-                src={index < rating ? Star : UnfilledStar}
-                alt=""
-              />
-            ))}
-          </Stars>
-        )}
+        <Technologies aria-label="Technologies">{technologies.map(technology => <span key={technology}>{technology}</span>)}</Technologies>
 
         {(repoLink || liveLink) && (
           <ActionMethods>
@@ -86,7 +54,7 @@ export const Project: React.FC<CardProjectProps> = ({
                 rel="noopener noreferrer"
               >
                 <SquareDashedMousePointer size={17} />
-                Demonstration
+                Live demo
               </a>
             ) : (
               <DisabledButton
@@ -94,7 +62,7 @@ export const Project: React.FC<CardProjectProps> = ({
                 aria-disabled="true"
               >
                 <SquareDashedMousePointer size={17} />
-                No Demonstration
+                Demo unavailable
               </DisabledButton>
             )}
 
@@ -106,14 +74,14 @@ export const Project: React.FC<CardProjectProps> = ({
                 rel="noopener noreferrer"
               >
                 <Code2 size={17} />
-                Repository
+                View repository
               </a>
             )}
           </ActionMethods>
         )}
 
         <LastUpdated>
-          Last update: {lastUpdated}
+          Updated: <time dateTime={lastUpdated}>{new Intl.DateTimeFormat("en", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" }).format(new Date(lastUpdated))}</time>
         </LastUpdated>
       </Content>
     </Card>
@@ -128,7 +96,8 @@ const Card = styled.article`
   min-width: 250px;
 
   overflow: hidden;
-  background: #0e0f11;
+  background: #080808;
+  border: 1px solid #292d33;
   border-radius: 12px;
 
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
@@ -163,7 +132,7 @@ const Cover = styled.img`
 
   padding: 8px;
   border-radius: 16px;
-  object-fit: cover;
+  object-fit: contain;
 
   @media (max-width: 450px) {
     height: 190px;
@@ -174,7 +143,7 @@ const Content = styled.div`
   padding: 8px 12px 10px;
 `;
 
-const CategoryRow = styled.div`
+const TitleRow = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -183,53 +152,16 @@ const CategoryRow = styled.div`
   margin-bottom: 6px;
 `;
 
-const Category = styled.span`
-  display: inline-flex;
-  align-items: center;
-
-  padding: 5px 12px;
-
-  color: #eaeaea;
-  background: #015c94;
-  border-radius: 15px;
-
-  font-size: 0.78rem;
-  font-weight: 500;
-`;
-
-const FavoriteButton = styled.button`
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 4px;
-
-  background: none;
-  border: none;
-
-  cursor: pointer;
-
-  &:focus-visible {
-    outline: 2px solid var(--primary-light);
-    outline-offset: 2px;
-    border-radius: 4px;
-  }
-`;
-
-const FavoriteIcon = styled.img`
-  width: 18px;
-  height: 18px;
-`;
-
 const Title = styled.h3`
-  margin: 5px 0 6px;
+  margin: 0;
 
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
   line-height: 1.25;
 `;
 
-const Description = styled.p`
+const Description = styled.p<{ $expanded: boolean }>`
   display: -webkit-box;
   overflow: hidden;
 
@@ -241,20 +173,44 @@ const Description = styled.p`
   line-height: 1.3;
 
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: ${({ $expanded }) => $expanded ? "unset" : 3};
 `;
 
-const Stars = styled.div`
+const DetailsButton = styled.button`
+  background: transparent;
+  border: 0;
+  padding: 4px 0;
+  margin-bottom: 12px;
+  color: var(--primary-light);
+  font: inherit;
+  font-size: 0.85rem;
+  cursor: pointer;
+  &:hover { text-decoration: underline; }
+  &:focus-visible { outline: 2px solid var(--primary-light); outline-offset: 4px; }
+`;
+
+const FocusNote = styled.p`
+  color: #cbd5e1;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  margin-bottom: 16px;
+  strong { display: block; color: #fff; margin-bottom: 4px; }
+`;
+
+const Technologies = styled.div`
   display: flex;
-  align-items: center;
-
-  margin-bottom: 8px;
-`;
-
-const StarImg = styled.img`
-  width: 18px;
-  height: 18px;
-  margin-right: 4px;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+  span {
+    padding: 4px 8px;
+    border: 1px solid #23536b;
+    border-radius: 6px;
+    background: #10212b;
+    color: #bce6fa;
+    font-size: 0.72rem;
+    line-height: 1.4;
+  }
 `;
 
 const ActionMethods = styled.div`
