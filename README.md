@@ -1,76 +1,63 @@
-# 📌 Victor Moni's Portfolio
+# Victor Moni | Portfolio
 
-Welcome to my personal portfolio!
-A front-end project built with **React**, **TypeScript**, and **Vite**, featuring an elegant design and continuous deployment via **Vercel**.
+Personal portfolio showcasing my projects, technical skills, and professional background as a Full Stack Developer.
 
-## 🚀 Live Demo
+Built with **React**, **TypeScript**, and **Vite**, and deployed on **Vercel**.
 
-Check out the live site:
-👉 [**victormoni.vercel.app**](https://victormoni.vercel.app)
+**[View Live Portfolio →](https://victormoni.vercel.app)**
 
----
+## Features
 
-## 🛠 Technologies Used
+- Responsive layout for desktop and mobile devices.
+- Component-based interface built with React.
+- Static typing with TypeScript.
+- Local development and production builds powered by Vite.
 
-- **Framework**: React + TypeScript
-- **Bundler**: Vite
-- **Deployment**: Vercel
-- **Others**: ESLint, TypeScript config, build files, and assets
+## Tech Stack
 
----
+| Category | Technology |
+| --- | --- |
+| UI library | React |
+| Language | TypeScript |
+| Build tool | Vite |
+| Code quality | ESLint |
+| Hosting | Vercel |
 
-## 📂 Project Structure
+## Getting Started
 
-```
-/public            — static files such as favicon and assets
-/src               — React source code (components, styles, etc.)
-README.md          — this file
-index.html         — main HTML template
-package.json       — dependencies and scripts
-tsconfig.json      — TypeScript configuration
-eslint.config.js   — linting rules
-vite.config.ts     — Vite configuration
-vercel.json        — Vercel deployment settings
-```
-
----
-
-## ⚡ Useful Scripts
+Clone the repository and install the dependencies:
 
 ```bash
-# Install dependencies
+git clone https://github.com/VictorMoni/Portfolio.git
+cd Portfolio
 npm install
-
-# Start development server
-npm run dev
-
-# Build for production
-npm run build
-
-# Preview production build locally
-npm run preview
 ```
 
-*(Adjust according to the scripts defined in `package.json`.)*
+Start the development server:
 
----
+```bash
+npm run dev
+```
 
-## ✨ Features
+Open the local URL displayed in your terminal.
 
-- Modern and responsive design for personal portfolio
-- Component-based architecture with React and type safety using TypeScript
-- Optimized builds with Vite
-- Automatic deployment and preview with Vercel
+## Available Commands
 
----
+| Command | Description |
+| --- | --- |
+| `npm install` | Install project dependencies |
+| `npm run dev` | Start the development server |
+| `npm run build` | Create a production build |
+| `npm run preview` | Preview the production build locally |
 
-## 👨‍💻 About the Author
+## About Me
 
-I am **Victor Moni**, a Full Stack Developer passionate about technology and building modern applications.
-Always learning, improving, and sharing knowledge.
+I'm **Victor Moni**, a Full Stack Developer with experience in **.NET, C#, Angular, React, and SQL**.
 
-🌐 [Portfolio](https://victormoni.vercel.app)
-💼 [LinkedIn](https://linkedin.com/in/victormoni)
-📂 [GitHub](https://github.com/victormoni)
+This portfolio brings together my professional background and projects, reflecting my continued growth in software development.
 
----
+## Connect
+
+- [Portfolio](https://victormoni.vercel.app)
+- [LinkedIn](https://www.linkedin.com/in/victormoni/)
+- [GitHub](https://github.com/VictorMoni)
