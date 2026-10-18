@@ -13,6 +13,7 @@ const SliderWrapper = styled.div`
   width: 100%;
   padding: 10px 0;
   @media (max-width: 1023px) { padding: 8px 0; }
+  @media (max-width: 1023px) and (orientation: portrait) { padding: 20px 0; }
 `;
 
 const MediaContent = styled.div`
@@ -63,7 +64,7 @@ const StyledImg = styled.img`
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
   transition: all 0.3s ease;
   background: #080808;
-  @media (max-width: 767px) {
+  @media (max-width: 1023px) {
     max-width: 100%;
     height: auto;
     aspect-ratio: 16 / 10;
@@ -151,7 +152,10 @@ const MediaGallery = ({ images }: MediaTypes) => {
         slides: { perView: 1, spacing: 16 },
         breakpoints: {
             "(min-width: 768px)": {
-                slides: { perView: 2, spacing: 16 },
+                slides: { perView: 2, spacing: 12 },
+            },
+            "(max-width: 1023px) and (orientation: landscape)": {
+                slides: { perView: 2, spacing: 12 },
             },
             "(min-width: 1024px)": {
                 disabled: true,
