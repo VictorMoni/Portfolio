@@ -1,10 +1,13 @@
 import styled, { keyframes } from "styled-components";
 import angular from "../../assets/angular.svg";
-import atlassian from "../../assets/atlassian.svg";
+import azuredevops from "../../assets/azuredevops.svg";
+import bootstrap from "../../assets/bootstrap.svg";
 import csharp from "../../assets/csharp.svg";
 import css from "../../assets/css.svg";
 import dbeaver from "../../assets/dbeaver.svg";
 import docker from "../../assets/docker.svg";
+import dotnetcore from "../../assets/dotnetcore.svg";
+import entityframeworkcore from "../../assets/entityframeworkcore.svg";
 import figma from "../../assets/figma.svg";
 import git from "../../assets/git.svg";
 import grafana from "../../assets/grafana.svg";
@@ -12,24 +15,30 @@ import html5 from "../../assets/html5.svg";
 import intellijidea from "../../assets/intellijidea.svg";
 import java from "../../assets/java.svg";
 import javascript from "../../assets/javascript.svg";
+import jira from "../../assets/jira.svg";
 import kubernetes from "../../assets/kubernetes.svg";
-import linuxmint from "../../assets/linuxmint.svg";
+import linux from "../../assets/linux.svg";
+import markdown from "../../assets/markdown.png";
 import microsoftsqlserver from "../../assets/microsoftsqlserver.svg";
+import notion from "../../assets/notion.svg";
 import oracle from "../../assets/oracle.svg";
+import pnpm from "../../assets/pnpm.svg";
 import postgresql from "../../assets/postgresql.svg";
-import rabbitmq from "../../assets/rabbitmq.svg";
+import postman from "../../assets/postman.svg";
+import react from "../../assets/react.svg";
+import rider from "../../assets/rider.svg";
 import sass from "../../assets/sass.svg";
 import spring from "../../assets/spring.svg";
+import swagger from "../../assets/swagger.svg";
 import tailwindcss from "../../assets/tailwindcss.svg";
 import typescript from "../../assets/typescript.svg";
-import ubuntu from "../../assets/ubuntu.svg";
 import uml from "../../assets/uml.svg";
 import visualbasic from "../../assets/visualbasic.svg";
 import visualstudio from "../../assets/visualstudio.svg";
 import vscode from "../../assets/vscode.svg";
 import windows11 from "../../assets/windows11.svg";
 
-const logos = [intellijidea, oracle, java, spring, grafana, vscode, rabbitmq, typescript,  visualbasic, dbeaver, linuxmint,  angular, microsoftsqlserver, uml, tailwindcss, visualstudio, ubuntu, javascript, csharp, windows11, css, sass, html5, git, docker, kubernetes, postgresql, atlassian, figma];
+const logos = [csharp, rider, dotnetcore, angular, typescript,  react, entityframeworkcore, java, spring, visualbasic, html5, sass, bootstrap, tailwindcss, vscode, notion, microsoftsqlserver, javascript, oracle, postgresql, git, azuredevops, docker, css, intellijidea, kubernetes, swagger, postman, grafana,  visualstudio,  dbeaver, jira, figma, uml, pnpm, markdown, linux, windows11];
 
 export const TechSlider = () => {
     // Criamos múltiplas cópias para garantir um loop suave
