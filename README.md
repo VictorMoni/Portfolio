@@ -6,7 +6,6 @@ A front-end project built with **React**, **TypeScript**, and **Vite**, featurin
 ## 🚀 Live Demo
 
 Check out the live site:
-👉 [**victormoni.dev**](https://victormoni.dev)
 👉 [**victormoni.vercel.app**](https://victormoni.vercel.app)
 
 ---
@@ -70,7 +69,7 @@ npm run preview
 I am **Victor Moni**, a Full Stack Developer passionate about technology and building modern applications.
 Always learning, improving, and sharing knowledge.
 
-🌐 [Portfolio](https://victormoni.dev)
+🌐 [Portfolio](https://victormoni.vercel.app)
 💼 [LinkedIn](https://linkedin.com/in/victormoni)
 📂 [GitHub](https://github.com/victormoni)
 
