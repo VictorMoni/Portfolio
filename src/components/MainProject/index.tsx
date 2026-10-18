@@ -83,8 +83,13 @@ const Container = styled.div`
   gap: 2rem;
 
   @media (min-width: 1024px) {
-    flex-direction: row;
-    gap: 3rem;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: 3rem;
+    row-gap: 0;
+    align-items: start;
+    .project-gallery { grid-column: 2; grid-row: 1 / span 2; align-self: center; }
+    .project-details { grid-column: 1; grid-row: 2; }
   }
 `;
 
@@ -96,7 +101,7 @@ const Content = styled.div`
   width: 100%;
 
   @media (min-width: 1024px) {
-    width: 50%;
+    width: 100%;
   }
 `;
 
@@ -270,6 +275,11 @@ export default function MainProject() {
 
 <Technologies aria-label="Technologies">{content.technologies.map(technology => <span key={technology}>{technology}</span>)}</Technologies>
 
+        </Content>
+        <Content className="project-gallery">
+          <MediaGallery images={[ProjectImage1, ProjectImage2, ProjectImage3, ProjectImage4]} />
+        </Content>
+        <Content className="project-details">
           <ActionMethods>
             {content.demoLink ? (
               <a href={content.demoLink} className="links" target="_blank" rel="noopener noreferrer">
@@ -295,11 +305,7 @@ export default function MainProject() {
             <span>Portfolio project · In development</span>
           </Footer>
         </Content>
-        <Content>
-          <MediaGallery
-            images={[ProjectImage1, ProjectImage2, ProjectImage3, ProjectImage4]}
-          />
-        </Content>
+
       </Container>
     </Section>
   );

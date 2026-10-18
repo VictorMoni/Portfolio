@@ -18,7 +18,7 @@ const MediaContent = styled.div`
   width: 100%;
   display: flex;
   flex-wrap: nowrap;
-  gap: 16px;
+  gap: 0;
   overflow: hidden;
 
   .keen-slider__slide {
@@ -55,12 +55,18 @@ const StyledImg = styled.img`
   width: 100%;
   max-width: 250px;
   height: 180px;
-  object-fit: cover;
+  object-fit: contain;
   border: 1px solid #a6a6a6;
   padding: 8px;
   border-radius: 12px;
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
   transition: all 0.3s ease;
+  background: #080808;
+  @media (max-width: 767px) {
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10;
+  }
 
   &:hover {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
@@ -141,29 +147,14 @@ const MediaGallery = ({ images }: MediaTypes) => {
 
     const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
         loop: false,
+        slides: { perView: 1, spacing: 16 },
         breakpoints: {
-            "(max-width: 1024px)": {
-                slides: {
-                    perView: 3.2,
-                    spacing: 16,
-                },
+            "(min-width: 768px)": {
+                slides: { perView: 2, spacing: 16 },
             },
-            "(max-width: 768px)": {
-                slides: {
-                    perView: 2.2,
-                    spacing: 16,
-                },
+            "(min-width: 1024px)": {
+                disabled: true,
             },
-            "(max-width: 500px)": {
-                slides: {
-                    perView: 1.4,
-                    spacing: 16,
-                },
-            },
-        },
-        slides: {
-            perView: 0,
-            spacing: 16,
         },
     });
 
