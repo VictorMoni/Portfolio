@@ -6,10 +6,10 @@ const About = () => {
    const experiences = [
     {
         id: 1,
-        title: "Full Stack Developer",
+        title: "Full Stack .NET Developer",
         company: "Sysopen",
         description:
-            "Supported, maintained, and enhanced the Recupera system using VB.NET, ASP.NET WebForms, C#, and Angular. Implemented bug fixes, improvements, and new features according to client requirements.\n\n Supported solutions used by companies such as Ambev, Aegea, Jeitto, and Porto Seguro. Created and optimized queries, stored procedures, and scripts in SQL Server and Oracle, performed testing of REST APIs and SOAP services using SoapUI, and used Azure DevOps/TFS for version control and work item management.",
+            "Developed and enhanced Recupera, an enterprise platform built with C#, VB.NET, ASP.NET WebForms, and Angular. Delivered functional improvements, resolved production incidents, and maintained systems for clients including Ambev, Aegea, Jeitto, and Porto Seguro.\n\nWrote and optimized SQL queries, stored procedures, and scripts in SQL Server and Oracle. Tested REST APIs and SOAP/WCF services with SoapUI, and tracked delivery and source control through Azure DevOps/TFS.",
         date: "10/2025 - 07/2026",
         highlight: "Full Stack Development",
         tags: [
@@ -20,7 +20,7 @@ const About = () => {
             "SQL Server",
             "Oracle",
             "REST APIs",
-            "SOAP",
+            "SOAP/WCF",
             "Azure DevOps"
         ]
     },
@@ -29,7 +29,7 @@ const About = () => {
         title: "Frontend Developer",
         company: "Search Price",
         description:
-            "Developed a responsive web application focused on user experience. Implemented light and dark modes, created custom hooks for state management, integrated APIs developed in Node.js, and configured continuous deployment on Vercel. Applied best practices in accessibility, performance, and component-based architecture.",
+            "Built and maintained a Next.js web application with a focus on responsive design, accessibility, and a smooth user experience. Created reusable components and custom hooks, implemented light and dark themes, and integrated Node.js APIs.\n\nConfigured continuous deployment on Vercel and improved code organization and performance to make the application easier to maintain and evolve.",
         date: "02/2024 - 07/2025",
         highlight: "Frontend Development",
         tags: [
@@ -46,7 +46,7 @@ const About = () => {
         title: "Marketplace Operations",
         company: "Entrepreneur",
         description:
-            "Managed sales operations across Mercado Livre, Shopee, Amazon, and Magalu marketplaces. Created product listings, issued invoices, managed pricing, and defined commercial strategies. Automated processes and conducted strategic planning, achieving average monthly revenue of BRL 130,000.",
+            "Ran my own e-commerce operation across Mercado Livre, Shopee, Amazon, and Magalu. Managed product listings, pricing, invoicing, and day-to-day commercial operations while automating operational processes.\n\nThis experience gave me a practical understanding of business needs and the operational problems that software can help solve.",
         date: "05/2020 - 01/2024",
         highlight: "Entrepreneurship",
         tags: [
@@ -65,7 +65,7 @@ const About = () => {
         title: "Systems Technician",
         company: "BRQ",
         description:
-            "Maintained and supported legacy systems for Itaú Unibanco.Participated in Java training courses and other technical development programs. Used development, testing, and version control tools in a corporate environment",
+            "Maintained and supported a legacy system for Itaú Unibanco, working with development, testing, and version control tools in an enterprise environment. Strengthened my technical foundation through Java training and other professional development courses.",
         date: "08/2019 - 02/2020",
         highlight: "Systems Support",
         tags: [
@@ -81,7 +81,7 @@ const About = () => {
         title: "Information Technology Intern",
         company: "Itaú Unibanco",
         description:
-            "Supported the change management process and evolution of internal systems within the Mobile Engineering team. Analyzed crashes, logs, and KPIs to identify issues and improve system stability. Prepared reports and monitored technical performance indicators. \n\n Used GitLab, Jira, Jenkins, Splunk, AppDynamics, and Crashlytics to support technical deliveries. Participated in internal Java training courses, expanding knowledge in application development.",
+            "Supported the Mobile Engineering team with change management and improvements to internal systems. Analyzed crashes, logs, and KPIs to investigate failures, identify opportunities to improve stability, and report on technical performance.\n\nWorked with GitLab, Jira, Jenkins, Splunk, AppDynamics, and Crashlytics to support delivery, while building my application development skills through internal Java training.",
         date: "06/2018 - 12/2018",
         highlight: "Mobile Engineering",
         tags: [
@@ -98,21 +98,23 @@ const About = () => {
 ];
 
     const overview = {
-    title: "Career Overview",
+    title: "Full Stack .NET Developer",
     company: "",
     description:
-        "Full Stack Developer with experience in developing, maintaining, and supporting web applications, REST APIs, SOAP services, and microservices. Experienced in .NET, VB.NET, C#, Java, Spring Boot, Angular, SQL Server, and Oracle.",
-    date: "3 Years in Technology",
+        "I build and improve software that supports real business operations. My focus is full stack .NET development, connecting C#, VB.NET, and ASP.NET applications with Angular interfaces, REST and SOAP/WCF integrations, and SQL Server and Oracle databases.\n\nMy experience includes enterprise projects for Ambev, Aegea, Jeitto, and Porto Seguro, alongside Next.js web development and running my own e-commerce business. That combination helps me connect technical decisions with the needs of the people using the software.\n\nI hold a bachelor’s degree in Information Systems and a postgraduate qualification in Cloud Computing, and I am currently pursuing postgraduate studies in Information Security. I bring advanced English skills and a practical focus on maintainable code, reliable integrations, and solving problems.",
+    date: "In technology since 2018",
     highlight: "Overview",
     tags: [
         "C#",
         "VB.NET",
         "ASP.NET",
-        "Spring Boot",
-        "Java",
         "Angular",
+        "Next.js",
         "SQL Server",
-        "Oracle"
+        "Oracle",
+        "REST & SOAP/WCF",
+        "Cloud Computing",
+        "Information Security"
     ]
 };
     const [currentExperienceId, setCurrentExperienceId] =
@@ -126,8 +128,8 @@ const About = () => {
     return (
         <AboutSection id="about">
             <Header>
-                <Title>Career</Title>
-                <Subtitle>Full Stack Developer</Subtitle>
+                <Title>About Me</Title>
+                <Subtitle>Enterprise applications, reliable integrations, and a business perspective.</Subtitle>
             </Header>
 
             <Content>
@@ -171,11 +173,11 @@ const About = () => {
                       </BoxHeader>
 
                       <BoxDescription>
-                          Summary of my career as a developer,
-                          highlighting my key skills and most relevant experiences.
+                          My approach to enterprise software, shaped by .NET development,
+                          cloud studies, and hands-on business experience.
                       </BoxDescription>
 
-                      <BoxDate>3 Years in Technology</BoxDate>
+                      <BoxDate>{overview.date}</BoxDate>
                   </ExperienceBox>
 
                   <ExperiencesScroll>
