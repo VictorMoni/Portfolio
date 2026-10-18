@@ -31,7 +31,6 @@ const content = {
 
 const Section = styled.section`
   position: relative;
-  min-height: 100vh;
   padding: 80px 150px;
   width: 100%;
   color: white;
@@ -77,7 +76,6 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100%;
   gap: 2rem;
 
   @media (min-width: 1024px) {

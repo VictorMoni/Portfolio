@@ -4,29 +4,27 @@ import { Folder, Home, User, Users } from "lucide-react";
 import { useEffect, useState } from "react";
 import styled, { css } from "styled-components";
 
+const navigationItems = [
+    { id: "home", label: "Home", icon: Home },
+    { id: "about", label: "About", icon: User },
+    { id: "projects", label: "Projects", icon: Folder },
+    { id: "socialmedia", label: "Social media", icon: Users },
+];
+
 export default function Header(){
     const [activeSection, setActiveSection] = useState<string>("");
 
     useEffect(() => {
         const handleScroll = () => {
-            const sections = ["home", "about", "projects", "socialmedia"];
-            const scrollPosition = window.scrollY + 100;
+            const isAtBottom =
+                Math.ceil(window.scrollY + window.innerHeight) >=
+                document.documentElement.scrollHeight;
+            const currentSection = [...navigationItems].reverse().find(({ id }) => {
+                const section = document.getElementById(id);
+                return section && (isAtBottom || section.getBoundingClientRect().top <= 100);
+            });
 
-            for (const id of sections) {
-                const el = document.getElementById(id);
-                if (el) {
-                    const offsetTop = el.offsetTop;
-                    const offsetHeight = el.offsetHeight;
-
-                    if (
-                        scrollPosition >= offsetTop &&
-                        scrollPosition < offsetTop + offsetHeight
-                    ) {
-                        setActiveSection(id);
-                        break;
-                    }
-                }
-            }
+            setActiveSection(currentSection?.id ?? "home");
         };
 
         window.addEventListener("scroll", handleScroll);
@@ -37,33 +35,20 @@ export default function Header(){
 
     return (
         <Container>
-            <Nav>
-                <TooltipWrapper>
-                    <NavItem href="#home" $active={activeSection === "home"}>
-                        <Home size={18} />
-                    </NavItem>
-                    <TooltipText>Home</TooltipText>
-                </TooltipWrapper>
-
-                <TooltipWrapper>
-                    <NavItem href="#about" $active={activeSection === "about"}>
-                        <User size={18} />
-                    </NavItem>
-                    <TooltipText>About</TooltipText>
-                </TooltipWrapper>
-
-                <TooltipWrapper>
-                    <NavItem href="#projects" $active={activeSection === "projects"}>
-                        <Folder size={18} />
-                    </NavItem>
-                    <TooltipText>Projects</TooltipText>
-                </TooltipWrapper>
-                <TooltipWrapper>
-                    <NavItem href="#socialmedia" $active={activeSection === "socialmedia"}>
-                        <Users size={18} />
-                    </NavItem>
-                    <TooltipText>Social media</TooltipText>
-                </TooltipWrapper>
+            <Nav aria-label="Main navigation">
+                {navigationItems.map(({ id, label, icon: Icon }) => (
+                    <TooltipWrapper key={id}>
+                        <NavItem
+                            href={`#${id}`}
+                            aria-label={label}
+                            aria-current={activeSection === id ? "location" : undefined}
+                            $active={activeSection === id}
+                        >
+                            <Icon size={18} aria-hidden="true" />
+                        </NavItem>
+                        <TooltipText aria-hidden="true">{label}</TooltipText>
+                    </TooltipWrapper>
+                ))}
             </Nav>
         </Container>
     );
@@ -109,7 +94,8 @@ export const TooltipWrapper = styled.div`
   position: relative;
   display: inline-block;
 
-  &:hover span {
+  &:hover span,
+  &:focus-within span {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);

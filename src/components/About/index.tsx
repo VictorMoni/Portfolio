@@ -275,7 +275,7 @@ const AboutSection = styled.section`
   min-height: 100vh;
   color: white;
   overflow: hidden;
-  background: linear-gradient(to right, #012846ff, #000, transparent);
+  background: linear-gradient(to right, #012846, #000);
 
   &::before {
     content: '';
@@ -323,9 +323,7 @@ background-image:
 
     &::before,
     &::after {
-      width: 100%;
-        background: linear-gradient(to right, #022742ff, #000, transparent);
-        z-index: 0;
+      display: none;
     }
   }
 `;

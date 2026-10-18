@@ -6,11 +6,44 @@ import otherProjectImage3 from '../../assets/taskyhub.png';
 import otherProjectImage2 from '../../assets/todoapp.png';
 import { Project } from "../Project";
 
-export const CarouselContainer2 = () => {
+const projects = [
+  {
+    cover: otherProjectImage,
+    category: "Personal Project",
+    title: "Sankhya",
+    description: "Full-Stack app in Angular + Spring Boot with MySQL, Docker, and CI/CD. Product catalog, cart, and orders integrated with Flyway and automated tests.",
+    rating: 5,
+    lastUpdated: "09/20/2025 - 09:00",
+    repoLink: "https://github.com/victormoni/Sankhya",
+    isFavorite: true,
+  },
+  {
+    cover: otherProjectImage2,
+    category: "Personal Project",
+    title: "TodoApp",
+    description: "This is a straightforward to-do app designed to help you manage your daily tasks efficiently. You can easily add new tasks, update existing ones, or remove them as needed, all through a clean and user-friendly interface.",
+    rating: 4,
+    lastUpdated: "07/22/2025 - 01:09",
+    isFavorite: false,
+    repoLink: "https://github.com/victormoni/TodoApp",
+    liveLink: "https://production-todo.vercel.app",
+  },
+  {
+    cover: otherProjectImage3,
+    category: "Personal Project",
+    title: "TaskyHub",
+    description: "Next.js & TypeScript task manager with Google Auth, recurring tasks, dark mode, batch operations, and import/export support.",
+    rating: 3,
+    lastUpdated: "06/07/2025 - 05:00",
+    liveLink: "https://taskyhub.vercel.app",
+    repoLink: "https://github.com/victormoni/TaskyHub",
+    isFavorite: false,
+  },
+];
+
+export const ProjectsCarousel = () => {
   const carouselRef = useRef<HTMLDivElement>(null);
-  let isDown = false;
-  let startX = 0;
-  let scrollLeft = 0;
+  const drag = useRef({ isDown: false, startX: 0, scrollLeft: 0 });
 
   const handleScroll = (direction: "left" | "right") => {
     if (!carouselRef.current) return;
@@ -23,26 +56,26 @@ export const CarouselContainer2 = () => {
 
   const handleMouseDown = (e: React.MouseEvent) => {
     if (!carouselRef.current) return;
-    isDown = true;
-    startX = e.pageX - carouselRef.current.offsetLeft;
-    scrollLeft = carouselRef.current.scrollLeft;
+    drag.current.isDown = true;
+    drag.current.startX = e.pageX - carouselRef.current.offsetLeft;
+    drag.current.scrollLeft = carouselRef.current.scrollLeft;
   };
 
   const handleMouseLeaveOrUp = () => {
-    isDown = false;
+    drag.current.isDown = false;
   };
 
   const handleMouseMove = (e: React.MouseEvent) => {
-    if (!isDown || !carouselRef.current) return;
+    if (!drag.current.isDown || !carouselRef.current) return;
     e.preventDefault();
     const x = e.pageX - carouselRef.current.offsetLeft;
-    const walk = (x - startX) * 1.5;
-    carouselRef.current.scrollLeft = scrollLeft - walk;
+    const walk = (x - drag.current.startX) * 1.5;
+    carouselRef.current.scrollLeft = drag.current.scrollLeft - walk;
   };
 
   return (
     <CarouselWrapper>
-      <ArrowButton position="left" onClick={() => handleScroll("left")}>
+      <ArrowButton type="button" aria-label="Previous projects" $position="left" onClick={() => handleScroll("left")}>
         <ChevronLeft size={20} />
       </ArrowButton>
 
@@ -53,46 +86,12 @@ export const CarouselContainer2 = () => {
         onMouseUp={handleMouseLeaveOrUp}
         onMouseMove={handleMouseMove}
       >
+        {projects.map(project => (
+          <Project key={project.title} {...project} />
+        ))}
+      </ScrollArea>
 
-       <Project
-          cover={otherProjectImage}
-          category="Personal Project"
-          title="Sankhya"
-          description="Full-Stack app in Angular + Spring Boot with MySQL, Docker, and CI/CD. Product catalog, cart, and orders integrated with Flyway and automated tests."
-          rating={5}
-          lastUpdated="09/20/2025 - 09:00"
-          repoLink="https://github.com/victormoni/Sankhya"
-          isFavorite={true}
-        />
-
-        <Project
-          cover={otherProjectImage2}
-          category="Personal Project"
-          title="TodoApp"
-          description="This is a straightforward to-do app designed to help you manage your daily tasks efficiently. You can easily add new tasks, update existing ones, or remove them as needed, all through a clean and user-friendly interface."
-          rating={4}
-          lastUpdated="07/22/2025 - 01:09"
-          isFavorite={false}
-          repoLink="https://github.com/victormoni/TodoApp"
-          liveLink="https://production-todo.vercel.app"
-        />
-
-        <Project
-          cover={otherProjectImage3}
-          category="Personal Project"
-          title="TaskyHub"
-          description="Next.js & TypeScript task manager with Google Auth, recurring tasks, dark mode, batch operations, and import/export support."
-          rating={3}
-          lastUpdated="06/07/2025 - 05:00"
-          liveLink="https://taskyhub.vercel.app"
-          repoLink="https://github.com/victormoni/TaskyHub"
-          isFavorite={false}
-        />
-
-
-    </ScrollArea>
-
-      <ArrowButton position="right" onClick={() => handleScroll("right")}>
+      <ArrowButton type="button" aria-label="Next projects" $position="right" onClick={() => handleScroll("right")}>
         <ChevronRight size={20} />
       </ArrowButton>
     </CarouselWrapper>
@@ -106,7 +105,6 @@ const slideIn = keyframes`
 
 const CarouselWrapper = styled.div`
   display: flex;
-  // align-items: center;
   position: relative;
   gap: 12px;
   animation: ${slideIn} 0.8s ease-out;
@@ -115,6 +113,8 @@ const CarouselWrapper = styled.div`
 const ScrollArea = styled.div`
   display: flex;
   gap: 24px;
+  min-width: 0;
+  width: 100%;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
@@ -137,20 +137,20 @@ const ScrollArea = styled.div`
   cursor: grab;
 `;
 
-const ArrowButton = styled.button<{ position: "left" | "right" }>`
+const ArrowButton = styled.button<{ $position: "left" | "right" }>`
   background: #1a1a1a;
   border: 1px solid #333;
   color: white;
   padding: 8px;
   position: absolute;
   top: 50%;
-  ${({ position }) => (position === "left" ? "left: -2%;" : "right: -2%;")}
+  ${({ $position }) => ($position === "left" ? "left: -2%;" : "right: -2%;")}
   transform: translateY(-50%);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 0;
+  z-index: 1;
   cursor: pointer;
   transition: background 0.2s;
 
@@ -158,7 +158,4 @@ const ArrowButton = styled.button<{ position: "left" | "right" }>`
     background: #333;
   }
 
-  // @media (max-width: 450px) {
-  //   display: none;
-  // }
 `;
