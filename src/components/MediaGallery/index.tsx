@@ -12,6 +12,7 @@ const SliderWrapper = styled.div`
   position: relative;
   width: 100%;
   padding: 10px 0;
+  @media (max-width: 1023px) { padding: 0; }
 `;
 
 const MediaContent = styled.div`
