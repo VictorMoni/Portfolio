@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import styled from "styled-components";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
@@ -81,7 +81,6 @@ const Arrow = styled.button`
   height: 36px;
   align-items: center;
   justify-content: center;
-  transition: 0.2s ease-out;
   cursor: pointer;
   transition: background 0.2s;
 
@@ -168,10 +167,6 @@ const MediaGallery = ({ images }: MediaTypes) => {
         },
     });
 
-    useCallback((e: KeyboardEvent) => {
-        if (e.key === "Escape") setSelectedImage(null);
-    }, []);
-
     useEffect(() => {
         const handleKeyDown = (e: KeyboardEvent) => {
             if (e.key === "Escape") setSelectedImage(null);
@@ -203,8 +198,8 @@ const MediaGallery = ({ images }: MediaTypes) => {
 
         {slider && slider.current && (
           <>
-            <ArrowLeft onClick={() => slider.current?.prev()}>&#10094;</ArrowLeft>
-            <ArrowRight onClick={() => slider.current?.next()}>&#10095;</ArrowRight>
+            <ArrowLeft type="button" aria-label="Previous images" onClick={() => slider.current?.prev()}>&#10094;</ArrowLeft>
+            <ArrowRight type="button" aria-label="Next images" onClick={() => slider.current?.next()}>&#10095;</ArrowRight>
           </>
         )}
       </SliderWrapper>

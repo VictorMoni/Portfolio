@@ -1,6 +1,6 @@
 import styled, { keyframes } from "styled-components";
 import MainProject from "../MainProject";
-import { CarouselContainer2 } from "../ProjectsCarousel";
+import { ProjectsCarousel } from "../ProjectsCarousel";
 
 const Projects = () => {
 
@@ -13,7 +13,7 @@ const Projects = () => {
             <Title>Side Projects</Title>
             <Subtitle>Other projects that I made</Subtitle>
           </Header>
-          <CarouselContainer2 />
+          <ProjectsCarousel />
         </OtherProjectsSection>
       </Content>
     </Section>
@@ -30,8 +30,6 @@ const fadeIn = keyframes`
 const Section = styled.section`
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  height: 100%;
   color: white;
   position: relative;
 `;
@@ -45,9 +43,8 @@ const Content = styled.div`
 `;
 
 const OtherProjectsSection = styled.div`
-  margin: 35px 0;
-  min-height: 100vh;
-  padding: 0px 150px;
+  padding: 60px 150px;
+  background: #0e0f11;
 
     @media (max-width: 1024px) {
       padding: 40px 20px;

@@ -49,6 +49,22 @@ Open the local URL displayed in your terminal.
 | `npm run dev` | Start the development server |
 | `npm run build` | Create a production build |
 | `npm run preview` | Preview the production build locally |
+| `npm test` | Run automated tests once |
+| `npm run test:watch` | Run tests in watch mode |
+| `npm run lint` | Check code quality with ESLint |
+
+## Automated Tests
+
+Install dependencies with `npm ci`, then run `npm test`. During development,
+use `npm run test:watch` to rerun affected tests when files change.
+
+The suite uses Vitest, React Testing Library, and jsdom. It covers page integration,
+navigation targets, project links and favorite callbacks, and gallery interactions
+(including Escape dismissal and scroll cleanup). Tests exercise the real React
+components; jsdom's missing `matchMedia` API is supplied in `src/test/setup.ts`.
+Responsive layout, slider positioning, and visual appearance require browser checks.
+
+Run `npm run build` and `npm run lint` alongside the tests before submitting changes.
 
 ## About Me
 
