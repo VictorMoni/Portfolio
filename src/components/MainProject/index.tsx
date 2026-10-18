@@ -80,7 +80,10 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
+  gap: 12px;
+  @media (max-width: 1023px) {
+    .project-details > :first-child { margin-top: 0; }
+  }
 
   @media (min-width: 1024px) {
     display: grid;
@@ -229,6 +232,7 @@ const Technologies = styled.div`
   flex-wrap: wrap;
   gap: 8px;
   margin-bottom: 20px;
+  @media (max-width: 1023px) { margin-bottom: 0; }
   span {
     padding: 5px 10px;
     border: 1px solid #23536b;
