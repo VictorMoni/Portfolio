@@ -8,6 +8,8 @@ import docker from "../../assets/docker.svg";
 import dotnetcore from "../../assets/dotnetcore.svg";
 import entityframeworkcore from "../../assets/entityframeworkcore.svg";
 import git from "../../assets/git.svg";
+import java from "../../assets/java.svg";
+import spring from "../../assets/spring.svg";
 import microsoftsqlserver from "../../assets/microsoftsqlserver.svg";
 import oracle from "../../assets/oracle.svg";
 import swagger from "../../assets/swagger.svg";
@@ -16,6 +18,8 @@ import typescript from "../../assets/typescript.svg";
 const technologies = [
   { name: 'C#', icon: csharp },
   { name: '.NET', icon: dotnetcore },
+  { name: 'Java', icon: java },
+  { name: 'Spring', icon: spring },
   { name: 'Angular', icon: angular },
   { name: 'TypeScript', icon: typescript },
   { name: 'Entity Framework', icon: entityframeworkcore },
@@ -50,7 +54,7 @@ export const TechSlider = () => {
       </div>
       <div id="stack-groups">
         <div className="window" tabIndex={expanded ? undefined : 0} role="region" aria-label="Technologies and tools">
-          <Track className="tech-track" $duration={50}>
+          <Track className="tech-track" $duration={58}>
             {[0, 1].map(copy => (
               <ul key={copy} aria-label={copy === 0 ? 'Technologies and tools' : undefined} aria-hidden={copy === 1 ? true : undefined} className={copy === 1 ? 'duplicate' : undefined}>
                 {technologies.map(tech => <li key={tech.name}><img src={tech.icon} alt="" loading="lazy" /><span>{tech.name}</span></li>)}
