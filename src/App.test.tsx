@@ -16,7 +16,7 @@ describe('Portfolio', () => {
       expect(document.getElementById(id)).toBeInTheDocument()
     }
     expect(screen.getByRole('link', { name: 'Resume' })).toHaveAttribute(
-      'href', 'https://drive.google.com/file/d/1ZakvZK_1uRrCiVU7DuDbkPOcv_Ptg47b',
+      'href', 'https://drive.google.com/file/d/1ZakvZK_1uRrCiVU7DuDbkPOcv_Ptg47b/view?usp=sharing',
     )
   })
 
