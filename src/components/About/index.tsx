@@ -8,7 +8,7 @@ const About = () => {
         id: 1,
         title: "Full Stack .NET Developer",
         company: "Sysopen",
-        document: { url: "https://drive.google.com/file/d/1rV8BvKmmJaYSEUiLQvAB1eJHN2O3vtAq/view?usp=sharing", label: "View employment document" },
+        document: { url: "https://drive.google.com/file/d/1rV8BvKmmJaYSEUiLQvAB1eJHN2O3vtAq/view?usp=sharing", label: "View recommendation letter" },
         description:
             "Developed and enhanced Recupera, an enterprise platform built with C#, VB.NET, ASP.NET WebForms, and Angular. Delivered functional improvements, resolved production incidents, and maintained systems for clients including Ambev, Aegea, Jeitto, and Porto Seguro.\n\nWrote and optimized SQL queries, stored procedures, and scripts in SQL Server and Oracle. Tested REST APIs and SOAP/WCF services with SoapUI, and tracked delivery and source control through Azure DevOps/TFS.",
         date: "10/2025 - 07/2026",
@@ -129,7 +129,7 @@ const About = () => {
                         </div>
                     </ExperienceHeader>
 
-                    <Description>
+                    <Description $hasDocument={Boolean(currentExp.document)}>
                         {currentExp.description}
                     </Description>
 
@@ -319,10 +319,10 @@ const ExperienceDate = styled.span`
     margin-top: 10px;
 `;
 
-const Description = styled.p`
+const Description = styled.p<{ $hasDocument: boolean }>`
     font-size: 16px;
     line-height: 1.7;
-    margin-bottom: 30px;
+    margin-bottom: ${({ $hasDocument }) => $hasDocument ? '8px' : '30px'};
     color: #e5e7eb;
     white-space: pre-line;
 `;
@@ -419,13 +419,14 @@ const BoxDate = styled.span`
 `;
 
 const DocumentLink = styled.a`
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   display: inline-flex;
   align-items: center;
   gap: 8px;
   min-height: 44px;
   color: var(--primary-light);
   font-size: 14px;
+  font-weight: 500;
   text-underline-offset: 4px;
   &:hover { text-decoration: underline; }
 `;
