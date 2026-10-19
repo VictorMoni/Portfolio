@@ -1,449 +1,114 @@
-import { useEffect, useState } from "react";
-import styled, { keyframes } from "styled-components";
-import githubIcon from '../../assets/github.png';
-import linkedinIcon from '../../assets/linkedin.png';
-import backgroundVideo from '../../assets/main-banner.webp';
-import whatsappIcon from '../../assets/whatsapp.png';
-import About from "../About";
-import Education from "../Education";
-import { Background } from "../BackgroundEclipse";
-import Projects from "../Projects";
-import { SocialFooter } from "../SocialMedia";
-import { TechSlider } from "../TechSlider";
+import { ArrowUpRight, Github, Linkedin, MessageCircle } from 'lucide-react';
+import styled, { keyframes } from 'styled-components';
+import banner from '../../assets/main-banner.webp';
+import About from '../About';
+import Education from '../Education';
+import Projects from '../Projects';
+import { SocialFooter } from '../SocialMedia';
+import { TechSlider } from '../TechSlider';
 
-interface MouseMovements {
-    clientX: number;
-    clientY: number;
-}
+export const Main = () => (
+  <>
+    <Introduction id="home">
+      <div className="info">
+        <p className="eyebrow">SOFTWARE DEVELOPMENT · BUSINESS PERSPECTIVE</p>
+        <h1>Victor Moni<span aria-hidden="true">.</span></h1>
+        <p className="role">
+          <span className="role-measure">.NET Full Stack Developer</span>
+          <span className="role-typing" aria-hidden="true">.NET Full Stack Developer</span>
+        </p>
+        <p className="summary">I build reliable .NET applications with a practical business mindset, while expanding my knowledge of cloud and security.</p>
+        <div className="actions">
+          <a className="primary-action" href="#projects">Explore projects <ArrowUpRight size={17} aria-hidden="true" /></a>
+          <a className="secondary-action" href="https://drive.google.com/file/d/1ZakvZK_1uRrCiVU7DuDbkPOcv_Ptg47b" target="_blank" rel="noopener noreferrer">Resume <ArrowUpRight size={16} aria-hidden="true" /></a>
+        </div>
+        <div className="socials">
+          <a href="https://github.com/victormoni" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><Github size={19} /></a>
+          <a href="https://www.linkedin.com/in/victormoni" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><Linkedin size={19} /></a>
+          <a href="https://wa.me/5511943936479" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><MessageCircle size={19} /></a>
+          <span aria-hidden="true" />
+          <a className="contact" href="#socialmedia">Contact me <ArrowUpRight size={14} aria-hidden="true" /></a>
+        </div>
+      </div>
+    </Introduction>
+    <TechSlider />
+    <About />
+    <Education />
+    <Projects />
+    <SocialFooter />
+  </>
+);
 
-const resumeUrl =
-  "https://drive.google.com/file/d/1ZakvZK_1uRrCiVU7DuDbkPOcv_Ptg47b";
-
-export const Main = () => {
-    const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
-
-    useEffect(() => {
-        const handleMouseMove = (e: MouseMovements) => {
-            setCursorPosition({ x: e.clientX, y: e.clientY })
-        }
-
-        window.addEventListener("mousemove", handleMouseMove)
-
-        return () => {
-            window.removeEventListener("mousemove", handleMouseMove);
-        }
-    }, [])
-
-    useEffect(() => {
-        const handleMouseMove = (e: MouseMovements) => {
-            const { clientX, clientY } = e;
-            const offsetX = (clientX - window.innerWidth / 2) * 0.05;
-            const offsetY = (clientY - window.innerHeight / 2) * 0.05;
-            document.querySelector('.character img')?.setAttribute(
-                'style',
-                `transform: translate(${offsetX}px, ${offsetY}px)`
-            );
-        };
-
-        window.addEventListener('mousemove', handleMouseMove);
-        return () => window.removeEventListener('mousemove', handleMouseMove);
-    }, []);
-
-    return (
-        <>
-        <Background />
-            <Introduction id="home">
-                <div className="info">
-                    <p>My name is</p>
-                    <h1>Victor Moni</h1>
-                    <TerminalText>
-                      <span className="terminal-measure" aria-hidden="true">&gt; .NET Full Stack Developer&nbsp;</span>
-                      <span className="terminal-typing">&gt; .NET Full Stack Developer</span>
-                    </TerminalText>
-                    <IntroSummary>I build reliable .NET applications with a practical business mindset, while expanding my knowledge of cloud and security.</IntroSummary>
-                    <div className="cv-style">
-                       <a
-                        href={resumeUrl}
-                        className="download-cv links"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Resume
-                    </a>
-                    <a href="#socialmedia" className="links contact-link">Contact me</a>
-                    </div>
-                 </div>
-
-                <div className="arrow">
-                    <p>↓</p>
-                </div>
-                <div className="social-media">
-                    <a href="https://github.com/victormoni" className="logo" target="_blank" rel="noopener noreferrer">
-                        <img src={githubIcon} alt="github icon" />
-                    </a>
-                    <a href="https://www.linkedin.com/in/victormoni" className="logo" target="_blank" rel="noopener noreferrer">
-                        <img src={linkedinIcon} alt="linkedin icon" />
-                    </a>
-                    <a href="https://wa.me/5511943936479" className="logo" target="_blank" rel="noopener noreferrer">
-                        <img src={whatsappIcon} alt="whatsapp icon" />
-                    </a>
-                </div>
-            </Introduction>
-            <SectionTransition />
-            <TechSlider />
-            <About />
-            <Education />
-            <Projects />
-            <SocialFooter />
-            <BackgroundPrompt>
-            </BackgroundPrompt>
-            <CursorDot style={{ left: `${cursorPosition.x}px`, top: `${cursorPosition.y}px` }}></CursorDot>
-            <CursorOutline style={{ left: `${cursorPosition.x}px`, top: `${cursorPosition.y}px` }}></CursorOutline>
-        </>
-    )
-}
-
-const IntroSummary = styled.p`
-  max-width: min(540px, calc(100vw - 110px));
-  margin: 18px 0 24px;
-  color: #d1d5db;
-  font-size: 16px !important;
-  line-height: 1.6;
+const typeRole = keyframes`
+  0%, 8% { width: 0; }
+  38%, 82% { width: 100%; }
+  98%, 100% { width: 0; }
 `;
 
-const terminalTyping = keyframes`
-    0% {
-        width: 0;
-    }
-
-    40% {
-        width: 100%;
-    }
-
-    70% {
-        width: 100%;
-    }
-
-    100% {
-        width: 0;
-    }
+const blinkCaret = keyframes`
+  0%, 100% { border-color: transparent; }
+  50% { border-color: var(--primary-light); }
 `;
-
-const terminalCursor = keyframes`
-    0%,
-    100% {
-        border-color: transparent;
-    }
-
-    50% {
-        border-color: var(--primary-light);
-    }
-`;
-
-const CursorDot = styled.div`
-    width: 5px;
-    height: 5px;
-    background-color: white;
-    position: fixed;
-    top: 0;
-    left: 0;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    z-index: 9;
-    pointer-events: none;
-    @media(max-width: 768px){
-        display: none;
-    }
-`
-
-const TerminalText = styled.span`
-    position: relative;
-    display: block;
-    width: max-content;
-    max-width: 100%;
-    white-space: nowrap;
-    color: var(--primary-light);
-    font-family: inherit;
-    font-size: 24px;
-    font-weight: 500;
-
-    .terminal-measure {
-        visibility: hidden;
-    }
-
-    .terminal-typing {
-        position: absolute;
-        top: 0;
-        left: 0;
-        display: block;
-        width: 0;
-        overflow: hidden;
-        border-right: 3px solid var(--primary-light);
-        animation:
-            ${terminalTyping} 6s steps(26) infinite,
-            ${terminalCursor} 0.7s step-end infinite;
-    }
-
-    @media (max-width: 450px) {
-        font-size: 20px;
-    }
-
-    @media (max-width: 380px) {
-        font-size: 18px;
-        .terminal-typing { border-right-width: 2px; }
-    }
-`;
-
-const CursorOutline = styled.div`
-    width: 30px;
-    height: 30px;
-    border: 2px solid hsla(0, 0%, 100%, 0.5);
-    position: fixed;
-    top: 0;
-    left: 0;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    z-index: 8;
-    pointer-events: none;
-    transition: left 0.1s ease, top 0.1s ease;
-
-    @media(max-width: 768px){
-        display: none;
-    }
-`
 
 const Introduction = styled.main`
+  position: relative;
+  isolation: isolate;
   display: flex;
   align-items: center;
-  padding: 0 150px;
-  min-height: 78vh;
-  height: auto;
-  padding-top: 120px;
-  padding-bottom: 70px;
-  margin-bottom: 0;
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  background-image: url(${backgroundVideo});
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center 20%;
-  background-color: transparent;
-
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.410);
-    z-index: -1;
-  }
+  min-height: 680px;
+  min-height: min(820px, 84svh);
+  padding: 170px var(--page-gutter) 72px;
+  background: var(--background);
   &::before {
-    content: "";
+    content: '';
     position: absolute;
-    bottom: -1px;
-    left: 0;
-    width: 100%;
-    height: 150px;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, black 100%);
-    z-index: 2;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(90deg, #111214 5%, rgba(17,18,20,.86) 45%, rgba(17,18,20,.35)), url(${banner}) center 30% / cover;
+    opacity: .55;
     pointer-events: none;
   }
-    .info p{
-        font-size: 24px;
-        color: #c2c2c2;
-    }
-    .info h1{
-        font-size: 60px;
-        margin-bottom: 10px;
-    }
-    .info span{
-        color: var(--primary-light);
-    }
-   .info p,
-   .info h1,
-   .info .cv-style {
-      animation: fade-up 0.5s 0.4s backwards;
-    }
-   .info .cv-style {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-top: 25px;
-   }
-   .info .links {
-      background: var(--primary);
-      color: white;
-      width: auto;
-      max-width: fit-content;
-
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-
-      border: 2px solid var(--primary);
-      border-radius: 5px;
-
-      font-weight: 600;
-      padding: 12px 24px;
-      margin: 10px 0;
-
-      cursor: pointer;
-      animation: fade-up 0.5s 0.4s backwards;
-      transition: 0.15s ease-in;
-
-      &:hover {
-          background: var(--primary-light);
-          border-color: var(--primary-light);
-      }
+  &::after {
+    content: ''; position: absolute; inset: auto 0 0; height: 160px;
+    background: linear-gradient(transparent, var(--background)); z-index: -1;
   }
-
-    .info .contact-link {
-      background: #111111;
-      border-color: var(--primary);
-      color: #ededed;
-      &:hover {
-          background: #1c1c1c;
-          border-color: var(--primary-light);
-      }
-   }
-   .info .cv-style { flex-wrap: wrap; }
-   .info .links img{
-        width: 20px;
-        height: 20px;
-        margin-right: 10px;
-    }
-
-    .arrow {
-        position: absolute;
-        left: 50%;
-        bottom: 100px;
-        animation: anima-seta 2000ms ease-in-out infinite;
-        opacity: 0;
-    }
-
-
-    .social-media{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        background-color: white;
-        border-radius: 10px 0 0 10px;
-        position: absolute;
-        right: 0;
-        z-index: 999999;
-        animation: fade-up 0.5s 0.4s backwards;
-    }
-    .social-media .logo{
-        padding: 10px;
-    }
-    .social-media .logo img{
-        width: 50px;
-        height: 50px;
-    }
-
-   @media (max-width: 1024px) {
-    padding: 40px 20px;
-}
-
-@media (max-width: 768px) {
-    background-position: 60%;
-    padding: 40px 20px 10px;
-
-    .info h1 {
-        font-size: 40px;
-    }
-
-    .info .cv-style {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-    }
-
-    .arrow {
-        left: 43%;
-    }
-}
-
-@media (max-width: 450px) {
-    padding: 110px 60px 60px 24px;
-
-    .info {
-        width: 100%;
-    }
-
-    .info .cv-style {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-        width: 100%;
-        margin-top: 25px;
-    }
-
-    .info .links {
-        width: 100%;
-        max-width: 160px;
-        margin: 0;
-    }
-
-    .social-media .logo {
-        padding: 7px;
-    }
-
-    .social-media .logo img {
-        width: 40px;
-        height: 40px;
-    }
-}
-
-@media (max-width: 380px) {
-    background-image: url(${backgroundVideo});
-
-    &::after {
-        background-color: rgba(0, 0, 0, 0.2);
-    }
-
-    .info h1 {
-        font-size: 32px;
-    }
-
-    .info p {
-        font-size: 20px;
-    }
-
-    .info .links {
-        max-width: 130px;
-        padding: 10px 18px;
-        font-size: 14px;
-    }
-}
-`
-
-const BackgroundPrompt = styled.div`
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: -999;
-    width: 100%;
-    height: 100%;
-    background-color: black;
-    img{
-        min-width: 100%;
-        min-height: 100%;
-        width: auto;
-        height: auto;
-        opacity: 0.675;
-    }
-`
-
-const SectionTransition = styled.div`
-  position: relative;
-  width: 100%;
-  height: 0px;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent);
-  z-index: 1;
-  margin-top: -1px;
+  .info { max-width: 650px; }
+  .eyebrow { color: var(--primary-light); font-size: 10px; font-weight: 600; letter-spacing: .18em; margin-bottom: 24px; line-height: 1.8; }
+  h1 { font-size: clamp(52px, 7vw, 88px); line-height: 1.05; letter-spacing: -.06em; font-weight: 700; }
+  h1 span { color: var(--primary-light); }
+  .role {
+    position: relative;
+    width: max-content;
+    max-width: 100%;
+    margin-top: 16px;
+    font-family: inherit;
+    font-size: clamp(16px, 2.2vw, 24px);
+    color: #dbe4ed;
+    letter-spacing: -.025em;
+    white-space: nowrap;
+  }
+  .role-measure { color: transparent; padding-right: 6px; }
+  .role-typing {
+    position: absolute;
+    inset: 0 auto 0 0;
+    overflow: hidden;
+    width: 0;
+    border-right: 2px solid var(--primary-light);
+    animation: ${typeRole} 8s steps(24, end) infinite, ${blinkCaret} .8s step-end infinite;
+  }
+  .summary { max-width: 490px; color: var(--muted); font-size: 16px; line-height: 1.85; margin: 24px 0 32px; }
+  .actions { display: flex; gap: 12px; flex-wrap: wrap; }
+  .actions a { display: inline-flex; align-items: center; gap: 12px; min-height: 46px; padding: 12px 20px; border-radius: var(--radius-small); font-size: 14px; font-weight: 600; transition: background .2s, border-color .2s; }
+  .primary-action { background: var(--primary); border: 1px solid var(--primary); &:hover { background: #247eb5; } }
+  .secondary-action { border: 1px solid #36414e; background: rgba(24,26,29,.7); &:hover { border-color: var(--primary-light); } }
+  .socials { display: flex; align-items: center; gap: 8px; margin-top: 32px; }
+  .socials a { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; color: var(--muted); transition: color .2s; &:hover { color: var(--text); } }
+  .socials > span { width: 1px; height: 18px; background: var(--border); margin: 0 12px; }
+  .socials .contact { gap: 8px; font-size: 13px; }
+  @media (max-width: 600px) {
+    min-height: 660px; padding-top: 145px; padding-bottom: 70px;
+    &::before { background-position: 60% center; opacity: .3; }
+    .eyebrow { max-width: 260px; }
+    .summary { font-size: 15px; }
+  }
 `;

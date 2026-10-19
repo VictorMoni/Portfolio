@@ -65,12 +65,12 @@ export const Container = styled.header`
   top: 1rem;
   align-items: center;
   justify-content: space-between;
-  opacity: 0.7;
+  opacity: 1;
   padding: 0.5rem 1rem;
-  background-color: #171717;
+  background-color: rgba(24, 26, 29, 0.94); backdrop-filter:blur(16px);
   color: white;
   border-radius: 1rem;
-  border: 1px solid gray;
+  border:1px solid var(--border);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   z-index: 9;
   transition: opacity 0.4s ease-in-out;
@@ -123,8 +123,8 @@ export const NavItem = styled.a<NavItemProps>`
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 1rem;
-  border-radius: 10px 10px 0 0;
+  padding:0.8rem;
+  border-radius:8px;
   transition: background-color 0.2s;
 
  ${({ $active }) =>
@@ -132,7 +132,7 @@ export const NavItem = styled.a<NavItemProps>`
         css`
       background-color: rgba(10, 60, 110, 0.7);
       color: #1fb3eeff;
-      border-bottom: 2px solid #1fb3eeff;
+      box-shadow:inset 0 0 0 1px #24445b;
 
     `}
 

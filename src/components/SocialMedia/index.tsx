@@ -111,7 +111,7 @@ export const SocialFooter = () => {
 
                     <FooterBottom>
                         <p>Victor Moni &middot; Full Stack Developer &middot; 2026</p>
-                        <span>Built with ❤️ and lots of code</span>
+                        <span>Thoughtfully built with React & TypeScript</span>
                     </FooterBottom>
                 </FooterContent>
             </FooterContainer>
@@ -129,34 +129,11 @@ const SectionTransition = styled.div`
 `;
 
 const FooterContainer = styled.footer`
-    background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
-    color: white;
-    padding: 60px 0 40px;
-    position: relative;
-
-    &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 2px;
-        background: linear-gradient(90deg, transparent, var(--primary), transparent);
-    }
+background:var(--background); color:var(--text); min-height:100vh; min-height:100svh; padding:max(104px, var(--section-space)) 0 40px; position:relative; border-top:1px solid var(--border);
 `;
 
 const FooterContent = styled.div`
-    // max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 150px;
-
-    @media (max-width: 1024px) {
-        padding: 0 40px;
-    }
-
-    @media (max-width: 768px) {
-        padding: 0 20px;
-    }
+margin:0 auto; padding:0 var(--page-gutter);
 `;
 
 const SocialSection = styled.div`
@@ -164,9 +141,9 @@ const SocialSection = styled.div`
     margin-bottom: 60px;
 
     h2 {
-        font-size: 40px;
+        font-size:clamp(30px,4vw,40px); letter-spacing:-0.035em;
         margin-bottom: 15px;
-        background: linear-gradient(45deg, var(--primary), var(--primary-light));
+        background:var(--text);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -174,7 +151,7 @@ const SocialSection = styled.div`
     }
 
     p {
-        font-size: 20px;
+        font-size:16px;
         color: #c2c2c2;
         margin-bottom: 50px;
         animation: fade-up 0.5s 0.4s backwards;
@@ -194,7 +171,7 @@ const SocialSection = styled.div`
 const SocialGrid = styled.div`
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+    gap:16px;
     // max-width: 800px;
     // margin: 0 auto;
 
@@ -205,115 +182,7 @@ const SocialGrid = styled.div`
 `;
 
 const SocialLink = styled.a`
-    display: flex;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
-    padding: 25px;
-    text-decoration: none;
-    color: white;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    animation: fade-up 0.5s 0.6s backwards;
-
-    &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-        transition: left 0.5s ease;
-    }
-
-    &:hover {
-        transform: translateY(-5px);
-        border-color: var(--primary);
-        box-shadow: 0 20px 40px rgba(134, 1, 243, 0.3);
-
-        &::before {
-            left: 100%;
-        }
-    }
-
-    img {
-        width: 50px;
-        height: 50px;
-        margin-right: 20px;
-        border-radius: 10px;
-        transition: transform 0.3s ease;
-    }
-
-    &:hover img {
-        transform: scale(1.1);
-    }
-
-    .social-info {
-        display: flex;
-        flex-direction: column;
-        flex: 1;
-    }
-
-    .social-name {
-        font-size: 20px;
-        font-weight: 600;
-        margin-bottom: 5px;
-    }
-
-    .social-desc {
-        font-size: 14px;
-        color: #c2c2c2;
-    }
-
-    &.github:hover {
-        border-color: #c4c4c4ff;
-        box-shadow: 0 20px 40px rgba(175, 175, 175, 0.3);
-    }
-
-    &.linkedin:hover {
-        border-color: #0077b5;
-        box-shadow: 0 20px 40px rgba(0, 119, 181, 0.3);
-    }
-
-    &.dailydev:hover {
-        border-color: #b9b9b9ff;
-        box-shadow: 0 20px 40px rgba(255, 255, 255, 0.2);
-    }
-
-    &.stackoverflow:hover {
-        border-color: #F48024;
-        box-shadow: 0 20px 40px rgba(244, 130, 36, 0.4);
-    }
-
-    &.googledev:hover {
-      border-color: #34a853;
-      box-shadow: 0 16px 35px rgba(52, 168, 83, 0.32);
-      transform: translateY(-4px);
-   }
-
-    &.discord:hover {
-        border-color: #5865f2;
-        box-shadow: 0 16px 35px rgba(88, 101, 242, 0.3);
-        transform: translateY(-4px);
-    }
-
-    @media (max-width: 768px) {
-        padding: 20px;
-
-        img {
-            width: 40px;
-            height: 40px;
-            margin-right: 15px;
-        }
-
-        .social-name {
-            font-size: 18px;
-        }
-    }
+display:flex; align-items:center; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:24px; color:var(--text); transition:border-color .2s, background .2s; &:hover { border-color:#3d617b; background:#202226; } img { width:32px; height:32px; object-fit:contain; margin-right:16px; } .social-info { display:flex; flex-direction:column; min-width:0; } .social-name { font-size:16px; font-weight:600; margin-bottom:4px; } .social-desc { font-size:13px; color:var(--muted); }
 `;
 
 const FooterBottom = styled.div`
