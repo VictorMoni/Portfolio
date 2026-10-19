@@ -1,3 +1,4 @@
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState, useEffect } from "react";
 import styled from "styled-components";
 import { useKeenSlider } from "keen-slider/react";
@@ -79,24 +80,33 @@ const Arrow = styled.button`
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: #1a1a1a;
-  border: 1px solid #333;
-  color: white;
-  padding: 8px;
-  border-radius: 50%;
   display: flex;
   width: 44px;
   height: 44px;
-  z-index: 2;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
   align-items: center;
   justify-content: center;
+  z-index: 2;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 50%;
+  color: #bec5ce;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: color 0.2s;
 
-  &:hover {
-    background: #333;
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 7px;
+    z-index: -1;
+    border-radius: 50%;
+    background: rgba(17, 18, 20, 0.72);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    transition: background 0.2s;
   }
+
+  &:hover { color: #fff; }
+  &:hover::before { background: rgba(30, 32, 36, 0.9); }
 
   @media (min-width: 1024px) {
     display: none;
@@ -196,8 +206,8 @@ const MediaGallery = ({ images }: MediaTypes) => {
 
         {images.length > 1 && (
           <>
-            <ArrowLeft type="button" aria-label="Previous images" onClick={() => slider.current?.prev()}>&#10094;</ArrowLeft>
-            <ArrowRight type="button" aria-label="Next images" onClick={() => slider.current?.next()}>&#10095;</ArrowRight>
+            <ArrowLeft type="button" aria-label="Previous images" onClick={() => slider.current?.prev()}><ChevronLeft size={16} strokeWidth={1.5} aria-hidden="true" /></ArrowLeft>
+            <ArrowRight type="button" aria-label="Next images" onClick={() => slider.current?.next()}><ChevronRight size={16} strokeWidth={1.5} aria-hidden="true" /></ArrowRight>
           </>
         )}
       </SliderWrapper>
