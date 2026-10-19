@@ -7,7 +7,7 @@ const qualifications = [
     level: "Postgraduate studies",
     status: "In progress",
     description: "Ongoing studies in cybersecurity, secure development, cloud security, and data protection, with a focus on building safer applications.",
-    link: "https://drive.google.com/file/d/1voLSBM70it0egcThRyeLAmBCGKP9KJvX",
+    link: "https://drive.google.com/file/d/1YKPFZO_njRY2g19kGSHJei1QtD9A_rTN/view?usp=sharing",
     linkLabel: "View study document",
   },
   {
@@ -15,7 +15,7 @@ const qualifications = [
     level: "Postgraduate qualification",
     status: "Completed",
     description: "Focused on cloud architecture, scalability, and cloud-native concepts to support the design of reliable applications.",
-    link: "https://drive.google.com/file/d/1BntFKgMxAChUnDfAV2yxRzEn4pWULIe1",
+    link: "https://drive.google.com/file/d/1BntFKgMxAChUnDfAV2yxRzEn4pWULIe1/view?usp=sharing",
     linkLabel: "View qualification document",
   },
   {
@@ -23,7 +23,7 @@ const qualifications = [
     level: "Bachelor’s degree",
     status: "Completed",
     description: "A foundation in software development and enterprise systems, connecting technology with business needs.",
-    link: "https://drive.google.com/file/d/1dNEKl2wCaTGVXRE-NpR_qyLavGiBNr_1",
+    link: "https://drive.google.com/file/d/1dNEKl2wCaTGVXRE-NpR_qyLavGiBNr_1/view?usp=sharing",
     linkLabel: "View degree document",
   },
 ];
