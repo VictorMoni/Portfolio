@@ -1,3 +1,4 @@
+import { useLanguage } from '../../i18n';
 import { ArrowUpRight, Github, Linkedin, MessageCircle } from 'lucide-react';
 import styled, { keyframes } from 'styled-components';
 import banner from '../../assets/main-banner.webp';
@@ -7,27 +8,29 @@ import Projects from '../Projects';
 import { SocialFooter } from '../SocialMedia';
 import { TechSlider } from '../TechSlider';
 
-export const Main = () => (
+export const Main = () => {
+  const { t } = useLanguage();
+  return (
   <>
     <Introduction id="home">
       <div className="info">
-        <p className="eyebrow">SOFTWARE DEVELOPMENT · BUSINESS PERSPECTIVE</p>
+        <p className="eyebrow">{t("SOFTWARE DEVELOPMENT · BUSINESS PERSPECTIVE")}</p>
         <h1>Victor Moni</h1>
         <p className="role">
-          <span className="role-measure">.NET Full Stack Developer</span>
-          <span className="role-typing" aria-hidden="true">.NET Full Stack Developer</span>
+          <span className="role-measure">{t(".NET Full Stack Developer")}</span>
+          <span className="role-typing" aria-hidden="true">{t(".NET Full Stack Developer")}</span>
         </p>
-        <p className="summary">I build reliable .NET applications with a practical business mindset, while expanding my knowledge of cloud and security.</p>
+        <p className="summary">{t("I build reliable .NET applications with a practical business mindset, while expanding my knowledge of cloud and security.")}</p>
         <div className="actions">
-          <a className="primary-action" href="#projects">Explore projects <ArrowUpRight size={17} aria-hidden="true" /></a>
-          <a className="secondary-action" href="https://drive.google.com/file/d/1ZakvZK_1uRrCiVU7DuDbkPOcv_Ptg47b/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume <ArrowUpRight size={16} aria-hidden="true" /></a>
+          <a className="primary-action" href="#projects">{t("Explore projects")}<ArrowUpRight size={17} aria-hidden="true" /></a>
+          <a className="secondary-action" href="https://drive.google.com/file/d/1ZakvZK_1uRrCiVU7DuDbkPOcv_Ptg47b/view?usp=sharing" target="_blank" rel="noopener noreferrer">{t("Resume")}<ArrowUpRight size={16} aria-hidden="true" /></a>
         </div>
         <div className="socials">
           <a href="https://github.com/victormoni" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><Github size={19} /></a>
           <a href="https://www.linkedin.com/in/victormoni" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><Linkedin size={19} /></a>
           <a href="https://wa.me/5511943936479" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><MessageCircle size={19} /></a>
           <span aria-hidden="true" />
-          <a className="contact" href="#socialmedia">Contact me <ArrowUpRight size={14} aria-hidden="true" /></a>
+          <a className="contact" href="#socialmedia">{t("Contact me")}<ArrowUpRight size={14} aria-hidden="true" /></a>
         </div>
       </div>
     </Introduction>
@@ -37,7 +40,8 @@ export const Main = () => (
     <Projects />
     <SocialFooter />
   </>
-);
+  );
+};
 
 const typeRole = keyframes`
   0%, 8% { width: 0; }

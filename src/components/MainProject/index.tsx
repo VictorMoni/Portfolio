@@ -1,3 +1,4 @@
+import { useLanguage } from '../../i18n';
 import { Code2, SquareDashedMousePointer } from "lucide-react";
 import styled from "styled-components";
 import ProjectImage1 from "../../assets/shopeasy1.webp";
@@ -203,22 +204,23 @@ const DisabledButton = styled.span`
 
 
 export default function MainProject() {
+  const { t } = useLanguage();
   return (
     <Section>
       <Container>
         <Content>
           {content.finishDate && (
             <Status>
-              <span>In Development</span>
+              <span>{t("In Development")}</span>
             </Status>
           )}
           <Header>
             <h2>{content.title}</h2>
           </Header>
 
-          {content.description && <Description>{content.description}</Description>}
+          {content.description && <Description>{t(content.description)}</Description>}
 
-<Technologies aria-label="Technologies">{content.technologies.map(technology => <span key={technology}>{technology}</span>)}</Technologies>
+<Technologies aria-label={t("Technologies")}>{content.technologies.map(technology => <span key={technology}>{technology}</span>)}</Technologies>
 
         </Content>
         <Content className="project-gallery">
@@ -229,25 +231,22 @@ export default function MainProject() {
             {content.demoLink ? (
               <a href={content.demoLink} className="links" target="_blank" rel="noopener noreferrer">
                 <SquareDashedMousePointer size={18} />
-                Live demo
-              </a>
+                {t("Live demo")}</a>
             ) : (
               <DisabledButton className="links disabled" aria-disabled="true">
                 <SquareDashedMousePointer size={18} />
-                Demo unavailable
-              </DisabledButton>
+                {t("Demo unavailable")}</DisabledButton>
             )}
 
             <a href={content.repoLink} className="links secondary" target="_blank" rel="noopener noreferrer">
               <Code2 size={18} />
-              View repository
-            </a>
+              {t("View repository")}</a>
 
           </ActionMethods>
 
-          <ProjectScope><strong>Architecture &amp; scope</strong>JWT authentication and Kafka order events connect the storefront to the backend. Docker Compose and Kubernetes support deployment. This learning project uses a simplified checkout and some mock data; payment integration remains planned.</ProjectScope>
+          <ProjectScope><strong>{t("Architecture & scope")}</strong>{t("JWT authentication and Kafka order events connect the storefront to the backend. Docker Compose and Kubernetes support deployment. This learning project uses a simplified checkout and some mock data; payment integration remains planned.")}</ProjectScope>
           <Footer>
-            <span>Portfolio project · In development</span>
+            <span>{t("Portfolio project · In development")}</span>
           </Footer>
         </Content>
 

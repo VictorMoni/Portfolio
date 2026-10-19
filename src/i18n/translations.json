@@ -1,0 +1,406 @@
+{
+  "Home": {
+    "pt": "Início",
+    "es": "Inicio"
+  },
+  "Career": {
+    "pt": "Carreira",
+    "es": "Trayectoria"
+  },
+  "Education": {
+    "pt": "Formação",
+    "es": "Formación"
+  },
+  "Projects": {
+    "pt": "Projetos",
+    "es": "Proyectos"
+  },
+  "Social media": {
+    "pt": "Redes sociais",
+    "es": "Redes sociales"
+  },
+  "Social Media": {
+    "pt": "Redes sociais",
+    "es": "Redes sociales"
+  },
+  "Main navigation": {
+    "pt": "Navegação principal",
+    "es": "Navegación principal"
+  },
+  "SOFTWARE DEVELOPMENT · BUSINESS PERSPECTIVE": {
+    "pt": "DESENVOLVIMENTO DE SOFTWARE · VISÃO DE NEGÓCIO",
+    "es": "DESARROLLO DE SOFTWARE · VISIÓN DE NEGOCIO"
+  },
+  ".NET Full Stack Developer": {
+    "pt": "Desenvolvedor Full Stack .NET",
+    "es": "Desarrollador Full Stack .NET"
+  },
+  "Full Stack .NET Developer": {
+    "pt": "Desenvolvedor Full Stack .NET",
+    "es": "Desarrollador Full Stack .NET"
+  },
+  "I build reliable .NET applications with a practical business mindset, while expanding my knowledge of cloud and security.": {
+    "pt": "Desenvolvo aplicações .NET confiáveis com uma visão prática de negócio, enquanto aprofundo meus conhecimentos em nuvem e segurança.",
+    "es": "Desarrollo aplicaciones .NET fiables con una visión práctica del negocio, mientras amplío mis conocimientos en la nube y la seguridad."
+  },
+  "Explore projects": {
+    "pt": "Explorar projetos",
+    "es": "Explorar proyectos"
+  },
+  "Resume": {
+    "pt": "Currículo",
+    "es": "Currículum"
+  },
+  "Contact me": {
+    "pt": "Entre em contato",
+    "es": "Contáctame"
+  },
+  "My technology stack": {
+    "pt": "Minhas tecnologias",
+    "es": "Mis tecnologías"
+  },
+  "Languages, frameworks, and tools I use to build and deliver software.": {
+    "pt": "Linguagens, frameworks e ferramentas que uso para desenvolver e entregar software.",
+    "es": "Lenguajes, frameworks y herramientas que utilizo para desarrollar y entregar software."
+  },
+  "Pause animation": {
+    "pt": "Pausar animação",
+    "es": "Pausar animación"
+  },
+  "Resume animation": {
+    "pt": "Retomar animação",
+    "es": "Reanudar animación"
+  },
+  "View all": {
+    "pt": "Ver todas",
+    "es": "Ver todas"
+  },
+  "Show slider": {
+    "pt": "Mostrar slider",
+    "es": "Mostrar carrusel"
+  },
+  "Technologies and tools": {
+    "pt": "Tecnologias e ferramentas",
+    "es": "Tecnologías y herramientas"
+  },
+  "Technologies": {
+    "pt": "Tecnologias",
+    "es": "Tecnologías"
+  },
+  "Enterprise applications, reliable integrations, and a business perspective.": {
+    "pt": "Aplicações corporativas, integrações confiáveis e uma visão de negócio.",
+    "es": "Aplicaciones empresariales, integraciones fiables y una visión de negocio."
+  },
+  "Professional Experience": {
+    "pt": "Experiência profissional",
+    "es": "Experiencia profesional"
+  },
+  "Frontend Developer": {
+    "pt": "Desenvolvedor Frontend",
+    "es": "Desarrollador Frontend"
+  },
+  "Marketplace Operations": {
+    "pt": "Operações em marketplaces",
+    "es": "Operaciones en marketplaces"
+  },
+  "Entrepreneur": {
+    "pt": "Empreendedor",
+    "es": "Emprendedor"
+  },
+  "Systems Technician": {
+    "pt": "Técnico de sistemas",
+    "es": "Técnico de sistemas"
+  },
+  "Information Technology Intern": {
+    "pt": "Estagiário de Tecnologia da Informação",
+    "es": "Pasante de Tecnología de la Información"
+  },
+  "View recommendation letter": {
+    "pt": "Ver carta de recomendação",
+    "es": "Ver carta de recomendación"
+  },
+  "View internship declaration": {
+    "pt": "Ver declaração de estágio",
+    "es": "Ver constancia de prácticas"
+  },
+  "Information Security": {
+    "pt": "Segurança da Informação",
+    "es": "Seguridad de la Información"
+  },
+  "Cloud Computing": {
+    "pt": "Computação em Nuvem",
+    "es": "Computación en la Nube"
+  },
+  "Information Systems": {
+    "pt": "Sistemas de Informação",
+    "es": "Sistemas de Información"
+  },
+  "Postgraduate studies": {
+    "pt": "Pós-graduação",
+    "es": "Estudios de posgrado"
+  },
+  "Postgraduate qualification": {
+    "pt": "Pós-graduação",
+    "es": "Posgrado"
+  },
+  "Bachelor’s degree": {
+    "pt": "Bacharelado",
+    "es": "Grado universitario"
+  },
+  "In progress": {
+    "pt": "Em andamento",
+    "es": "En curso"
+  },
+  "Completed": {
+    "pt": "Concluído",
+    "es": "Finalizado"
+  },
+  "View study document": {
+    "pt": "Ver documento acadêmico",
+    "es": "Ver documento académico"
+  },
+  "View qualification document": {
+    "pt": "Ver certificado de pós-graduação",
+    "es": "Ver certificado de posgrado"
+  },
+  "View degree document": {
+    "pt": "Ver diploma",
+    "es": "Ver diploma"
+  },
+  "Academic foundations and continued learning in cloud and security.": {
+    "pt": "Formação acadêmica e aprendizado contínuo em nuvem e segurança.",
+    "es": "Formación académica y aprendizaje continuo en la nube y la seguridad."
+  },
+  "In Development": {
+    "pt": "Em desenvolvimento",
+    "es": "En desarrollo"
+  },
+  "Side Projects": {
+    "pt": "Projetos pessoais",
+    "es": "Proyectos personales"
+  },
+  "Java and TypeScript projects that complement my enterprise .NET experience": {
+    "pt": "Projetos em Java e TypeScript que complementam minha experiência corporativa com .NET",
+    "es": "Proyectos en Java y TypeScript que complementan mi experiencia empresarial con .NET"
+  },
+  "Live demo": {
+    "pt": "Ver demonstração",
+    "es": "Ver demostración"
+  },
+  "Demo unavailable": {
+    "pt": "Demonstração indisponível",
+    "es": "Demostración no disponible"
+  },
+  "View repository": {
+    "pt": "Ver repositório",
+    "es": "Ver repositorio"
+  },
+  "View details": {
+    "pt": "Ver detalhes",
+    "es": "Ver detalles"
+  },
+  "Show less": {
+    "pt": "Ver menos",
+    "es": "Ver menos"
+  },
+  "Engineering focus": {
+    "pt": "Foco técnico",
+    "es": "Enfoque técnico"
+  },
+  "Architecture & scope": {
+    "pt": "Arquitetura e escopo",
+    "es": "Arquitectura y alcance"
+  },
+  "Portfolio project · In development": {
+    "pt": "Projeto de portfólio · Em desenvolvimento",
+    "es": "Proyecto de portafolio · En desarrollo"
+  },
+  "Previous projects": {
+    "pt": "Projetos anteriores",
+    "es": "Proyectos anteriores"
+  },
+  "Next projects": {
+    "pt": "Próximos projetos",
+    "es": "Siguientes proyectos"
+  },
+  "Side projects carousel": {
+    "pt": "Carrossel de projetos pessoais",
+    "es": "Carrusel de proyectos personales"
+  },
+  "Previous images": {
+    "pt": "Imagens anteriores",
+    "es": "Imágenes anteriores"
+  },
+  "Next images": {
+    "pt": "Próximas imagens",
+    "es": "Siguientes imágenes"
+  },
+  "expanded": {
+    "pt": "Imagem ampliada",
+    "es": "Imagen ampliada"
+  },
+  "Updated:": {
+    "pt": "Atualizado em:",
+    "es": "Actualizado:"
+  },
+  "Find me on social networks and follow my work": {
+    "pt": "Encontre-me nas redes sociais e acompanhe meu trabalho",
+    "es": "Encuéntrame en las redes sociales y sigue mi trabajo"
+  },
+  "Projects and code": {
+    "pt": "Projetos e código",
+    "es": "Proyectos y código"
+  },
+  "Career and networking": {
+    "pt": "Carreira e networking",
+    "es": "Trayectoria y contactos"
+  },
+  "Reads and bookmarks": {
+    "pt": "Leituras e favoritos",
+    "es": "Lecturas y favoritos"
+  },
+  "Questions and answers": {
+    "pt": "Perguntas e respostas",
+    "es": "Preguntas y respuestas"
+  },
+  "Developer profile and achievements": {
+    "pt": "Perfil de desenvolvedor e conquistas",
+    "es": "Perfil de desarrollador y logros"
+  },
+  "Communities and networking": {
+    "pt": "Comunidades e networking",
+    "es": "Comunidades y contactos"
+  },
+  "Thoughtfully built with React & TypeScript": {
+    "pt": "Desenvolvido com cuidado usando React e TypeScript",
+    "es": "Desarrollado con cuidado usando React y TypeScript"
+  },
+  "Full Stack Developer": {
+    "pt": "Desenvolvedor Full Stack",
+    "es": "Desarrollador Full Stack"
+  },
+  "Sales": {
+    "pt": "Vendas",
+    "es": "Ventas"
+  },
+  "Process Automation": {
+    "pt": "Automação de processos",
+    "es": "Automatización de procesos"
+  },
+  "Pricing": {
+    "pt": "Precificação",
+    "es": "Precios"
+  },
+  "Invoices": {
+    "pt": "Notas fiscais",
+    "es": "Facturación"
+  },
+  "Logistics": {
+    "pt": "Logística",
+    "es": "Logística"
+  },
+  "Financial Management": {
+    "pt": "Gestão financeira",
+    "es": "Gestión financiera"
+  },
+  "Strategic Planning": {
+    "pt": "Planejamento estratégico",
+    "es": "Planificación estratégica"
+  },
+  "Legacy Systems": {
+    "pt": "Sistemas legados",
+    "es": "Sistemas heredados"
+  },
+  "Java Training": {
+    "pt": "Formação em Java",
+    "es": "Formación en Java"
+  },
+  "Version Control": {
+    "pt": "Controle de versão",
+    "es": "Control de versiones"
+  },
+  "System Support": {
+    "pt": "Suporte a sistemas",
+    "es": "Soporte de sistemas"
+  },
+  "Application Monitoring": {
+    "pt": "Monitoramento de aplicações",
+    "es": "Monitorización de aplicaciones"
+  },
+  "Change Management": {
+    "pt": "Gestão de mudanças",
+    "es": "Gestión de cambios"
+  },
+  "Developed and enhanced Recupera, an enterprise platform built with C#, VB.NET, ASP.NET WebForms, and Angular. Delivered functional improvements, resolved production incidents, and maintained systems for clients including Ambev, Aegea, Jeitto, and Porto Seguro.\n\nWrote and optimized SQL queries, stored procedures, and scripts in SQL Server and Oracle. Tested REST APIs and SOAP/WCF services with SoapUI, and tracked delivery and source control through Azure DevOps/TFS.": {
+    "pt": "Desenvolvi e aprimorei o Recupera, uma plataforma corporativa em C#, VB.NET, ASP.NET WebForms e Angular. Entreguei melhorias funcionais, resolvi incidentes em produção e mantive sistemas para clientes como Ambev, Aegea, Jeitto e Porto Seguro.\n\nEscrevi e otimizei consultas SQL, stored procedures e scripts em SQL Server e Oracle. Testei APIs REST e serviços SOAP/WCF com SoapUI e acompanhei entregas e controle de versão pelo Azure DevOps/TFS.",
+    "es": "Desarrollé y mejoré Recupera, una plataforma empresarial en C#, VB.NET, ASP.NET WebForms y Angular. Entregué mejoras funcionales, resolví incidentes en producción y mantuve sistemas para clientes como Ambev, Aegea, Jeitto y Porto Seguro.\n\nEscribí y optimicé consultas SQL, procedimientos almacenados y scripts en SQL Server y Oracle. Probé APIs REST y servicios SOAP/WCF con SoapUI y gestioné entregas y control de versiones con Azure DevOps/TFS."
+  },
+  "Built and maintained a Next.js web application with a focus on responsive design, accessibility, and a smooth user experience. Created reusable components and custom hooks, implemented light and dark themes, and integrated Node.js APIs.\n\nConfigured continuous deployment on Vercel and improved code organization and performance to make the application easier to maintain and evolve.": {
+    "pt": "Desenvolvi e mantive uma aplicação web em Next.js com foco em design responsivo, acessibilidade e experiência do usuário. Criei componentes reutilizáveis e hooks personalizados, implementei temas claro e escuro e integrei APIs Node.js.\n\nConfigurei a implantação contínua na Vercel e melhorei a organização e o desempenho do código para facilitar a manutenção e a evolução da aplicação.",
+    "es": "Desarrollé y mantuve una aplicación web en Next.js centrada en el diseño adaptable, la accesibilidad y la experiencia de usuario. Creé componentes reutilizables y hooks personalizados, implementé temas claro y oscuro e integré APIs Node.js.\n\nConfiguré el despliegue continuo en Vercel y mejoré la organización y el rendimiento del código para facilitar el mantenimiento y la evolución de la aplicación."
+  },
+  "Ran my own e-commerce operation across Mercado Livre, Shopee, Amazon, and Magalu. Managed product listings, pricing, invoicing, and day-to-day commercial operations while automating operational processes.\n\nThis experience gave me a practical understanding of business needs and the operational problems that software can help solve.": {
+    "pt": "Gerenciei minha própria operação de e-commerce no Mercado Livre, Shopee, Amazon e Magalu. Cuidei de anúncios, preços, emissão de notas fiscais e rotinas comerciais, além de automatizar processos operacionais.\n\nEssa experiência me deu uma visão prática das necessidades do negócio e dos problemas operacionais que o software pode ajudar a resolver.",
+    "es": "Gestioné mi propia operación de comercio electrónico en Mercado Livre, Shopee, Amazon y Magalu. Administré anuncios, precios, facturación y operaciones comerciales diarias, además de automatizar procesos operativos.\n\nEsta experiencia me proporcionó una comprensión práctica de las necesidades del negocio y de los problemas operativos que el software puede ayudar a resolver."
+  },
+  "Maintained and supported a legacy system for Itaú Unibanco, working with development, testing, and version control tools in an enterprise environment. Strengthened my technical foundation through Java training and other professional development courses.": {
+    "pt": "Realizei manutenção e suporte de um sistema legado para o Itaú Unibanco, utilizando ferramentas de desenvolvimento, testes e controle de versão em um ambiente corporativo. Fortaleci minha base técnica com formação em Java e outros cursos de desenvolvimento profissional.",
+    "es": "Mantuve y brindé soporte a un sistema heredado para Itaú Unibanco, utilizando herramientas de desarrollo, pruebas y control de versiones en un entorno empresarial. Reforcé mi base técnica con formación en Java y otros cursos de desarrollo profesional."
+  },
+  "Supported the Mobile Engineering team with change management and improvements to internal systems. Analyzed crashes, logs, and KPIs to investigate failures, identify opportunities to improve stability, and report on technical performance.\n\nWorked with GitLab, Jira, Jenkins, Splunk, AppDynamics, and Crashlytics to support delivery, while building my application development skills through internal Java training.": {
+    "pt": "Apoiei a equipe de Engenharia Mobile na gestão de mudanças e em melhorias de sistemas internos. Analisei falhas, logs e indicadores para investigar problemas, identificar oportunidades de melhoria de estabilidade e relatar o desempenho técnico.\n\nUtilizei GitLab, Jira, Jenkins, Splunk, AppDynamics e Crashlytics para apoiar as entregas, enquanto desenvolvia minhas habilidades de programação por meio de formação interna em Java.",
+    "es": "Apoyé al equipo de Ingeniería Mobile en la gestión de cambios y la mejora de sistemas internos. Analicé fallos, registros e indicadores para investigar problemas, identificar oportunidades de mejora de estabilidad e informar sobre el rendimiento técnico.\n\nUtilicé GitLab, Jira, Jenkins, Splunk, AppDynamics y Crashlytics para apoyar las entregas, mientras desarrollaba mis habilidades de programación mediante formación interna en Java."
+  },
+  "Ongoing studies in cybersecurity, secure development, cloud security, and data protection, with a focus on building safer applications.": {
+    "pt": "Estudos em andamento em cibersegurança, desenvolvimento seguro, segurança em nuvem e proteção de dados, com foco na construção de aplicações mais seguras.",
+    "es": "Estudios en curso de ciberseguridad, desarrollo seguro, seguridad en la nube y protección de datos, centrados en crear aplicaciones más seguras."
+  },
+  "Focused on cloud architecture, scalability, and cloud-native concepts to support the design of reliable applications.": {
+    "pt": "Formação focada em arquitetura de nuvem, escalabilidade e conceitos cloud-native para apoiar o desenvolvimento de aplicações confiáveis.",
+    "es": "Formación centrada en arquitectura en la nube, escalabilidad y conceptos cloud-native para diseñar aplicaciones fiables."
+  },
+  "A foundation in software development and enterprise systems, connecting technology with business needs.": {
+    "pt": "Base em desenvolvimento de software e sistemas corporativos, conectando tecnologia às necessidades do negócio.",
+    "es": "Base en desarrollo de software y sistemas empresariales, conectando la tecnología con las necesidades del negocio."
+  },
+  "Full-stack shopping application built with Angular, Spring Boot, and MySQL. Browse a visual product catalog, manage a cart saved locally, and check out with stock validation. Includes order history, Flyway database migrations, and Docker Compose orchestration.": {
+    "pt": "Aplicação de compras full stack com Angular, Spring Boot e MySQL. Permite explorar um catálogo visual, gerenciar um carrinho salvo localmente e finalizar pedidos com validação de estoque. Inclui histórico de pedidos, migrações com Flyway e orquestração com Docker Compose.",
+    "es": "Aplicación de compras full stack con Angular, Spring Boot y MySQL. Permite explorar un catálogo visual, gestionar un carrito guardado localmente y finalizar pedidos con validación de existencias. Incluye historial de pedidos, migraciones con Flyway y orquestación con Docker Compose."
+  },
+  "A focused task manager built with React, TypeScript, and Vite. Create, edit, and delete tasks through a straightforward interface that keeps everyday planning simple and puts essential actions within easy reach.": {
+    "pt": "Gerenciador de tarefas com React, TypeScript e Vite. Crie, edite e exclua tarefas em uma interface direta, que simplifica o planejamento diário e mantém as ações essenciais ao alcance.",
+    "es": "Gestor de tareas con React, TypeScript y Vite. Crea, edita y elimina tareas mediante una interfaz sencilla que facilita la planificación diaria y mantiene las acciones esenciales al alcance."
+  },
+  "A personal productivity app built with Next.js and TypeScript, with Google sign-in and MongoDB storage. Organize tasks with due dates and recurring schedules, find items with search and filters, and save time with bulk actions and JSON import/export.": {
+    "pt": "Aplicação de produtividade pessoal com Next.js, TypeScript, login com Google e armazenamento no MongoDB. Organize tarefas com prazos e recorrência, encontre itens com busca e filtros e economize tempo com ações em lote e importação/exportação JSON.",
+    "es": "Aplicación de productividad personal con Next.js, TypeScript, inicio de sesión con Google y almacenamiento en MongoDB. Organiza tareas con fechas límite y recurrencia, encuentra elementos con búsquedas y filtros y ahorra tiempo con acciones en lote e importación/exportación JSON."
+  },
+  "Connects a locally saved cart to a stock-validated checkout API, with Flyway migrations for reproducible database setup.": {
+    "pt": "Conecta um carrinho salvo localmente a uma API de checkout com validação de estoque e migrações Flyway para reproduzir a configuração do banco.",
+    "es": "Conecta un carrito guardado localmente a una API de checkout con validación de existencias y migraciones Flyway para reproducir la configuración de la base de datos."
+  },
+  "Keeps task creation, editing, and deletion within a focused React interface, demonstrating essential frontend interaction patterns.": {
+    "pt": "Reúne criação, edição e exclusão de tarefas em uma interface React focada, demonstrando padrões essenciais de interação no frontend.",
+    "es": "Reúne la creación, edición y eliminación de tareas en una interfaz React enfocada, demostrando patrones esenciales de interacción frontend."
+  },
+  "Combines authenticated task management with due dates, recurring schedules, bulk actions, and JSON import/export.": {
+    "pt": "Combina gestão de tarefas com autenticação, prazos, recorrência, ações em lote e importação/exportação JSON.",
+    "es": "Combina la gestión de tareas con autenticación, fechas límite, recurrencia, acciones en lote e importación/exportación JSON."
+  },
+  "A full-stack e-commerce platform connecting an Angular storefront to a Spring Boot API. Built around secure authentication, product management, and event-driven orders.": {
+    "pt": "Uma plataforma de e-commerce full stack que conecta uma loja Angular a uma API Spring Boot. Desenvolvida com autenticação segura, gestão de produtos e pedidos orientados a eventos.",
+    "es": "Una plataforma de comercio electrónico full stack que conecta una tienda Angular a una API Spring Boot. Desarrollada con autenticación segura, gestión de productos y pedidos basados en eventos."
+  },
+  "JWT authentication and Kafka order events connect the storefront to the backend. Docker Compose and Kubernetes support deployment. This learning project uses a simplified checkout and some mock data; payment integration remains planned.": {
+    "pt": "A autenticação JWT e os eventos de pedidos do Kafka conectam a loja ao backend. Docker Compose e Kubernetes apoiam a implantação. Este projeto de aprendizado usa checkout simplificado e alguns dados simulados; a integração de pagamentos está planejada.",
+    "es": "La autenticación JWT y los eventos de pedidos de Kafka conectan la tienda con el backend. Docker Compose y Kubernetes permiten el despliegue. Este proyecto de aprendizaje utiliza un checkout simplificado y algunos datos simulados; la integración de pagos está prevista."
+  },
+  "Project screenshot": {
+    "pt": "Captura do projeto",
+    "es": "Captura del proyecto"
+  },
+  "REST APIs": {
+    "pt": "APIs REST",
+    "es": "APIs REST"
+  }
+}

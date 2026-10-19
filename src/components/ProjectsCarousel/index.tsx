@@ -1,3 +1,4 @@
+import { useLanguage } from '../../i18n';
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import React, { useRef } from "react";
 import styled, { keyframes } from "styled-components";
@@ -39,6 +40,7 @@ const projects = [
 ];
 
 export const ProjectsCarousel = () => {
+    const { t } = useLanguage();
   const carouselRef = useRef<HTMLDivElement>(null);
   const drag = useRef({ isDown: false, startX: 0, scrollLeft: 0 });
 
@@ -74,14 +76,14 @@ export const ProjectsCarousel = () => {
 
   return (
     <CarouselWrapper>
-      <ArrowButton type="button" aria-label="Previous projects" $position="left" onClick={() => handleScroll("left")}>
+      <ArrowButton type="button" aria-label={t("Previous projects")} $position="left" onClick={() => handleScroll("left")}>
         <ChevronLeft size={20} />
       </ArrowButton>
 
       <ScrollArea
         ref={carouselRef}
         role="region"
-        aria-label="Side projects carousel"
+        aria-label={t("Side projects carousel")}
         tabIndex={0}
         onMouseDown={handleMouseDown}
         onMouseLeave={handleMouseLeaveOrUp}
@@ -93,7 +95,7 @@ export const ProjectsCarousel = () => {
         ))}
       </ScrollArea>
 
-      <ArrowButton type="button" aria-label="Next projects" $position="right" onClick={() => handleScroll("right")}>
+      <ArrowButton type="button" aria-label={t("Next projects")} $position="right" onClick={() => handleScroll("right")}>
         <ChevronRight size={20} />
       </ArrowButton>
     </CarouselWrapper>

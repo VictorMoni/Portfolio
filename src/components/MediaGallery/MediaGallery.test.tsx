@@ -20,7 +20,7 @@ describe('MediaGallery', () => {
     const user = userEvent.setup()
     render(<MediaGallery images={['/first.png', '/second.png']} />)
     expect(screen.queryByAltText('expanded')).not.toBeInTheDocument()
-    await user.click(screen.getByAltText('media-1'))
+    await user.click(screen.getByAltText('Project screenshot 2'))
     expect(screen.getByAltText('expanded')).toHaveAttribute('src', '/second.png')
     expect(document.body).toHaveStyle({ overflow: 'hidden' })
     await user.keyboard('{Escape}')
@@ -31,7 +31,7 @@ describe('MediaGallery', () => {
   it('closes the expanded image when clicked', async () => {
     const user = userEvent.setup()
     render(<MediaGallery images={['/first.png']} />)
-    await user.click(screen.getByAltText('media-0'))
+    await user.click(screen.getByAltText('Project screenshot 1'))
     await user.click(screen.getByAltText('expanded'))
     expect(screen.queryByAltText('expanded')).not.toBeInTheDocument()
     expect(document.body.style.overflow).toBe('')
@@ -40,7 +40,7 @@ describe('MediaGallery', () => {
   it('restores scrolling when unmounted with an open image', async () => {
     const user = userEvent.setup()
     const { unmount } = render(<MediaGallery images={['/first.png']} />)
-    await user.click(screen.getByAltText('media-0'))
+    await user.click(screen.getByAltText('Project screenshot 1'))
     expect(document.body.style.overflow).toBe('hidden')
     unmount()
     expect(screen.queryByAltText('expanded')).not.toBeInTheDocument()

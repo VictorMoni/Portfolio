@@ -1,3 +1,4 @@
+import { useLanguage } from '../../i18n';
 import {
   Code2,
   SquareDashedMousePointer
@@ -27,6 +28,7 @@ export const Project: React.FC<CardProjectProps> = ({
   liveLink,
   engineeringFocus,
 }) => {
+  const { t, locale } = useLanguage();
   const [expanded, setExpanded] = useState(false);
   const descriptionId = useId();
   return (
@@ -39,10 +41,10 @@ export const Project: React.FC<CardProjectProps> = ({
         </TitleRow>
 
         {description && (
-          <><Description id={descriptionId} $expanded={expanded}>{description}</Description><DetailsButton type="button" aria-expanded={expanded} aria-controls={descriptionId} onClick={() => setExpanded(!expanded)}>{expanded ? "Show less" : "View details"}</DetailsButton>{expanded && engineeringFocus && <FocusNote><strong>Engineering focus</strong>{engineeringFocus}</FocusNote>}</>
+          <><Description id={descriptionId} $expanded={expanded}>{t(description)}</Description><DetailsButton type="button" aria-expanded={expanded} aria-controls={descriptionId} onClick={() => setExpanded(!expanded)}>{expanded ? t("Show less") : t("View details")}</DetailsButton>{expanded && engineeringFocus && <FocusNote><strong>{t("Engineering focus")}</strong>{t(engineeringFocus)}</FocusNote>}</>
         )}
 
-        <Technologies aria-label="Technologies">{technologies.map(technology => <span key={technology}>{technology}</span>)}</Technologies>
+        <Technologies aria-label={t("Technologies")}>{technologies.map(technology => <span key={technology}>{technology}</span>)}</Technologies>
 
         {(repoLink || liveLink) && (
           <ActionMethods>
@@ -54,16 +56,14 @@ export const Project: React.FC<CardProjectProps> = ({
                 rel="noopener noreferrer"
               >
                 <SquareDashedMousePointer size={17} />
-                Live demo
-              </a>
+                {t("Live demo")}</a>
             ) : (
               <DisabledButton
                 className="links disabled"
                 aria-disabled="true"
               >
                 <SquareDashedMousePointer size={17} />
-                Demo unavailable
-              </DisabledButton>
+                {t("Demo unavailable")}</DisabledButton>
             )}
 
             {repoLink && (
@@ -74,14 +74,13 @@ export const Project: React.FC<CardProjectProps> = ({
                 rel="noopener noreferrer"
               >
                 <Code2 size={17} />
-                View repository
-              </a>
+                {t("View repository")}</a>
             )}
           </ActionMethods>
         )}
 
         <LastUpdated>
-          Updated: <time dateTime={lastUpdated}>{new Intl.DateTimeFormat("en", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" }).format(new Date(lastUpdated))}</time>
+          {t("Updated:")}{" "}<time dateTime={lastUpdated}>{new Intl.DateTimeFormat(locale, { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" }).format(new Date(lastUpdated))}</time>
         </LastUpdated>
       </Content>
     </Card>

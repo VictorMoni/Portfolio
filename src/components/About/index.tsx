@@ -1,8 +1,10 @@
+import { useLanguage } from '../../i18n';
 import { Calendar, ExternalLink } from 'lucide-react';
 import { useState } from "react";
 import styled, { keyframes } from "styled-components";
 
 const About = () => {
+    const { t } = useLanguage();
    const experiences = [
     {
         id: 1,
@@ -110,17 +112,17 @@ const About = () => {
     return (
         <AboutSection id="about">
             <Header>
-                <Title>Career</Title>
-                <Subtitle>Enterprise applications, reliable integrations, and a business perspective.</Subtitle>
+                <Title>{t("Career")}</Title>
+                <Subtitle>{t("Enterprise applications, reliable integrations, and a business perspective.")}</Subtitle>
             </Header>
 
             <Content>
                 <MainInfo>
                     <ExperienceHeader>
                         <div>
-                          <ExperienceTitle>{currentExp.title}</ExperienceTitle>
+                          <ExperienceTitle>{t(currentExp.title)}</ExperienceTitle>
                           {currentExp.company && (
-                              <ExperienceCompany>{currentExp.company}</ExperienceCompany>
+                              <ExperienceCompany>{t(currentExp.company)}</ExperienceCompany>
                           )}
                             <ExperienceDate>
                                 <Calendar size={20} />
@@ -130,20 +132,20 @@ const About = () => {
                     </ExperienceHeader>
 
                     <Description $hasDocument={Boolean(currentExp.document)}>
-                        {currentExp.description}
+                        {t(currentExp.description)}
                     </Description>
 
                     {currentExp.document && (
                         <DocumentLink href={currentExp.document.url} target="_blank" rel="noopener noreferrer"
-                            aria-label={`${currentExp.document.label}: ${currentExp.title}`}>
-                            {currentExp.document.label} <ExternalLink size={15} aria-hidden="true" />
+                            aria-label={`${t(currentExp.document.label)}: ${t(currentExp.title)}`}>
+                            {t(currentExp.document.label)} <ExternalLink size={15} aria-hidden="true" />
                         </DocumentLink>
                     )}
 
                     <TagsContainer>
                         {currentExp.tags.map((tag, index) => (
-                            <Tag key={`${tag}-${index}`}>
-                                {tag}
+                            <Tag key={`${t(tag)}-${index}`}>
+                                {t(tag)}
                             </Tag>
                         ))}
                     </TagsContainer>
@@ -152,7 +154,7 @@ const About = () => {
                  <ExperienceContainer>
 
 
-                  <SectionTitle>Professional Experience</SectionTitle>
+                  <SectionTitle>{t("Professional Experience")}</SectionTitle>
                   <ExperiencesScroll>
                       {experiences.map((experience) => (
                           <ExperienceBox
@@ -168,8 +170,8 @@ const About = () => {
                           >
                               <BoxHeader>
                                   <BoxText>
-                                      <BoxTitle>{experience.title}</BoxTitle>
-                                      <BoxCompany>{experience.company}</BoxCompany>
+                                      <BoxTitle>{t(experience.title)}</BoxTitle>
+                                      <BoxCompany>{t(experience.company)}</BoxCompany>
                                   </BoxText>
                               </BoxHeader>
 

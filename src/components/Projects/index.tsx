@@ -1,8 +1,10 @@
+import { useLanguage } from '../../i18n';
 import styled, { keyframes } from "styled-components";
 import MainProject from "../MainProject";
 import { ProjectsCarousel } from "../ProjectsCarousel";
 
 const Projects = () => {
+    const { t } = useLanguage();
 
   return (
     <Section id="projects">
@@ -10,8 +12,8 @@ const Projects = () => {
         <MainProject />
         <OtherProjectsSection>
           <Header>
-            <Title>Side Projects</Title>
-            <Subtitle>Java and TypeScript projects that complement my enterprise .NET experience</Subtitle>
+            <Title>{t("Side Projects")}</Title>
+            <Subtitle>{t("Java and TypeScript projects that complement my enterprise .NET experience")}</Subtitle>
           </Header>
           <ProjectsCarousel />
         </OtherProjectsSection>

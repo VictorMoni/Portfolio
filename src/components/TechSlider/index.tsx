@@ -1,3 +1,4 @@
+import { useLanguage } from '../../i18n';
 import { useState } from 'react';
 import { Pause, Play } from 'lucide-react';
 import styled, { keyframes } from 'styled-components';
@@ -32,6 +33,7 @@ const technologies = [
 ];
 
 export const TechSlider = () => {
+    const { t } = useLanguage();
   const [paused, setPaused] = useState(false);
   const [expanded, setExpanded] = useState(false);
 
@@ -39,24 +41,24 @@ export const TechSlider = () => {
     <Stack aria-labelledby="stack-title" $paused={paused} $expanded={expanded}>
       <div className="stack-heading">
         <div>
-          <h2 id="stack-title">My technology stack</h2>
-          <p className="stack-description">Languages, frameworks, and tools I use to build and deliver software.</p>
+          <h2 id="stack-title">{t("My technology stack")}</h2>
+          <p className="stack-description">{t("Languages, frameworks, and tools I use to build and deliver software.")}</p>
         </div>
         <div className="controls">
           {!expanded && <button type="button" onClick={() => setPaused(!paused)} aria-pressed={paused}>
             {paused ? <Play size={14} aria-hidden="true" /> : <Pause size={14} aria-hidden="true" />}
-            {paused ? 'Resume animation' : 'Pause animation'}
+            {paused ? t("Resume animation") : t("Pause animation")}
           </button>}
           <button type="button" aria-expanded={expanded} aria-controls="stack-groups" onClick={() => setExpanded(!expanded)}>
-            {expanded ? 'Show slider' : 'View all'}
+            {expanded ? t("Show slider") : t("View all")}
           </button>
         </div>
       </div>
       <div id="stack-groups">
-        <div className="window" tabIndex={expanded ? undefined : 0} role="region" aria-label="Technologies and tools">
+        <div className="window" tabIndex={expanded ? undefined : 0} role="region" aria-label={t("Technologies and tools")}>
           <Track className="tech-track" $duration={58}>
             {[0, 1].map(copy => (
-              <ul key={copy} aria-label={copy === 0 ? 'Technologies and tools' : undefined} aria-hidden={copy === 1 ? true : undefined} className={copy === 1 ? 'duplicate' : undefined}>
+              <ul key={copy} aria-label={copy === 0 ? t("Technologies and tools") : undefined} aria-hidden={copy === 1 ? true : undefined} className={copy === 1 ? 'duplicate' : undefined}>
                 {technologies.map(tech => <li key={tech.name}><img src={tech.icon} alt="" loading="lazy" /><span>{tech.name}</span></li>)}
               </ul>
             ))}
