@@ -133,6 +133,13 @@ const About = () => {
                         {currentExp.description}
                     </Description>
 
+                    {currentExp.document && (
+                        <DocumentLink href={currentExp.document.url} target="_blank" rel="noopener noreferrer"
+                            aria-label={`${currentExp.document.label}: ${currentExp.title}`}>
+                            {currentExp.document.label} <ExternalLink size={15} aria-hidden="true" />
+                        </DocumentLink>
+                    )}
+
                     <TagsContainer>
                         {currentExp.tags.map((tag, index) => (
                             <Tag key={`${tag}-${index}`}>
@@ -140,12 +147,6 @@ const About = () => {
                             </Tag>
                         ))}
                     </TagsContainer>
-                    {currentExp.document && (
-                        <DocumentLink href={currentExp.document.url} target="_blank" rel="noopener noreferrer"
-                            aria-label={`${currentExp.document.label}: ${currentExp.title}`}>
-                            {currentExp.document.label} <ExternalLink size={15} aria-hidden="true" />
-                        </DocumentLink>
-                    )}
                 </MainInfo>
 
                  <ExperienceContainer>
@@ -418,6 +419,7 @@ const BoxDate = styled.span`
 `;
 
 const DocumentLink = styled.a`
+  margin-bottom: 20px;
   display: inline-flex;
   align-items: center;
   gap: 8px;
