@@ -3,70 +3,29 @@ import { Pause, Play } from 'lucide-react';
 import styled, { keyframes } from 'styled-components';
 import angular from "../../assets/angular.svg";
 import azuredevops from "../../assets/azuredevops.svg";
-import bootstrap from "../../assets/bootstrap.svg";
 import csharp from "../../assets/csharp.svg";
-import css from "../../assets/css.svg";
-import dbeaver from "../../assets/dbeaver.svg";
 import docker from "../../assets/docker.svg";
 import dotnetcore from "../../assets/dotnetcore.svg";
 import entityframeworkcore from "../../assets/entityframeworkcore.svg";
-import figma from "../../assets/figma.svg";
 import git from "../../assets/git.svg";
-import grafana from "../../assets/grafana.svg";
-import html5 from "../../assets/html5.svg";
-import intellijidea from "../../assets/intellijidea.svg";
-import java from "../../assets/java.svg";
-import javascript from "../../assets/javascript.svg";
-import jira from "../../assets/jira.svg";
-import kubernetes from "../../assets/kubernetes.svg";
-import linux from "../../assets/linux.svg";
-import markdown from "../../assets/markdown.png";
 import microsoftsqlserver from "../../assets/microsoftsqlserver.svg";
-import notion from "../../assets/notion.svg";
 import oracle from "../../assets/oracle.svg";
-import pnpm from "../../assets/pnpm.svg";
-import postgresql from "../../assets/postgresql.svg";
-import postman from "../../assets/postman.svg";
-import react from "../../assets/react.svg";
-import rider from "../../assets/rider.svg";
-import sass from "../../assets/sass.svg";
-import spring from "../../assets/spring.svg";
 import swagger from "../../assets/swagger.svg";
-import tailwindcss from "../../assets/tailwindcss.svg";
 import typescript from "../../assets/typescript.svg";
-import uml from "../../assets/uml.svg";
-import visualbasic from "../../assets/visualbasic.svg";
-import visualstudio from "../../assets/visualstudio.svg";
-import vscode from "../../assets/vscode.svg";
-import windows11 from "../../assets/windows11.svg";
 
-const groups = [
-  { label: 'Languages & frameworks', items: [
-    { name: 'C#', icon: csharp }, { name: '.NET', icon: dotnetcore },
-    { name: 'Angular', icon: angular }, { name: 'TypeScript', icon: typescript },
-    { name: 'React', icon: react }, { name: 'Entity Framework', icon: entityframeworkcore },
-    { name: 'Java', icon: java }, { name: 'Spring', icon: spring },
-    { name: 'Visual Basic', icon: visualbasic }, { name: 'JavaScript', icon: javascript },
-    { name: 'HTML5', icon: html5 }, { name: 'CSS3', icon: css },
-    { name: 'Sass', icon: sass }, { name: 'Bootstrap', icon: bootstrap },
-    { name: 'Tailwind CSS', icon: tailwindcss }, { name: 'Markdown', icon: markdown },
-  ] },
-  { label: 'Data, infrastructure & tools', items: [
-    { name: 'SQL Server', icon: microsoftsqlserver }, { name: 'Oracle', icon: oracle },
-    { name: 'PostgreSQL', icon: postgresql }, { name: 'Docker', icon: docker },
-    { name: 'Kubernetes', icon: kubernetes }, { name: 'Azure DevOps', icon: azuredevops },
-    { name: 'Git', icon: git }, { name: 'Swagger', icon: swagger },
-    { name: 'Postman', icon: postman }, { name: 'Grafana', icon: grafana },
-    { name: 'Rider', icon: rider }, { name: 'Visual Studio', icon: visualstudio },
-    { name: 'VS Code', icon: vscode }, { name: 'IntelliJ IDEA', icon: intellijidea },
-    { name: 'DBeaver', icon: dbeaver }, { name: 'Jira', icon: jira },
-    { name: 'Figma', icon: figma }, { name: 'Notion', icon: notion },
-    { name: 'UML', icon: uml }, { name: 'pnpm', icon: pnpm },
-    { name: 'Linux', icon: linux }, { name: 'Windows', icon: windows11 },
-  ] },
+const technologies = [
+  { name: 'C#', icon: csharp },
+  { name: '.NET', icon: dotnetcore },
+  { name: 'Angular', icon: angular },
+  { name: 'TypeScript', icon: typescript },
+  { name: 'Entity Framework', icon: entityframeworkcore },
+  { name: 'SQL Server', icon: microsoftsqlserver },
+  { name: 'Oracle', icon: oracle },
+  { name: 'REST APIs / Swagger', icon: swagger },
+  { name: 'Git', icon: git },
+  { name: 'Azure DevOps', icon: azuredevops },
+  { name: 'Docker', icon: docker },
 ];
-
-const technologies = groups.flatMap(group => group.items);
 
 export const TechSlider = () => {
   const [paused, setPaused] = useState(false);
@@ -91,7 +50,7 @@ export const TechSlider = () => {
       </div>
       <div id="stack-groups">
         <div className="window" tabIndex={expanded ? undefined : 0} role="region" aria-label="Technologies and tools">
-          <Track className="tech-track" $duration={160}>
+          <Track className="tech-track" $duration={50}>
             {[0, 1].map(copy => (
               <ul key={copy} aria-label={copy === 0 ? 'Technologies and tools' : undefined} aria-hidden={copy === 1 ? true : undefined} className={copy === 1 ? 'duplicate' : undefined}>
                 {technologies.map(tech => <li key={tech.name}><img src={tech.icon} alt="" loading="lazy" /><span>{tech.name}</span></li>)}
