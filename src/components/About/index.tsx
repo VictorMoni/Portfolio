@@ -1,4 +1,4 @@
-import { Calendar } from 'lucide-react';
+import { Calendar, ExternalLink } from 'lucide-react';
 import { useState } from "react";
 import styled, { keyframes } from "styled-components";
 
@@ -8,6 +8,7 @@ const About = () => {
         id: 1,
         title: "Full Stack .NET Developer",
         company: "Sysopen",
+        document: { url: "https://drive.google.com/file/d/1rV8BvKmmJaYSEUiLQvAB1eJHN2O3vtAq/view?usp=sharing", label: "View employment document" },
         description:
             "Developed and enhanced Recupera, an enterprise platform built with C#, VB.NET, ASP.NET WebForms, and Angular. Delivered functional improvements, resolved production incidents, and maintained systems for clients including Ambev, Aegea, Jeitto, and Porto Seguro.\n\nWrote and optimized SQL queries, stored procedures, and scripts in SQL Server and Oracle. Tested REST APIs and SOAP/WCF services with SoapUI, and tracked delivery and source control through Azure DevOps/TFS.",
         date: "10/2025 - 07/2026",
@@ -79,6 +80,7 @@ const About = () => {
     {
         id: 5,
         title: "Information Technology Intern",
+        document: { url: "https://drive.google.com/file/d/1D1WEXsTBHldgTWdhYg3Wor630T5T-jWg/view?usp=sharing", label: "View internship declaration" },
         company: "Itaú Unibanco",
         description:
             "Supported the Mobile Engineering team with change management and improvements to internal systems. Analyzed crashes, logs, and KPIs to investigate failures, identify opportunities to improve stability, and report on technical performance.\n\nWorked with GitLab, Jira, Jenkins, Splunk, AppDynamics, and Crashlytics to support delivery, while building my application development skills through internal Java training.",
@@ -138,6 +140,12 @@ const About = () => {
                             </Tag>
                         ))}
                     </TagsContainer>
+                    {currentExp.document && (
+                        <DocumentLink href={currentExp.document.url} target="_blank" rel="noopener noreferrer"
+                            aria-label={`${currentExp.document.label}: ${currentExp.title}`}>
+                            {currentExp.document.label} <ExternalLink size={15} aria-hidden="true" />
+                        </DocumentLink>
+                    )}
                 </MainInfo>
 
                  <ExperienceContainer>
@@ -407,4 +415,15 @@ const BoxDate = styled.span`
     font-size: 12px;
     color: #c9c9c9;
     font-weight: 500;
+`;
+
+const DocumentLink = styled.a`
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  color: var(--primary-light);
+  font-size: 14px;
+  text-underline-offset: 4px;
+  &:hover { text-decoration: underline; }
 `;
