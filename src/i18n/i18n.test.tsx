@@ -1,3 +1,4 @@
+import LanguageSwitcher from './LanguageSwitcher';
 import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
@@ -19,9 +20,28 @@ afterEach(() => {
 });
 
 describe('Portfolio languages', () => {
+  it('supports keyboard selection, Escape and outside clicks in the language dropdown', async () => {
+    const user = userEvent.setup();
+    render(<LanguageProvider><LanguageSwitcher /></LanguageProvider>);
+    const trigger = screen.getByRole('button', { name: 'Change language' });
+    await user.click(trigger);
+    expect(screen.getByRole('button', { name: 'English' })).toHaveFocus();
+    await user.keyboard('{Escape}');
+    expect(trigger).toHaveFocus();
+    expect(trigger).toHaveAttribute('aria-expanded', 'false');
+    await user.keyboard('{ArrowDown}{ArrowDown}{Enter}');
+    expect(document.documentElement.lang).toBe('es-ES');
+    const spanishTrigger = screen.getByRole('button', { name: 'Cambiar idioma' });
+    expect(spanishTrigger).toHaveAttribute('aria-expanded', 'false');
+    await user.click(spanishTrigger);
+    await user.click(document.body);
+    expect(spanishTrigger).toHaveAttribute('aria-expanded', 'false');
+  });
+
   it('switches all sections and accessible labels between Portuguese, Spanish and English', async () => {
     const user = userEvent.setup();
     render(<App />);
+    await user.click(screen.getByRole('button', { name: 'Change language' }));
     await user.click(screen.getByRole('button', { name: 'Português' }));
     expect(screen.getByRole('link', { name: 'Explorar projetos' })).toHaveAttribute('href', '#projects');
     expect(screen.getByRole('heading', { name: 'Minhas tecnologias' })).toBeVisible();
@@ -32,12 +52,14 @@ describe('Portfolio languages', () => {
     expect(within(status).getByText('Em andamento')).toHaveAttribute('data-progress', 'true');
     expect(document.documentElement.lang).toBe('pt-BR');
     expect(screen.getByRole('link', { name: 'Currículo' })).toHaveAttribute('href', 'https://drive.google.com/file/d/1rNLEny2TgxbY6d6ASpLnipbGo2YWuISH/view?usp=sharing');
+    await user.click(screen.getByRole('button', { name: 'Alterar idioma' }));
     await user.click(screen.getByRole('button', { name: 'Español' }));
     expect(screen.getByRole('link', { name: 'Contáctame' })).toHaveAttribute('href', '#socialmedia');
     expect(screen.getByRole('heading', { name: 'Trayectoria' })).toBeVisible();
     expect(screen.getByRole('heading', { name: 'Proyectos personales' })).toBeVisible();
     expect(document.documentElement.lang).toBe('es-ES');
     expect(screen.getByRole('link', { name: 'Currículum' })).toHaveAttribute('href', 'https://drive.google.com/file/d/1IvYgqcfUJrkQwHRuXavWJR-eM0MK6OyR/view?usp=sharing');
+    await user.click(screen.getByRole('button', { name: 'Cambiar idioma' }));
     await user.click(screen.getByRole('button', { name: 'English' }));
     expect(screen.getByRole('link', { name: 'Resume' })).toHaveAttribute('href', 'https://drive.google.com/file/d/1ZakvZK_1uRrCiVU7DuDbkPOcv_Ptg47b/view?usp=sharing');
     expect(screen.getByRole('heading', { name: 'Career' })).toBeVisible();
