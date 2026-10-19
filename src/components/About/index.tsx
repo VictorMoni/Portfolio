@@ -2,7 +2,6 @@ import { Calendar } from 'lucide-react';
 import { useState } from "react";
 import styled, { keyframes } from "styled-components";
 
-import image from '../../assets/career-background-black.webp';
 const About = () => {
    const experiences = [
     {
@@ -214,7 +213,7 @@ const ExperiencesScroll = styled.div`
     }
 
     &::-webkit-scrollbar-thumb:hover {
-        background: var(--primary-light);
+        background: var(--text);
     }
 `;
 
@@ -239,38 +238,7 @@ const BoxCompany = styled.p`
 `;
 
 const AboutSection = styled.section`
-  position: relative;
-  isolation: isolate;
-  display: flex;
-  flex-direction: column;
-  padding: 80px 140px;
-  min-height: 100vh;
-  color: white;
-  overflow: hidden;
-  background-color: #08090b;
-
-  &::before {
-    content: '';
-    position: absolute;
-    inset: -8px;
-    z-index: -1;
-    pointer-events: none;
-    background-image:
-      linear-gradient(90deg, rgba(5, 7, 10, 0.96) 0%, rgba(5, 7, 10, 0.88) 38%, rgba(5, 7, 10, 0.28) 75%, rgba(5, 7, 10, 0.18) 100%),
-      url(${image});
-    background-size: cover;
-    background-position: center right;
-    filter: blur(2px);
-  }
-
-  @media (max-width: 1024px) {
-    padding: 60px 20px;
-    &::before {
-      background-image:
-        linear-gradient(rgba(5, 7, 10, 0.82), rgba(5, 7, 10, 0.88)),
-        url(${image});
-    }
-  }
+position: relative; padding: var(--section-space) var(--page-gutter); background: var(--background); border-top: 1px solid var(--border); color: var(--text); min-width: 0;
 `;
 
 const Header = styled.div`
@@ -279,10 +247,10 @@ const Header = styled.div`
 `;
 
 const Title = styled.h2`
-    font-size: 43px;
+    font-size:clamp(30px,4vw,40px); letter-spacing:-0.035em;
     font-weight: 700;
     margin-bottom: 10px;
-    background: var(--primary-light);
+    background: var(--text);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -358,19 +326,13 @@ const TagsContainer = styled.div`
 `;
 
 const Tag = styled.span`
-    padding: 8px 16px;
-    background: #076E9E;
-    border: 1px solid #076E9E;
-    border-radius: 10px;
-    font-size: 14px;
-    color: #ffffffff;
-    font-weight: 500;
+padding:6px 10px; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-small); color:var(--muted); font-size:12px;
 `;
 
 const ExperienceContainer = styled.div`
-    background: rgba(2, 16, 28, 0.72);
+    background:var(--surface);
     padding: 24px;
-    border: 1px solid rgba(77, 149, 180, 0.25);
+    border:1px solid var(--border);
     border-radius: 12px;
     box-sizing: border-box;
     flex: 1;

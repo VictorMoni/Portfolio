@@ -1,6 +1,5 @@
 import { GraduationCap, ExternalLink } from "lucide-react";
 import styled from "styled-components";
-import educationBackground from "../../assets/education-background.webp";
 
 const qualifications = [
   {
@@ -57,37 +56,7 @@ export default function Education() {
 }
 
 const Section = styled.section`
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  padding: 80px 140px;
-  min-height: 650px;
-  color: white;
-  background-color: #031321;
-  &::before {
-    content: '';
-    position: absolute;
-    inset: -8px;
-    z-index: -1;
-    pointer-events: none;
-    background-image:
-      linear-gradient(90deg, rgba(1, 14, 27, 0.74), rgba(1, 14, 27, 0.25)),
-      url(${educationBackground});
-    background-size: cover;
-    background-position: center;
-    filter: blur(2px);
-  }
-  border-top: 1px solid #23536b;
-  @media (max-width: 1024px) { padding: 60px 20px; }
-  h2 {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin: 0 0 12px;
-    font-size: clamp(30px, 4vw, 43px);
-    color: var(--primary-light);
-  }
-  .intro { margin: 0 0 28px; color: #b5c3cf; line-height: 1.6; }
+position: relative; padding: var(--section-space) var(--page-gutter); background: var(--background); border-top: 1px solid var(--border); color: var(--text); min-width: 0;h2 { display:flex; align-items:center; gap:12px; margin-bottom:16px; font-size:clamp(30px,4vw,40px); letter-spacing:-0.035em; } h2 svg { color:var(--primary-light); width:24px; } .intro { color:var(--muted); margin-bottom:40px; }
 `;
 
 const Grid = styled.div`
@@ -101,10 +70,10 @@ const Card = styled.article`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 24px;
-  border: 1px solid #23536b;
+  padding:28px;
+  border:1px solid var(--border);
   border-radius: 12px;
-  background: rgba(2, 23, 38, 0.92);
+  background:var(--surface);
   h3 { margin: 18px 0 6px; font-size: 21px; line-height: 1.3; }
   .status {
     padding: 5px 10px;

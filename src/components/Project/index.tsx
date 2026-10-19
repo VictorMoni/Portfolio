@@ -96,14 +96,14 @@ const Card = styled.article`
   min-width: 250px;
 
   overflow: hidden;
-  background: #080808;
-  border: 1px solid #292d33;
+  background:var(--surface);
+  border:1px solid var(--border);
   border-radius: 12px;
 
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 
   color: #fff;
-  font-family: "Inter", sans-serif;
+  font-family:inherit;
 
   transition:
     transform 0.2s ease,
@@ -131,7 +131,7 @@ const Cover = styled.img`
   height: 210px;
 
   padding: 8px;
-  border-radius: 16px;
+  border-radius: var(--radius);
   object-fit: contain;
 
   @media (max-width: 450px) {
@@ -140,7 +140,7 @@ const Cover = styled.img`
 `;
 
 const Content = styled.div`
-  padding: 8px 12px 10px;
+  padding:20px;
 `;
 
 const TitleRow = styled.div`
@@ -167,10 +167,10 @@ const Description = styled.p<{ $expanded: boolean }>`
 
   margin: 0 0 10px;
 
-  color: #aaa;
+  color:var(--muted);
 
   font-size: 0.88rem;
-  line-height: 1.3;
+  line-height:1.65;
 
   -webkit-box-orient: vertical;
   -webkit-line-clamp: ${({ $expanded }) => $expanded ? "unset" : 3};
@@ -204,10 +204,10 @@ const Technologies = styled.div`
   margin-bottom: 12px;
   span {
     padding: 4px 8px;
-    border: 1px solid #23536b;
+    border: 1px solid var(--border);
     border-radius: 6px;
-    background: #10212b;
-    color: #bce6fa;
+    background: var(--background);
+    color: var(--muted);
     font-size: 0.72rem;
     line-height: 1.4;
   }
@@ -245,7 +245,7 @@ const ActionMethods = styled.div`
       border-color 0.2s ease;
 
     &:hover {
-      background: var(--primary-light);
+      background: #247eb5;
       border-color: var(--primary-light);
     }
   }
@@ -269,26 +269,7 @@ const ActionMethods = styled.div`
 `;
 
 const DisabledButton = styled.span`
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 7px;
-
-  min-height: 36px;
-  padding: 7px 10px;
-
-  background: #2e2e2e !important;
-  border: 2px solid #2e2e2e !important;
-  border-radius: 6px;
-
-  color: #999 !important;
-
-  font-size: 0.8rem;
-  font-weight: 500;
-  text-decoration: none;
-
-  opacity: 0.7;
-  cursor: not-allowed;
+&& { display:inline-flex; align-items:center; gap:6px; padding:8px 0; background:transparent; border:0; color:var(--muted); font-size:12px; font-weight:400; cursor:default; }
 `;
 
 const LastUpdated = styled.p`

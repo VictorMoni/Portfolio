@@ -1,6 +1,5 @@
 import { Code2, SquareDashedMousePointer } from "lucide-react";
 import styled from "styled-components";
-import cover from "../../assets/shopeasy-background-black.webp";
 import ProjectImage1 from "../../assets/shopeasy1.webp";
 import ProjectImage2 from "../../assets/shopeasy2.webp";
 import ProjectImage3 from "../../assets/shopeasy3.webp";
@@ -10,8 +9,8 @@ import MediaGallery from "../MediaGallery";
 const content = {
   id: "1",
   title: "ShopEasy",
-  coverImage: cover,
-  description: "A full-stack e-commerce foundation connecting an Angular storefront to a Spring Boot REST API and MySQL. Combines JWT authentication, product and order management, and Kafka order events, with ELK logging and containerized deployment through Docker Compose or Kubernetes.",
+
+  description: "A full-stack e-commerce platform connecting an Angular storefront to a Spring Boot API. Built around secure authentication, product management, and event-driven orders.",
   note: "This project is a portfolio and learning base, currently with a simplified checkout and some mock data. Future improvements include payment gateway, persistent cart, and CI/CD pipeline. It can be adapted to other databases or cloud providers.",
   startDate: "2025-04",
   finishDate: "Present",
@@ -28,51 +27,17 @@ const content = {
 };
 
 const Section = styled.section`
-  position: relative;
-  padding: 110px 150px 80px;
-  width: 100%;
-  color: white;
-  overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
-  background: linear-gradient(to bottom right, #0f0f0f, black);
-
-    &::before {
-    content: "";
-    position: absolute;
-    top: -1px;
-    left: 0;
-    width: 100%;
-    height: 150px;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, black 100%);
-    z-index: 2; /* Camada de transição */
-    pointer-events: none;
-  }
-
-  @media (max-width: 1024px) {
-    padding: 110px 20px 80px;
-        &::before{
-      z-index: 3;
-    }
- }
+position: relative; min-height: 100vh; min-height: 100svh; padding: max(104px, var(--section-space)) var(--page-gutter) var(--section-space); background: var(--background); border-top: 1px solid var(--border); color: var(--text); min-width: 0;
 `;
 
-const ProjectBackground = styled.div<{ $bg?: string }>`
-  position: absolute;
-  inset: 0;
-  background-image: ${({ $bg }) => ($bg ? `linear-gradient(90deg, rgba(0,0,0,0.78), rgba(0,0,0,0.3)), url(${$bg})` : "none")};
-  background-size: cover;
-  background-position: center;
-  opacity: 1;
-  filter: blur(3px);
-  transform: scale(1.01);
-`;
+
 
 const Container = styled.div`
   padding: 32px;
-  background: #080808;
-  border: 1px solid #292d33;
-  border-radius: 16px;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius: var(--radius);
+
   @media (max-width: 600px) { padding: 20px; }
   position: relative;
   z-index: 3;
@@ -115,11 +80,11 @@ const Header = styled.div`
   margin-bottom: 1rem;
   gap: 0.25rem;
 
-  h1 {
+  h2 {
     font-size: 40px;
     font-weight: bold;
     color: white;
-    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+    letter-spacing:-0.035em;
 
     @media (min-width: 1024px) {
       font-size: 40px;
@@ -137,19 +102,7 @@ const Header = styled.div`
 `;
 
 const Status = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-  background: #0662a3ff;
-  width: fit-content;
-  padding: 0.5rem 1rem;
-  border-radius: 0.375rem;
-
-  span {
-    color: white;
-    font-weight: 500;
-  }
+display:flex; width:fit-content; margin-bottom:20px; padding:6px 10px; border:1px solid #2b465b; background:#142332; border-radius:var(--radius-small); color:#afd7f5; font-size:12px;
 `;
 
 const Description = styled.p`
@@ -200,7 +153,7 @@ const ActionMethods = styled.div`
     font-weight: 500;
     transition: background 0.2s;
     &:hover {
-      background: var(--primary-light);
+      background: #247eb5;
         }
     }
 
@@ -235,27 +188,16 @@ const Technologies = styled.div`
   @media (max-width: 1023px) { margin-bottom: 0; }
   span {
     padding: 5px 10px;
-    border: 1px solid #23536b;
+    border: 1px solid var(--border);
     border-radius: 6px;
-    background: #10212b;
-    color: #bce6fa;
+    background: var(--background);
+    color: var(--muted);
     font-size: 0.85rem;
   }
 `;
 
 const DisabledButton = styled.span`
-  display: inline-flex;
-  align-items: center;
-  padding: 8px 12px;
-  background: #2e2e2e;
-  color: #999;
-  gap: 10px;
-  border-radius: 0.375rem;
-  font-weight: 500;
-  font-size: 14px;
-  opacity: 0.7;
-  cursor: not-allowed;
-  text-decoration: none;
+&& { display:inline-flex; align-items:center; gap:6px; padding:8px 0; background:transparent; border:0; color:var(--muted); font-size:12px; font-weight:400; cursor:default; }
 `;
 
 
@@ -263,7 +205,6 @@ const DisabledButton = styled.span`
 export default function MainProject() {
   return (
     <Section>
-      <ProjectBackground $bg={content.coverImage || ""} />
       <Container>
         <Content>
           {content.finishDate && (
@@ -272,7 +213,7 @@ export default function MainProject() {
             </Status>
           )}
           <Header>
-            <h1>{content.title}</h1>
+            <h2>{content.title}</h2>
           </Header>
 
           {content.description && <Description>{content.description}</Description>}

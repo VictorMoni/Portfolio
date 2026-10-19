@@ -1,5 +1,4 @@
 import styled, { keyframes } from "styled-components";
-import sideProjectsBackground from "../../assets/side-projects-background.webp";
 import MainProject from "../MainProject";
 import { ProjectsCarousel } from "../ProjectsCarousel";
 
@@ -44,29 +43,7 @@ const Content = styled.div`
 `;
 
 const OtherProjectsSection = styled.div`
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  padding: 60px 150px;
-  background: #07090c;
-
-  &::before {
-    content: '';
-    position: absolute;
-    inset: -8px;
-    z-index: -1;
-    pointer-events: none;
-    background-image:
-      linear-gradient(90deg, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.35)),
-      url(${sideProjectsBackground});
-    background-size: cover;
-    background-position: center;
-    filter: blur(2px);
-  }
-
-  @media (max-width: 1024px) {
-    padding: 40px 20px;
-  }
+position: relative; padding: var(--section-space) var(--page-gutter); background: var(--background); border-top: 1px solid var(--border); color: var(--text); min-width: 0;
 `;
 
 const Header = styled.div`
@@ -78,7 +55,7 @@ const Title = styled.h2`
     font-size: 40px;
     font-weight: 700;
     margin-bottom: 10px;
-    background: var(--primary-light);
+    background: var(--text);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
