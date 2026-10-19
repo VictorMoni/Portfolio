@@ -8,8 +8,14 @@ import Projects from '../Projects';
 import { SocialFooter } from '../SocialMedia';
 import { TechSlider } from '../TechSlider';
 
+const resumes = {
+  pt: 'https://drive.google.com/file/d/1rNLEny2TgxbY6d6ASpLnipbGo2YWuISH/view?usp=sharing',
+  en: 'https://drive.google.com/file/d/1ZakvZK_1uRrCiVU7DuDbkPOcv_Ptg47b/view?usp=sharing',
+  es: 'https://drive.google.com/file/d/1IvYgqcfUJrkQwHRuXavWJR-eM0MK6OyR/view?usp=sharing',
+};
+
 export const Main = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   return (
   <>
     <Introduction id="home">
@@ -23,7 +29,7 @@ export const Main = () => {
         <p className="summary">{t("I build reliable .NET applications with a practical business mindset, while expanding my knowledge of cloud and security.")}</p>
         <div className="actions">
           <a className="primary-action" href="#projects">{t("Explore projects")}<ArrowUpRight size={17} aria-hidden="true" /></a>
-          <a className="secondary-action" href="https://drive.google.com/file/d/1ZakvZK_1uRrCiVU7DuDbkPOcv_Ptg47b/view?usp=sharing" target="_blank" rel="noopener noreferrer">{t("Resume")}<ArrowUpRight size={16} aria-hidden="true" /></a>
+          <a className="secondary-action" href={resumes[language]} target="_blank" rel="noopener noreferrer">{t("Resume")}<ArrowUpRight size={16} aria-hidden="true" /></a>
         </div>
         <div className="socials">
           <a href="https://github.com/victormoni" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><Github size={19} /></a>
