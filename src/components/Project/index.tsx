@@ -99,14 +99,12 @@ const Card = styled.article`
   border:1px solid var(--border);
   border-radius: 12px;
 
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--card-shadow);
 
-  color: #fff;
+  color: var(--text);
   font-family:inherit;
 
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+  transition: var(--control-transition);
 
   &:hover {
     transform: translateY(-3px);
@@ -156,7 +154,7 @@ const Title = styled.h3`
 
   font-size: 1.2rem;
   font-weight: 700;
-  color: #fff;
+  color: var(--text);
   line-height: 1.25;
 `;
 
@@ -189,11 +187,11 @@ const DetailsButton = styled.button`
 `;
 
 const FocusNote = styled.p`
-  color: #cbd5e1;
+  color: var(--muted);
   font-size: 0.85rem;
   line-height: 1.6;
   margin-bottom: 16px;
-  strong { display: block; color: #fff; margin-bottom: 4px; }
+  strong { display: block; color: var(--text); margin-bottom: 4px; }
 `;
 
 const Technologies = styled.div`
@@ -239,9 +237,7 @@ const ActionMethods = styled.div`
     font-size: 0.76rem;
     font-weight: 500;
 
-    transition:
-      background 0.2s ease,
-      border-color 0.2s ease;
+    transition: var(--control-transition);
 
     &:hover {
       background: #247eb5;
@@ -250,6 +246,7 @@ const ActionMethods = styled.div`
   }
 
   .links.secondary {
+    color: var(--primary-light);
     background: transparent;
 
     &:hover {
@@ -274,7 +271,7 @@ const DisabledButton = styled.span`
 const LastUpdated = styled.p`
   margin: 8px 0 0;
 
-  color: #888;
+  color: var(--muted);
 
   font-size: 0.72rem;
   line-height: 1.2;

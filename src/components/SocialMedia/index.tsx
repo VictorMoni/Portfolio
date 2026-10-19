@@ -147,12 +147,12 @@ const SocialSection = styled.div`
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
-        animation: fade-up 0.5s 0.2s backwards;
+        animation: fade-up 0.5s 0.32s backwards;
     }
 
     p {
         font-size:16px;
-        color: #c2c2c2;
+        color: var(--muted);
         margin-bottom: 50px;
         animation: fade-up 0.5s 0.4s backwards;
     }
@@ -182,18 +182,19 @@ const SocialGrid = styled.div`
 `;
 
 const SocialLink = styled.a`
-display:flex; align-items:center; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:24px; color:var(--text); transition:border-color .2s, background .2s; &:hover { border-color:#3d617b; background:#202226; } img { width:32px; height:32px; object-fit:contain; margin-right:16px; } .social-info { display:flex; flex-direction:column; min-width:0; } .social-name { font-size:16px; font-weight:600; margin-bottom:4px; } .social-desc { font-size:13px; color:var(--muted); }
+  &.github img, &.dailydev img { filter: var(--mono-icon-filter); }
+display:flex; align-items:center; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:24px; color:var(--text); transition: var(--control-transition); &:hover { border-color:#3d617b; background:var(--hover-surface); } img { width:32px; height:32px; object-fit:contain; margin-right:16px; } .social-info { display:flex; flex-direction:column; min-width:0; } .social-name { font-size:16px; font-weight:600; margin-bottom:4px; } .social-desc { font-size:13px; color:var(--muted); }
 `;
 
 const FooterBottom = styled.div`
     text-align: center;
     padding-top: 40px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid var(--border);
     animation: fade-up 0.5s 0.8s backwards;
 
     p {
         font-size: 16px;
-        color: #c2c2c2;
+        color: var(--muted);
         margin-bottom: 10px;
     }
 

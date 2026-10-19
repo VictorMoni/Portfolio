@@ -80,14 +80,14 @@ const Card = styled.article`
   .status {
     padding: 5px 10px;
     border-radius: 6px;
-    color: #b2e4cf;
-    background: #10362e;
+    color: var(--success-text);
+    background: var(--success-background);
     font-size: 12px;
     font-weight: 600;
-    &[data-progress="true"] { color: #bce6fa; background: #123c53; }
+    &[data-progress="true"] { color: var(--status-text); background: var(--status-background); }
   }
-  .level { margin: 0; color: #b5c3cf; font-size: 14px; }
-  .description { margin: 18px 0 24px; color: #d1d5db; line-height: 1.6; }
+  .level { margin: 0; color: var(--muted); font-size: 14px; }
+  .description { margin: 18px 0 24px; color: var(--muted); line-height: 1.6; }
   a {
     display: inline-flex;
     align-items: center;

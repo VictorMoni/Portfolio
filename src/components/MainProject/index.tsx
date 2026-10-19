@@ -84,7 +84,7 @@ const Header = styled.div`
   h2 {
     font-size: 40px;
     font-weight: bold;
-    color: white;
+    color: var(--text);
     letter-spacing:-0.035em;
 
     @media (min-width: 1024px) {
@@ -93,8 +93,8 @@ const Header = styled.div`
   }
 
   a {
-    color: #d1d5db;
-    transition: color 0.2s;
+    color: var(--muted);
+    transition: var(--control-transition);
 
     &:hover {
       color: #3b82f6;
@@ -103,11 +103,11 @@ const Header = styled.div`
 `;
 
 const Status = styled.div`
-display:flex; width:fit-content; margin-bottom:20px; padding:6px 10px; border:1px solid #2b465b; background:#142332; border-radius:var(--radius-small); color:#afd7f5; font-size:12px;
+display:flex; width:fit-content; margin-bottom:20px; padding:6px 10px; border:1px solid var(--active-border); background:var(--status-background); border-radius:var(--radius-small); color:var(--status-text); font-size:12px;
 `;
 
 const Description = styled.p`
-  color: #d1d5db;
+  color: var(--muted);
   margin-bottom: 1.5rem;
   line-height: 1.6;
   font-size: 18px;
@@ -116,15 +116,15 @@ const Description = styled.p`
 
 const ProjectScope = styled.p`
   margin-top: 24px;
-  color: #b8c1cc;
+  color: var(--muted);
   font-size: 14px;
   line-height: 1.6;
-  strong { display: block; color: #fff; margin-bottom: 6px; }
+  strong { display: block; color: var(--text); margin-bottom: 6px; }
 `;
 
 const Footer = styled.div`
   font-size: 0.75rem;
-  color: #6b7280;
+  color: var(--muted);
   display: flex;
   flex-direction: column;
   margin-top: 1.5rem;
@@ -152,21 +152,15 @@ const ActionMethods = styled.div`
     border-radius: 0.375rem;
     text-decoration: none;
     font-weight: 500;
-    transition: background 0.2s;
+    transition: var(--control-transition);
     &:hover {
       background: #247eb5;
         }
     }
 
-    .links.disabled,
-    .links.disabled:hover {
-      background: #2e2e2e;
-      color: #999;
-      border: 2px solid #2e2e2e;
-      cursor: not-allowed;
-    }
 
     .links.secondary {
+    color: var(--primary-light);
       background: transparent;
       border: 2px solid var(--primary);
 

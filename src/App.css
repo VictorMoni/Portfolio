@@ -7,6 +7,21 @@
   --primary: #176c9f;
   --primary-light: #79bce5;
   --white: #edf2f7;
+  --header-background: rgba(24, 26, 29, 0.94);
+  --hover-surface: #262b31;
+  --active-background: #173044;
+  --active-border: #31566e;
+  --hero-overlay: linear-gradient(90deg, #111214 5%, rgba(17,18,20,.86) 45%, rgba(17,18,20,.35));
+  --hero-opacity: .55;
+  --hero-summary: var(--muted);
+  --mono-icon-filter: none;
+  --status-background: #142332;
+  --status-text: #afd7f5;
+  --success-background: #10362e;
+  --success-text: #b2e4cf;
+  --card-shadow: 0 4px 12px rgba(0,0,0,.15);
+  --control-easing: cubic-bezier(.22, 1, .36, 1);
+  --control-transition: background-color .42s var(--control-easing), color .42s var(--control-easing), border-color .42s var(--control-easing), box-shadow .42s var(--control-easing), opacity .42s var(--control-easing), transform .34s var(--control-easing);
   --radius: 12px;
   --radius-small: 6px;
   --page-gutter: max(24px, calc((100% - 1120px) / 2));
@@ -17,10 +32,35 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
+html[data-theme="light"] {
+  color-scheme: light;
+  --background: #dcdedc;
+  --surface: #eceeeb;
+  --border: #bdc4c2;
+  --text: #202b30;
+  --muted: #4c5a61;
+  --primary: #23627e;
+  --primary-light: #23627e;
+  --white: #ffffff;
+  --header-background: rgba(236,238,235,.94);
+  --hover-surface: #d2d9d7;
+  --active-background: #d7e2e5;
+  --active-border: #a6bbc2;
+  --hero-overlay: none;
+  --hero-opacity: 1;
+  --hero-summary: #4c5a61;
+  --mono-icon-filter: brightness(0) saturate(100%);
+  --status-background: #dbe5e6;
+  --status-text: #315d6c;
+  --success-background: #d9e6dc;
+  --success-text: #315e40;
+  --card-shadow: 0 8px 24px rgba(32,43,48,.045);
+}
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { background: var(--background); color: var(--text); min-width: 320px; line-height: 1.65; }
 a { color: inherit; text-decoration: none; }
 button { font: inherit; cursor: pointer; }
+button, a { transition: var(--control-transition); }
 ul { list-style: none; }
 img { max-width: 100%; }
 html { scroll-behavior: smooth; scroll-padding-top: 0; }

@@ -39,6 +39,7 @@ export const Main = () => {
           <a className="contact" href="#socialmedia">{t("Contact me")}<ArrowUpRight size={14} aria-hidden="true" /></a>
         </div>
       </div>
+      <div className="hero-art" aria-hidden="true" />
     </Introduction>
     <TechSlider />
     <About />
@@ -74,8 +75,8 @@ const Introduction = styled.main`
     position: absolute;
     inset: 0;
     z-index: -1;
-    background: linear-gradient(90deg, #111214 5%, rgba(17,18,20,.86) 45%, rgba(17,18,20,.35)), url(${banner}) center 30% / cover;
-    opacity: .55;
+    background: var(--hero-overlay), url(${banner}) center 30% / cover;
+    opacity: var(--hero-opacity);
     pointer-events: none;
   }
   &::after {
@@ -92,7 +93,7 @@ const Introduction = styled.main`
     margin-top: 16px;
     font-family: inherit;
     font-size: clamp(16px, 2.2vw, 24px);
-    color: #dbe4ed;
+    color: var(--text);
     letter-spacing: -.025em;
     white-space: nowrap;
   }
@@ -105,15 +106,60 @@ const Introduction = styled.main`
     border-right: 2px solid var(--primary-light);
     animation: ${typeRole} 8s steps(24, end) infinite, ${blinkCaret} .8s step-end infinite;
   }
-  .summary { max-width: 490px; color: var(--muted); font-size: 16px; line-height: 1.85; margin: 24px 0 32px; }
+  .summary { max-width: 490px; color: var(--hero-summary); font-size: 16px; line-height: 1.85; margin: 24px 0 32px; }
   .actions { display: flex; gap: 12px; flex-wrap: wrap; }
-  .actions a { display: inline-flex; align-items: center; gap: 12px; min-height: 46px; padding: 12px 20px; border-radius: var(--radius-small); font-size: 14px; font-weight: 600; transition: background .2s, border-color .2s; }
-  .primary-action { background: var(--primary); border: 1px solid var(--primary); &:hover { background: #247eb5; } }
-  .secondary-action { border: 1px solid #36414e; background: rgba(24,26,29,.7); &:hover { border-color: var(--primary-light); } }
+  .actions a { display: inline-flex; align-items: center; gap: 12px; min-height: 46px; padding: 12px 20px; border-radius: var(--radius-small); font-size: 14px; font-weight: 600; transition: var(--control-transition); }
+  .primary-action { color: #fff; background: var(--primary); border: 1px solid var(--primary); &:hover { background: #247eb5; } }
+  .secondary-action { border: 1px solid var(--border); background: var(--surface); &:hover { border-color: var(--primary-light); } }
   .socials { display: flex; align-items: center; gap: 8px; margin-top: 32px; }
-  .socials a { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; color: var(--muted); transition: color .2s; &:hover { color: var(--text); } }
+  .socials a { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; color: var(--muted); transition: var(--control-transition); &:hover { color: var(--text); } }
   .socials > span { width: 1px; height: 18px; background: var(--border); margin: 0 12px; }
   .socials .contact { gap: 8px; font-size: 13px; }
+
+  .hero-art { display: none; }
+  html[data-theme="light"] & {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    gap: 56px;
+    min-height: auto;
+    padding-top: 152px;
+    padding-bottom: 76px;
+    &::before, &::after { display: none; }
+    .info { max-width: 100%; min-width: 0; }
+    h1 { font-size: clamp(48px, 5.5vw, 78px); }
+    .hero-art {
+      display: block;
+      width: 100%;
+      min-height: 390px;
+      align-self: stretch;
+      border-radius: 18px;
+      border: 1px solid rgba(32,43,48,.12);
+      background: url(${banner}) 64% center / cover;
+      box-shadow: 0 16px 40px rgba(25,38,45,.13);
+    }
+    .secondary-action { background: transparent; border-color: #a3afb2; }
+    .eyebrow { letter-spacing: .14em; }
+    .socials { margin-top: 24px; }
+    @media (max-width: 1000px) {
+      gap: 28px;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr);
+      h1 { font-size: clamp(42px, 6vw, 62px); }
+    }
+    @media (max-width: 760px) {
+      grid-template-columns: 1fr;
+      gap: 36px;
+      padding-top: 132px;
+      padding-bottom: 48px;
+      h1 { font-size: clamp(48px, 9vw, 68px); }
+      .hero-art { min-height: 0; aspect-ratio: 16 / 9; background-position: center 55%; }
+    }
+  }
+
+  @media (max-width: 900px) {
+    html[data-theme="light"] &::before {
+      background-image: linear-gradient(90deg, rgba(197,208,218,.94), rgba(197,208,218,.88) 72%, rgba(197,208,218,.35)), url(${banner});
+    }
+  }
   @media (max-width: 600px) {
     min-height: 660px; padding-top: 145px; padding-bottom: 70px;
     &::before { background-position: 60% center; opacity: .3; }

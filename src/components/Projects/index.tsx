@@ -32,7 +32,7 @@ const fadeIn = keyframes`
 const Section = styled.section`
   display: flex;
   flex-direction: column;
-  color: white;
+  color: var(--text);
   position: relative;
 `;
 
@@ -65,6 +65,6 @@ const Title = styled.h2`
 
 const Subtitle = styled.p`
     font-size: 18px;
-    color: #9ca3af;
+    color: var(--muted);
     margin: 0;
 `;
