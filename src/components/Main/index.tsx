@@ -20,7 +20,7 @@ export const Main = () => (
         <p className="summary">I build reliable .NET applications with a practical business mindset, while expanding my knowledge of cloud and security.</p>
         <div className="actions">
           <a className="primary-action" href="#projects">Explore projects <ArrowUpRight size={17} aria-hidden="true" /></a>
-          <a className="secondary-action" href="https://drive.google.com/file/d/1ZakvZK_1uRrCiVU7DuDbkPOcv_Ptg47b" target="_blank" rel="noopener noreferrer">Resume <ArrowUpRight size={16} aria-hidden="true" /></a>
+          <a className="secondary-action" href="https://drive.google.com/file/d/1ZakvZK_1uRrCiVU7DuDbkPOcv_Ptg47b/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume <ArrowUpRight size={16} aria-hidden="true" /></a>
         </div>
         <div className="socials">
           <a href="https://github.com/victormoni" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><Github size={19} /></a>
