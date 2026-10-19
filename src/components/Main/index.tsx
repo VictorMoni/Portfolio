@@ -162,6 +162,12 @@ const Introduction = styled.main`
   }
   @media (max-width: 600px) {
     min-height: 660px; padding-top: 145px; padding-bottom: 70px;
+    padding-inline: 20px;
+    .info { width: 100%; min-width: 0; }
+    h1, html[data-theme="light"] & h1 {
+      font-size: clamp(44px, 12vw, 56px);
+      letter-spacing: -.035em;
+    }
     &::before { background-position: 60% center; opacity: .3; }
     .eyebrow { max-width: 260px; }
     .summary { font-size: 15px; }
