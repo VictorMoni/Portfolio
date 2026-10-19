@@ -85,8 +85,10 @@ const Arrow = styled.button`
   padding: 8px;
   border-radius: 50%;
   display: flex;
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
+  z-index: 2;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
   align-items: center;
   justify-content: center;
   cursor: pointer;
@@ -192,7 +194,7 @@ const MediaGallery = ({ images }: MediaTypes) => {
           ))}
         </MediaContent>
 
-        {slider && slider.current && (
+        {images.length > 1 && (
           <>
             <ArrowLeft type="button" aria-label="Previous images" onClick={() => slider.current?.prev()}>&#10094;</ArrowLeft>
             <ArrowRight type="button" aria-label="Next images" onClick={() => slider.current?.next()}>&#10095;</ArrowRight>
