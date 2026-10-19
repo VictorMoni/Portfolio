@@ -1,3 +1,5 @@
+import { useEffect, useId, useRef, useState } from 'react';
+import { Check, ChevronDown } from 'lucide-react';
 import styled from 'styled-components';
 import { useLanguage } from './index';
 import type { Language } from './index';
@@ -29,35 +31,86 @@ function Flag({ code }: { code: Language }) {
 }
 
 export default function LanguageSwitcher() {
-  const { language, setLanguage } = useLanguage();
-  return <Selector role="group" aria-label="Português / English / Español">
-    {languages.map(option => <button key={option.code} type="button" lang={option.code}
-      aria-label={option.label} title={option.label} aria-pressed={language === option.code}
-      onClick={() => setLanguage(option.code)}>
-      <Flag code={option.code} /><span>{option.short}</span>
-    </button>)}
+  const { language, setLanguage, t } = useLanguage();
+  const [open, setOpen] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const panelId = useId();
+  const current = languages.find(option => option.code === language)!;
+
+  useEffect(() => {
+    if (!open) return;
+    containerRef.current?.querySelector<HTMLButtonElement>('[aria-pressed="true"]')?.focus();
+    const dismiss = (event: PointerEvent) => {
+      if (!containerRef.current?.contains(event.target as Node)) setOpen(false);
+    };
+    document.addEventListener('pointerdown', dismiss);
+    return () => document.removeEventListener('pointerdown', dismiss);
+  }, [open]);
+
+  return <Selector ref={containerRef}
+    onBlur={event => { if (!event.currentTarget.contains(event.relatedTarget)) setOpen(false); }}
+    onKeyDown={event => {
+      if (event.key === 'Escape') { event.preventDefault(); setOpen(false); triggerRef.current?.focus(); }
+    }}>
+    <button ref={triggerRef} type="button" className="language-trigger" aria-label={t('Change language')}
+      title={current.label} aria-expanded={open} aria-controls={panelId}
+      onClick={() => setOpen(value => !value)}
+      onKeyDown={event => { if (event.key === 'ArrowDown') { event.preventDefault(); setOpen(true); } }}>
+      <Flag code={language} /><span>{current.short}</span>
+      <ChevronDown size={13} className={open ? 'chevron open' : 'chevron'} aria-hidden="true" />
+    </button>
+    {open && <div className="language-panel" id={panelId} role="group" aria-label={t('Choose a language')}
+      onKeyDown={event => {
+        const keys = ['ArrowDown', 'ArrowUp', 'Home', 'End'];
+        if (!keys.includes(event.key)) return;
+        event.preventDefault();
+        const options = Array.from(event.currentTarget.querySelectorAll('button'));
+        const index = options.indexOf(document.activeElement as HTMLButtonElement);
+        const next = event.key === 'Home' ? 0 : event.key === 'End' ? options.length - 1 :
+          (index + (event.key === 'ArrowDown' ? 1 : -1) + options.length) % options.length;
+        options[next]?.focus();
+      }}>
+      {languages.map(option => <button key={option.code} type="button" lang={option.code}
+        aria-label={option.label} aria-pressed={language === option.code}
+        onClick={() => { setLanguage(option.code); setOpen(false); triggerRef.current?.focus(); }}>
+        <Flag code={option.code} /><span>{option.label}</span>
+        {language === option.code && <Check size={15} className="check" aria-hidden="true" />}
+      </button>)}
+    </div>}
   </Selector>;
 }
 
 const Selector = styled.div`
-  display: flex;
-  gap: 4px;
+  position: relative;
+  flex-shrink: 0;
   margin-left: 12px;
   padding-left: 12px;
   border-left: 1px solid var(--border);
   button {
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    gap: 3px; width: 40px; min-height: 44px; padding: 4px;
-    background: transparent; color: var(--muted); border: 1px solid transparent;
-    border-radius: 8px; font-size: 9px; letter-spacing: .05em;
-    transition: var(--control-transition);
+    display: flex; align-items: center; gap: 9px; min-height: 44px;
+    padding: 8px 10px; color: var(--text); background: transparent;
+    border: 1px solid transparent; border-radius: 8px; font: inherit;
+    font-size: 12px; transition: var(--control-transition);
   }
-  button[aria-pressed="true"] { background: var(--active-background); border-color: var(--active-border); color: var(--text); }
   button:hover { background: var(--hover-surface); }
-  svg { display: block; border-radius: 2px; }
+  .language-trigger { gap: 7px; }
+  .language-trigger[aria-expanded="true"] { background: var(--active-background); border-color: var(--active-border); }
+  .chevron { color: var(--muted); transition: transform .3s var(--control-easing); }
+  .chevron.open { transform: rotate(180deg); }
+  .language-panel {
+    position: absolute; right: 0; top: calc(100% + 16px); width: 188px;
+    padding: 6px; border: 1px solid var(--border); border-radius: 12px;
+    background: var(--surface); box-shadow: 0 12px 32px rgba(0,0,0,.15);
+    animation: fade-up .18s ease-out; z-index: 12;
+  }
+  .language-panel button { width: 100%; text-align: left; padding: 10px; gap: 12px; }
+  .language-panel button[aria-pressed="true"] { background: var(--active-background); color: var(--primary-light); }
+  .check { margin-left: auto; }
+  svg { flex-shrink: 0; display: block; border-radius: 2px; }
   @media (max-width: 600px) {
-    margin-left: 5px; padding-left: 5px; gap: 1px;
-    button { width: 28px; }
-    svg { width: 20px; }
+    margin-left: 6px; padding-left: 6px;
+    .language-trigger { gap: 5px; padding: 6px; }
+    .language-trigger > svg:first-child { width: 20px; }
   }
 `;
