@@ -7,7 +7,7 @@ const qualifications = [
     level: "Postgraduate studies",
     status: "In progress",
     description: "Ongoing studies in cybersecurity, secure development, cloud security, and data protection, with a focus on building safer applications.",
-    link: "https://drive.google.com/file/d/1YKPFZO_njRY2g19kGSHJei1QtD9A_rTN/view?usp=sharing",
+    link: "https://drive.google.com/file/d/1voLSBM70it0egcThRyeLAmBCGKP9KJvX/view?usp=sharing",
     linkLabel: "View study document",
   },
   {
