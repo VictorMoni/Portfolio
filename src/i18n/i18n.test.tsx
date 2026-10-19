@@ -31,13 +31,15 @@ describe('Portfolio languages', () => {
     const status = screen.getByRole('heading', { name: 'Segurança da Informação' }).closest('article')!;
     expect(within(status).getByText('Em andamento')).toHaveAttribute('data-progress', 'true');
     expect(document.documentElement.lang).toBe('pt-BR');
+    expect(screen.getByRole('link', { name: 'Currículo' })).toHaveAttribute('href', 'https://drive.google.com/file/d/1rNLEny2TgxbY6d6ASpLnipbGo2YWuISH/view?usp=sharing');
     await user.click(screen.getByRole('button', { name: 'Español' }));
     expect(screen.getByRole('link', { name: 'Contáctame' })).toHaveAttribute('href', '#socialmedia');
     expect(screen.getByRole('heading', { name: 'Trayectoria' })).toBeVisible();
     expect(screen.getByRole('heading', { name: 'Proyectos personales' })).toBeVisible();
     expect(document.documentElement.lang).toBe('es-ES');
+    expect(screen.getByRole('link', { name: 'Currículum' })).toHaveAttribute('href', 'https://drive.google.com/file/d/1IvYgqcfUJrkQwHRuXavWJR-eM0MK6OyR/view?usp=sharing');
     await user.click(screen.getByRole('button', { name: 'English' }));
-    expect(screen.getByRole('link', { name: 'Resume' })).toBeVisible();
+    expect(screen.getByRole('link', { name: 'Resume' })).toHaveAttribute('href', 'https://drive.google.com/file/d/1ZakvZK_1uRrCiVU7DuDbkPOcv_Ptg47b/view?usp=sharing');
     expect(screen.getByRole('heading', { name: 'Career' })).toBeVisible();
     expect(document.documentElement.lang).toBe('en-US');
   }, 30000);
