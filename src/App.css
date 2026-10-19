@@ -28,6 +28,9 @@ section[id], footer[id] { scroll-margin-top: 0; }
 #about, #education { padding-top: max(104px, var(--section-space)); }
 h1, h2, h3, h4 { line-height: 1.2; }
 h2 { letter-spacing: -.035em; }
+/* Suppress native tap feedback while preserving keyboard focus indicators. */
+a, button, [role="button"], .keen-slider__slide { -webkit-tap-highlight-color: transparent; }
+a:focus:not(:focus-visible), button:focus:not(:focus-visible) { outline: none; }
 a:focus-visible, button:focus-visible { outline: 2px solid var(--primary-light); outline-offset: 5px; }
 ::selection { background: #285474; color: #fff; }
 @keyframes fade-up { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
