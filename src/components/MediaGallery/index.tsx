@@ -1,3 +1,4 @@
+import { useLanguage } from '../../i18n';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState, useEffect } from "react";
 import styled from "styled-components";
@@ -157,6 +158,7 @@ const ModalImage = styled.img`
 
 
 const MediaGallery = ({ images }: MediaTypes) => {
+    const { t } = useLanguage();
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
     const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
@@ -199,15 +201,15 @@ const MediaGallery = ({ images }: MediaTypes) => {
         <MediaContent ref={sliderRef} className="keen-slider">
           {images.map((img, index) => (
             <Slide key={index} className="keen-slider__slide" onClick={() => setSelectedImage(img)}>
-              <StyledImg src={img} alt={`media-${index}`} loading="lazy" />
+              <StyledImg src={img} alt={`${t("Project screenshot")} ${index + 1}`} loading="lazy" />
             </Slide>
           ))}
         </MediaContent>
 
         {images.length > 1 && (
           <>
-            <ArrowLeft type="button" aria-label="Previous images" onClick={() => slider.current?.prev()}><ChevronLeft size={16} strokeWidth={1.5} aria-hidden="true" /></ArrowLeft>
-            <ArrowRight type="button" aria-label="Next images" onClick={() => slider.current?.next()}><ChevronRight size={16} strokeWidth={1.5} aria-hidden="true" /></ArrowRight>
+            <ArrowLeft type="button" aria-label={t("Previous images")} onClick={() => slider.current?.prev()}><ChevronLeft size={16} strokeWidth={1.5} aria-hidden="true" /></ArrowLeft>
+            <ArrowRight type="button" aria-label={t("Next images")} onClick={() => slider.current?.next()}><ChevronRight size={16} strokeWidth={1.5} aria-hidden="true" /></ArrowRight>
           </>
         )}
       </SliderWrapper>
@@ -215,7 +217,7 @@ const MediaGallery = ({ images }: MediaTypes) => {
       {selectedImage &&
         createPortal(
           <Modal onClick={() => setSelectedImage(null)}>
-            <ModalImage src={selectedImage} alt="expanded" />
+            <ModalImage src={selectedImage} alt={t("expanded")} />
           </Modal>,
           document.body
         )}

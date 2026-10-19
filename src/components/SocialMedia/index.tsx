@@ -1,3 +1,4 @@
+import { useLanguage } from '../../i18n';
 import styled from "styled-components"
 import dailydev from '../../assets/daily-dev.svg'
 import discord from '../../assets/discord.svg'
@@ -7,14 +8,15 @@ import linkedin from '../../assets/linkedin.png'
 import stackoverflow from '../../assets/stackoverflow.svg'
 
 export const SocialFooter = () => {
+    const { t } = useLanguage();
     return (
         <>
             <SectionTransition />
             <FooterContainer id="socialmedia">
                 <FooterContent>
                     <SocialSection>
-                        <h2>Social Media</h2>
-                        <p>Find me on social networks and follow my work</p>
+                        <h2>{t("Social Media")}</h2>
+                        <p>{t("Find me on social networks and follow my work")}</p>
 
                         <SocialGrid>
                             <SocialLink
@@ -26,7 +28,7 @@ export const SocialFooter = () => {
                                 <img src={github} alt="GitHub" />
                                 <div className="social-info">
                                     <span className="social-name">GitHub</span>
-                                    <span className="social-desc">Projects and code</span>
+                                    <span className="social-desc">{t("Projects and code")}</span>
                                 </div>
                             </SocialLink>
 
@@ -39,7 +41,7 @@ export const SocialFooter = () => {
                                 <img src={linkedin} alt="LinkedIn" />
                                 <div className="social-info">
                                     <span className="social-name">LinkedIn</span>
-                                    <span className="social-desc">Career and networking</span>
+                                    <span className="social-desc">{t("Career and networking")}</span>
                                 </div>
                             </SocialLink>
 
@@ -52,7 +54,7 @@ export const SocialFooter = () => {
                                 <img src={dailydev} alt="Daily.dev" />
                                 <div className="social-info">
                                     <span className="social-name">Daily.dev</span>
-                                    <span className="social-desc">Reads and bookmarks</span>
+                                    <span className="social-desc">{t("Reads and bookmarks")}</span>
                                 </div>
                             </SocialLink>
 
@@ -65,7 +67,7 @@ export const SocialFooter = () => {
                                 <img src={stackoverflow} alt="StackOverflow" />
                                 <div className="social-info">
                                     <span className="social-name">Stack Overflow</span>
-                                    <span className="social-desc">Questions and answers</span>
+                                    <span className="social-desc">{t("Questions and answers")}</span>
                                 </div>
                             </SocialLink>
 
@@ -83,8 +85,7 @@ export const SocialFooter = () => {
                                   </span>
 
                                   <span className="social-desc">
-                                      Developer profile and achievements
-                                  </span>
+                                      {t("Developer profile and achievements")}</span>
                               </div>
                           </SocialLink>
 
@@ -102,16 +103,15 @@ export const SocialFooter = () => {
                                   </span>
 
                                   <span className="social-desc">
-                                      Communities and networking
-                                  </span>
+                                      {t("Communities and networking")}</span>
                               </div>
                           </SocialLink>
                         </SocialGrid>
                     </SocialSection>
 
                     <FooterBottom>
-                        <p>Victor Moni &middot; Full Stack Developer &middot; 2026</p>
-                        <span>Thoughtfully built with React & TypeScript</span>
+                        <p>Victor Moni &middot; {t("Full Stack Developer")} &middot; 2026</p>
+                        <span>{t("Thoughtfully built with React & TypeScript")}</span>
                     </FooterBottom>
                 </FooterContent>
             </FooterContainer>

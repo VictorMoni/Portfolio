@@ -1,3 +1,4 @@
+import { useLanguage } from '../../i18n';
 import { GraduationCap, ExternalLink } from "lucide-react";
 import styled from "styled-components";
 
@@ -29,23 +30,24 @@ const qualifications = [
 ];
 
 export default function Education() {
+  const { t } = useLanguage();
   return (
     <Section id="education" aria-labelledby="education-title">
-      <h2 id="education-title"><GraduationCap size={28} aria-hidden="true" /> Education</h2>
-      <p className="intro">Academic foundations and continued learning in cloud and security.</p>
+      <h2 id="education-title"><GraduationCap size={28} aria-hidden="true" /> {t("Education")}</h2>
+      <p className="intro">{t("Academic foundations and continued learning in cloud and security.")}</p>
       <Grid>
         {qualifications.map(qualification => (
           <Card key={qualification.title}>
             <span className="status" data-progress={qualification.status === "In progress"}>
-              {qualification.status}
+              {t(qualification.status)}
             </span>
-            <h3>{qualification.title}</h3>
-            <p className="level">{qualification.level}</p>
-            <p className="description">{qualification.description}</p>
+            <h3>{t(qualification.title)}</h3>
+            <p className="level">{t(qualification.level)}</p>
+            <p className="description">{t(qualification.description)}</p>
             {qualification.link && (
               <a href={qualification.link} target="_blank" rel="noopener noreferrer"
-                aria-label={`${qualification.linkLabel}: ${qualification.title}`}>
-                {qualification.linkLabel} <ExternalLink size={15} aria-hidden="true" />
+                aria-label={`${t(qualification.linkLabel)}: ${t(qualification.title)}`}>
+                {t(qualification.linkLabel)} <ExternalLink size={15} aria-hidden="true" />
               </a>
             )}
           </Card>

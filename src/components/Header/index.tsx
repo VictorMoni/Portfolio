@@ -1,3 +1,5 @@
+import LanguageSwitcher from '../../i18n/LanguageSwitcher';
+import { useLanguage } from '../../i18n';
 "use client";
 
 import { Folder, GraduationCap, Home, User, Users } from "lucide-react";
@@ -13,6 +15,7 @@ const navigationItems = [
 ];
 
 export default function Header(){
+    const { t } = useLanguage();
     const [activeSection, setActiveSection] = useState<string>("");
 
     useEffect(() => {
@@ -36,21 +39,22 @@ export default function Header(){
 
     return (
         <Container>
-            <Nav aria-label="Main navigation">
+            <Nav aria-label={t("Main navigation")}>
                 {navigationItems.map(({ id, label, icon: Icon }) => (
                     <TooltipWrapper key={id}>
                         <NavItem
                             href={`#${id}`}
-                            aria-label={label}
+                            aria-label={t(label)}
                             aria-current={activeSection === id ? "location" : undefined}
                             $active={activeSection === id}
                         >
                             <Icon size={18} aria-hidden="true" />
                         </NavItem>
-                        <TooltipText aria-hidden="true">{label}</TooltipText>
+                        <TooltipText aria-hidden="true">{t(label)}</TooltipText>
                     </TooltipWrapper>
                 ))}
             </Nav>
+            <LanguageSwitcher />
         </Container>
     );
 }
@@ -74,6 +78,12 @@ export const Container = styled.header`
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   z-index: 9;
   transition: opacity 0.4s ease-in-out;
+  max-width: calc(100vw - 16px);
+  @media (max-width: 600px) {
+    padding: 5px;
+    nav { gap: 0; }
+    nav a { padding: 8px; min-width: 34px; min-height: 44px; }
+  }
 
   &:hover {
     opacity: 1;
