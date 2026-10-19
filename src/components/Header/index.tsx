@@ -1,3 +1,4 @@
+import ThemeToggle from '../ThemeToggle';
 import LanguageSwitcher from '../../i18n/LanguageSwitcher';
 import { useLanguage } from '../../i18n';
 "use client";
@@ -55,6 +56,7 @@ export default function Header(){
                 ))}
             </Nav>
             <LanguageSwitcher />
+            <ThemeToggle />
         </Container>
     );
 }
@@ -71,18 +73,18 @@ export const Container = styled.header`
   justify-content: space-between;
   opacity: 1;
   padding: 0.5rem 1rem;
-  background-color: rgba(24, 26, 29, 0.94); backdrop-filter:blur(16px);
-  color: white;
+  background-color: var(--header-background); backdrop-filter:blur(16px);
+  color: var(--text);
   border-radius: 1rem;
   border:1px solid var(--border);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   z-index: 9;
-  transition: opacity 0.4s ease-in-out;
+  transition: var(--control-transition);
   max-width: calc(100vw - 16px);
   @media (max-width: 600px) {
     padding: 5px;
     nav { gap: 0; }
-    nav a { padding: 8px; min-width: 34px; min-height: 44px; }
+    nav a { padding: 6px; min-width: 30px; min-height: 44px; }
   }
 
   &:hover {
@@ -116,15 +118,15 @@ export const TooltipWrapper = styled.div`
 export const TooltipText = styled.span`
   position: absolute;
   bottom: -80%;
-  background-color: #333;
-  color: #fff;
+  background-color: var(--text);
+  color: var(--background);
   padding: 4px 8px;
   border-radius: 4px;
   white-space: nowrap;
   font-size: 0.75rem;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.2s ease-in-out;
+  transition: var(--control-transition);
   pointer-events: none;
   z-index: 10;
 `;
@@ -135,19 +137,19 @@ export const NavItem = styled.a<NavItemProps>`
   gap: 0.5rem;
   padding:0.8rem;
   border-radius:8px;
-  transition: background-color 0.2s;
+  transition: var(--control-transition);
 
  ${({ $active }) =>
         $active &&
         css`
-      background-color: rgba(10, 60, 110, 0.7);
-      color: #1fb3eeff;
-      box-shadow:inset 0 0 0 1px #24445b;
+      background-color: var(--active-background);
+      color: var(--primary-light);
+      box-shadow:inset 0 0 0 1px var(--active-border);
 
     `}
 
   &:hover {
-    background-color: #3f3f46;
+    background-color: var(--hover-surface);
   }
 
   @media(max-width: 768px){

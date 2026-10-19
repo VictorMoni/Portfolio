@@ -402,5 +402,13 @@
   "REST APIs": {
     "pt": "APIs REST",
     "es": "APIs REST"
+  },
+  "Switch to light mode": {
+    "pt": "Ativar modo claro",
+    "es": "Activar modo claro"
+  },
+  "Switch to dark mode": {
+    "pt": "Ativar modo escuro",
+    "es": "Activar modo oscuro"
   }
 }

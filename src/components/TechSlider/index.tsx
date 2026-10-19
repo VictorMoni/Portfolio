@@ -88,11 +88,11 @@ const Stack = styled.section<{ $paused: boolean; $expanded: boolean }>`
   .stack-description { max-width: 520px; margin-top: 12px; color: var(--muted); font-size: 14px; line-height: 1.7; }
   h2 { font-size: clamp(22px, 3vw, 28px); font-weight: 500; }
   .controls { display: flex; gap: 8px; flex-wrap: wrap; }
-  button { display: inline-flex; align-items: center; gap: 7px; min-height: 40px; padding: 8px 12px; border: 1px solid var(--border); border-radius: var(--radius-small); color: var(--muted); background: transparent; font-size: 12px; transition: color .2s, border-color .2s; }
+  button { display: inline-flex; align-items: center; gap: 7px; min-height: 40px; padding: 8px 12px; border: 1px solid var(--border); border-radius: var(--radius-small); color: var(--muted); background: transparent; font-size: 12px; transition: var(--control-transition); }
   button:hover { color: var(--text); border-color: #535960; }
   .window { overflow: hidden; padding: 4px 0; mask-image: linear-gradient(90deg, transparent, #000 24px, #000 calc(100% - 24px), transparent); }
   .window:focus-visible { outline: 2px solid var(--primary-light); outline-offset: 4px; }
-  li { flex-shrink: 0; display: flex; align-items: center; gap: 10px; padding: 13px 18px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface); color: #c3c8d0; font-size: 13px; white-space: nowrap; transition: border-color .2s, color .2s; }
+  li { flex-shrink: 0; display: flex; align-items: center; gap: 10px; padding: 13px 18px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface); color: var(--text); font-size: 13px; white-space: nowrap; transition: var(--control-transition); }
   li:hover { color: var(--text); border-color: #4a5969; }
   img { width: 24px; height: 24px; object-fit: contain; filter: saturate(.7); }
   ${Track} { animation-play-state: ${({ $paused }) => $paused ? 'paused' : 'running'}; }

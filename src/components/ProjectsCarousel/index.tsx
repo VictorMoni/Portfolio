@@ -147,9 +147,9 @@ const ScrollArea = styled.div`
 `;
 
 const ArrowButton = styled.button<{ $position: "left" | "right" }>`
-  background: #1a1a1a;
-  border: 1px solid #333;
-  color: white;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
   padding: 8px;
   position: absolute;
   top: 50%;
@@ -161,10 +161,10 @@ const ArrowButton = styled.button<{ $position: "left" | "right" }>`
   justify-content: center;
   z-index: 1;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: var(--control-transition);
 
   &:hover {
-    background: #333;
+    background: var(--hover-surface);
   }
 
 `;

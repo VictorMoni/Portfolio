@@ -47,7 +47,7 @@ const MediaContent = styled.div`
 `;
 
 const Slide = styled.div`
-  transition: transform 0.3s ease;
+  transition: var(--control-transition);
   cursor: pointer;
 
   &:hover {
@@ -60,12 +60,12 @@ const StyledImg = styled.img`
   max-width: 250px;
   height: 180px;
   object-fit: contain;
-  border: 1px solid #a6a6a6;
+  border: 1px solid var(--border);
   padding: 8px;
   border-radius: 12px;
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
-  transition: all 0.3s ease;
-  background: #080808;
+  box-shadow: var(--card-shadow);
+  transition: var(--control-transition);
+  background: var(--surface);
   @media (max-width: 1023px) {
     max-width: 100%;
     height: auto;
@@ -73,7 +73,7 @@ const StyledImg = styled.img`
   }
 
   &:hover {
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    box-shadow: var(--card-shadow);
   }
 `;
 
@@ -93,7 +93,7 @@ const Arrow = styled.button`
   border-radius: 50%;
   color: #bec5ce;
   cursor: pointer;
-  transition: color 0.2s;
+  transition: var(--control-transition);
 
   &::before {
     content: '';
@@ -103,7 +103,7 @@ const Arrow = styled.button`
     border-radius: 50%;
     background: rgba(17, 18, 20, 0.72);
     border: 1px solid rgba(255, 255, 255, 0.12);
-    transition: background 0.2s;
+    transition: var(--control-transition);
   }
 
   &:hover { color: #fff; }

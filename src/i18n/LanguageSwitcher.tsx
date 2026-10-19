@@ -50,14 +50,14 @@ const Selector = styled.div`
     gap: 3px; width: 40px; min-height: 44px; padding: 4px;
     background: transparent; color: var(--muted); border: 1px solid transparent;
     border-radius: 8px; font-size: 9px; letter-spacing: .05em;
-    transition: background .2s, border-color .2s;
+    transition: var(--control-transition);
   }
-  button[aria-pressed="true"] { background: #173044; border-color: #31566e; color: var(--text); }
-  button:hover { background: #262b31; }
+  button[aria-pressed="true"] { background: var(--active-background); border-color: var(--active-border); color: var(--text); }
+  button:hover { background: var(--hover-surface); }
   svg { display: block; border-radius: 2px; }
   @media (max-width: 600px) {
     margin-left: 5px; padding-left: 5px; gap: 1px;
-    button { width: 32px; }
+    button { width: 28px; }
     svg { width: 20px; }
   }
 `;

@@ -232,7 +232,7 @@ const ExperienceCompany = styled.p`
     margin: 6px 0 0;
     font-size: 20px;
     font-weight: 500;
-    color: #f0f0f0;
+    color: var(--text);
 `;
 
 const BoxText = styled.div`
@@ -245,7 +245,7 @@ const BoxCompany = styled.p`
     margin: 4px 0 0;
     font-size: 14px;
     font-weight: 400;
-    color: #9ca3af;
+    color: var(--muted);
 `;
 
 const AboutSection = styled.section`
@@ -269,7 +269,7 @@ const Title = styled.h2`
 
 const Subtitle = styled.p`
     font-size: 18px;
-    color: #9ca3af;
+    color: var(--muted);
     margin: 0;
 `;
 
@@ -290,7 +290,7 @@ const Content = styled.div`
 const MainInfo = styled.div`
     flex: 1.2;
     width: 100%;
-    animation: ${slideIn} 0.8s ease-out 0.2s both;
+    animation: ${slideIn} 0.8s ease-out 0.32s both;
 
     @media (max-width: 1024px) {
         order: 2;
@@ -308,7 +308,7 @@ const ExperienceTitle = styled.h3`
     font-size: 30px;
     margin: 0;
     // color: var(--primary-light);
-    color: white;
+    color: var(--text);
     font-weight: 600;
 `;
 
@@ -316,7 +316,7 @@ const ExperienceDate = styled.span`
     display: flex;
     align-items: center;
     gap: 8px;
-    color: #9ca3af;
+    color: var(--muted);
     font-size: 16px;
     margin-top: 10px;
 `;
@@ -325,7 +325,7 @@ const Description = styled.p<{ $hasDocument: boolean }>`
     font-size: 16px;
     line-height: 1.7;
     margin-bottom: ${({ $hasDocument }) => $hasDocument ? '8px' : '30px'};
-    color: #e5e7eb;
+    color: var(--text);
     white-space: pre-line;
 `;
 
@@ -382,14 +382,14 @@ const ExperienceBox = styled.button<{ $isActive?: boolean }>`
     appearance: none;
     border: 0;
     border-radius: 0;
-    border-left: 3px solid ${({ $isActive }) => $isActive ? 'var(--primary-light)' : '#29404f'};
+    border-left: 3px solid ${({ $isActive }) => $isActive ? 'var(--primary-light)' : 'var(--border)'};
     padding: 24px;
     background: ${({ $isActive }) => $isActive ? 'rgba(0, 146, 200, 0.12)' : 'transparent'};
     cursor: pointer;
-    transition: background-color 0.2s ease, border-color 0.2s ease;
+    transition: var(--control-transition);
 
     &:hover {
-        background: ${({ $isActive }) => $isActive ? 'rgba(0, 146, 200, 0.16)' : 'rgba(255, 255, 255, 0.04)'};
+        background: ${({ $isActive }) => $isActive ? 'rgba(0, 146, 200, 0.16)' : 'var(--hover-surface)'};
     }
 
     &:focus-visible {
@@ -408,7 +408,7 @@ const BoxHeader = styled.div`
 const BoxTitle = styled.h4`
     font-size: 18px;
     color: var(--primary-light);
-    color: white;
+    color: var(--text);
     margin: 0;
     font-weight: 600;
 `;
@@ -416,7 +416,7 @@ const BoxTitle = styled.h4`
 
 const BoxDate = styled.span`
     font-size: 12px;
-    color: #c9c9c9;
+    color: var(--muted);
     font-weight: 500;
 `;
 
