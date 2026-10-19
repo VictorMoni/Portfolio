@@ -12,7 +12,7 @@ export const Main = () => (
     <Introduction id="home">
       <div className="info">
         <p className="eyebrow">SOFTWARE DEVELOPMENT · BUSINESS PERSPECTIVE</p>
-        <h1>Victor Moni<span aria-hidden="true">.</span></h1>
+        <h1>Victor Moni</h1>
         <p className="role">
           <span className="role-measure">.NET Full Stack Developer</span>
           <span className="role-typing" aria-hidden="true">.NET Full Stack Developer</span>
@@ -75,7 +75,6 @@ const Introduction = styled.main`
   .info { max-width: 650px; }
   .eyebrow { color: var(--primary-light); font-size: 10px; font-weight: 600; letter-spacing: .18em; margin-bottom: 24px; line-height: 1.8; }
   h1 { font-size: clamp(52px, 7vw, 88px); line-height: 1.05; letter-spacing: -.06em; font-weight: 700; }
-  h1 span { color: var(--primary-light); }
   .role {
     position: relative;
     width: max-content;
