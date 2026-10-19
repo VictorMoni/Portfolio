@@ -4,6 +4,18 @@ import { describe, expect, it } from 'vitest'
 import MediaGallery from './index'
 
 describe('MediaGallery', () => {
+  it('renders both navigation arrows immediately for multiple images', () => {
+    render(<MediaGallery images={['/first.png', '/second.png']} />)
+    expect(screen.getByRole('button', { name: 'Previous images' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Next images' })).toBeInTheDocument()
+  })
+
+  it('does not show navigation arrows for a single image', () => {
+    render(<MediaGallery images={['/first.png']} />)
+    expect(screen.queryByRole('button', { name: 'Previous images' })).not.toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: 'Next images' })).not.toBeInTheDocument()
+  })
+
   it('opens the selected image and closes it with Escape, restoring scrolling', async () => {
     const user = userEvent.setup()
     render(<MediaGallery images={['/first.png', '/second.png']} />)
