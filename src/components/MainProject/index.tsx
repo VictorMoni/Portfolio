@@ -1,23 +1,30 @@
+import { useIsLightTheme } from "../../hooks/useIsLightTheme";
 import { useLanguage } from '../../i18n';
-import { Code2, SquareDashedMousePointer } from "lucide-react";
+import { SquareDashedMousePointer } from "lucide-react";
 import styled from "styled-components";
-import ProjectImage1 from "../../assets/shopeasy1.webp";
-import ProjectImage2 from "../../assets/shopeasy2.webp";
-import ProjectImage3 from "../../assets/shopeasy3.webp";
-import ProjectImage4 from "../../assets/shopeasy4.webp";
+import ProjectImage1 from "../../assets/searchprice-home.jpg";
+import ProjectImage2 from "../../assets/searchprice-testimonials.jpg";
+import ProjectImage3 from "../../assets/searchprice-about.jpg";
+import ProjectImage4 from "../../assets/searchprice-advantages.jpg";
+import LightProjectImage1 from "../../assets/searchprice-home-light.jpg";
+import LightProjectImage2 from "../../assets/searchprice-testimonials-light.jpg";
+import LightProjectImage3 from "../../assets/searchprice-about-light.jpg";
+import LightProjectImage4 from "../../assets/searchprice-advantages-light.jpg";
 import MediaGallery from "../MediaGallery";
+
+const darkImages = [ProjectImage1, ProjectImage2, ProjectImage3, ProjectImage4];
+const lightImages = [LightProjectImage1, LightProjectImage2, LightProjectImage3, LightProjectImage4];
+
 
 const content = {
   id: "1",
-  title: "ShopEasy",
+  title: "SearchPrice",
 
-  description: "A full-stack e-commerce platform connecting an Angular storefront to a Spring Boot API. Built around secure authentication, product management, and event-driven orders.",
-  note: "This project is a portfolio and learning base, currently with a simplified checkout and some mock data. Future improvements include payment gateway, persistent cart, and CI/CD pipeline. It can be adapted to other databases or cloud providers.",
+  description: "A web platform for comparing product prices and profitability across marketplaces, helping sellers find opportunities and reduce research time.",
   startDate: "2025-04",
   finishDate: "Present",
-  repoLink: "https://github.com/victormoni/ShopEasy",
-  demoLink: null,
-  technologies: ["Angular", "Spring Boot", "MySQL", "Kafka", "Docker", "Kubernetes"],
+  demoLink: "https://searchprice.vercel.app",
+  technologies: ["Next.js", "React", "Tailwind CSS"],
 
   categories: [
     { categoryId: "1", category: { name: "Startup" } },
@@ -198,6 +205,7 @@ const DisabledButton = styled.span`
 
 
 export default function MainProject() {
+  const isLight = useIsLightTheme();
   const { t } = useLanguage();
   return (
     <Section>
@@ -205,7 +213,7 @@ export default function MainProject() {
         <Content>
           {content.finishDate && (
             <Status>
-              <span>{t("In Development")}</span>
+              <span>{t("Live website")}</span>
             </Status>
           )}
           <Header>
@@ -218,7 +226,7 @@ export default function MainProject() {
 
         </Content>
         <Content className="project-gallery">
-          <MediaGallery images={[ProjectImage1, ProjectImage2, ProjectImage3, ProjectImage4]} />
+          <MediaGallery images={isLight ? lightImages : darkImages} />
         </Content>
         <Content className="project-details">
           <ActionMethods>
@@ -232,15 +240,12 @@ export default function MainProject() {
                 {t("Demo unavailable")}</DisabledButton>
             )}
 
-            <a href={content.repoLink} className="links secondary" target="_blank" rel="noopener noreferrer">
-              <Code2 size={18} />
-              {t("View repository")}</a>
 
           </ActionMethods>
 
-          <ProjectScope><strong>{t("Architecture & scope")}</strong>{t("JWT authentication and Kafka order events connect the storefront to the backend. Docker Compose and Kubernetes support deployment. This learning project uses a simplified checkout and some mock data; payment integration remains planned.")}</ProjectScope>
+          <ProjectScope><strong>{t("Architecture & scope")}</strong>{t("Built with Next.js and React, the website presents marketplace comparisons through a responsive interface with light and dark themes.")}</ProjectScope>
           <Footer>
-            <span>{t("Portfolio project · In development")}</span>
+            <span>{t("Website available online")}</span>
           </Footer>
         </Content>
 

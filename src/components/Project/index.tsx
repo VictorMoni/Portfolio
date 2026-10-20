@@ -1,3 +1,4 @@
+import { useIsLightTheme } from "../../hooks/useIsLightTheme";
 import { useLanguage } from '../../i18n';
 import {
   Code2,
@@ -8,6 +9,7 @@ import styled from "styled-components";
 
 type CardProjectProps = {
   cover: string;
+  lightCover?: string;
 
   title: string;
   description?: string;
@@ -20,6 +22,7 @@ type CardProjectProps = {
 
 export const Project: React.FC<CardProjectProps> = ({
   cover,
+  lightCover,
   title,
   description,
   technologies = [],
@@ -29,11 +32,12 @@ export const Project: React.FC<CardProjectProps> = ({
   engineeringFocus,
 }) => {
   const { t, locale } = useLanguage();
+  const isLight = useIsLightTheme();
   const [expanded, setExpanded] = useState(false);
   const descriptionId = useId();
   return (
     <Card>
-      <Cover src={cover} alt={title} loading="lazy" decoding="async" />
+      <Cover src={isLight && lightCover ? lightCover : cover} alt={title} loading="lazy" decoding="async" />
 
       <Content>
         <TitleRow>

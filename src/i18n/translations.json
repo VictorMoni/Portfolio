@@ -418,5 +418,21 @@
   "Choose a language": {
     "pt": "Escolha um idioma",
     "es": "Elige un idioma"
+  },
+  "A web platform for comparing product prices and profitability across marketplaces, helping sellers find opportunities and reduce research time.": {
+    "pt": "Uma plataforma web para comparar preços e lucratividade de produtos entre marketplaces, ajudando vendedores a encontrar oportunidades e reduzir o tempo de pesquisa.",
+    "es": "Una plataforma web para comparar precios y rentabilidad de productos entre marketplaces, ayudando a vendedores a encontrar oportunidades y reducir el tiempo de investigación."
+  },
+  "Built with Next.js and React, the website presents marketplace comparisons through a responsive interface with light and dark themes.": {
+    "pt": "Desenvolvido com Next.js e React, o site apresenta comparações entre marketplaces em uma interface responsiva com temas claro e escuro.",
+    "es": "Desarrollado con Next.js y React, el sitio presenta comparaciones entre marketplaces en una interfaz adaptable con temas claro y oscuro."
+  },
+  "Live website": {
+    "pt": "Site no ar",
+    "es": "Sitio en línea"
+  },
+  "Website available online": {
+    "pt": "Site disponível online",
+    "es": "Sitio disponible en línea"
   }
 }
