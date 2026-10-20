@@ -1,26 +1,11 @@
 import { useIsLightTheme } from "../../hooks/useIsLightTheme";
-import { useLanguage } from '../../i18n';
-import {
-  Code2,
-  SquareDashedMousePointer
-} from "lucide-react";
+import { useLanguage } from "../../i18n";
+import ProjectActions from "../ProjectActions";
+import type { ProjectData } from "../../types/project";
 import React, { useId, useState } from "react";
 import styled from "styled-components";
 
-type CardProjectProps = {
-  cover: string;
-  lightCover?: string;
-
-  title: string;
-  description?: string;
-  engineeringFocus?: string;
-  technologies?: string[];
-  lastUpdated: string;
-  repoLink?: string;
-  liveLink?: string;
-};
-
-export const Project: React.FC<CardProjectProps> = ({
+export const Project: React.FC<ProjectData> = ({
   cover,
   lightCover,
   title,
@@ -37,7 +22,12 @@ export const Project: React.FC<CardProjectProps> = ({
   const descriptionId = useId();
   return (
     <Card>
-      <Cover src={isLight && lightCover ? lightCover : cover} alt={title} loading="lazy" decoding="async" />
+      <Cover
+        src={isLight && lightCover ? lightCover : cover}
+        alt={title}
+        loading="lazy"
+        decoding="async"
+      />
 
       <Content>
         <TitleRow>
@@ -45,46 +35,53 @@ export const Project: React.FC<CardProjectProps> = ({
         </TitleRow>
 
         {description && (
-          <><Description id={descriptionId} $expanded={expanded}>{t(description)}</Description><DetailsButton type="button" aria-expanded={expanded} aria-controls={descriptionId} onClick={() => setExpanded(!expanded)}>{expanded ? t("Show less") : t("View details")}</DetailsButton>{expanded && engineeringFocus && <FocusNote><strong>{t("Engineering focus")}</strong>{t(engineeringFocus)}</FocusNote>}</>
+          <>
+            <Description id={descriptionId} $expanded={expanded}>
+              {t(description)}
+            </Description>
+            <DetailsButton
+              type="button"
+              aria-expanded={expanded}
+              aria-controls={descriptionId}
+              onClick={() => setExpanded(!expanded)}
+            >
+              {expanded ? t("Show less") : t("View details")}
+            </DetailsButton>
+            {expanded && engineeringFocus && (
+              <FocusNote>
+                <strong>{t("Engineering focus")}</strong>
+                {t(engineeringFocus)}
+              </FocusNote>
+            )}
+          </>
         )}
 
-        <Technologies aria-label={t("Technologies")}>{technologies.map(technology => <span key={technology}>{technology}</span>)}</Technologies>
+        <Technologies aria-label={t("Technologies")}>
+          {technologies.map((technology) => (
+            <span key={technology}>{technology}</span>
+          ))}
+        </Technologies>
 
         {(repoLink || liveLink) && (
           <ActionMethods>
-            {liveLink ? (
-              <a
-                href={liveLink}
-                className="links"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <SquareDashedMousePointer size={17} />
-                {t("Live demo")}</a>
-            ) : (
-              <DisabledButton
-                className="links disabled"
-                aria-disabled="true"
-              >
-                <SquareDashedMousePointer size={17} />
-                {t("Demo unavailable")}</DisabledButton>
-            )}
-
-            {repoLink && (
-              <a
-                href={repoLink}
-                className="links secondary"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Code2 size={17} />
-                {t("View repository")}</a>
-            )}
+            <ProjectActions
+              demoLink={liveLink}
+              repoLink={repoLink}
+              iconSize={17}
+            />
           </ActionMethods>
         )}
 
         <LastUpdated>
-          {t("Updated:")}{" "}<time dateTime={lastUpdated}>{new Intl.DateTimeFormat(locale, { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" }).format(new Date(lastUpdated))}</time>
+          {t("Updated:")}{" "}
+          <time dateTime={lastUpdated}>
+            {new Intl.DateTimeFormat(locale, {
+              month: "short",
+              day: "numeric",
+              year: "numeric",
+              timeZone: "UTC",
+            }).format(new Date(lastUpdated))}
+          </time>
         </LastUpdated>
       </Content>
     </Card>
@@ -99,14 +96,14 @@ const Card = styled.article`
   min-width: 250px;
 
   overflow: hidden;
-  background:var(--surface);
-  border:1px solid var(--border);
+  background: var(--surface);
+  border: 1px solid var(--border);
   border-radius: 12px;
 
   box-shadow: var(--card-shadow);
 
   color: var(--text);
-  font-family:inherit;
+  font-family: inherit;
 
   transition: var(--control-transition);
 
@@ -141,7 +138,7 @@ const Cover = styled.img`
 `;
 
 const Content = styled.div`
-  padding:20px;
+  padding: 20px;
 `;
 
 const TitleRow = styled.div`
@@ -168,13 +165,13 @@ const Description = styled.p<{ $expanded: boolean }>`
 
   margin: 0 0 10px;
 
-  color:var(--muted);
+  color: var(--muted);
 
   font-size: 0.88rem;
-  line-height:1.65;
+  line-height: 1.65;
 
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: ${({ $expanded }) => $expanded ? "unset" : 3};
+  -webkit-line-clamp: ${({ $expanded }) => ($expanded ? "unset" : 3)};
 `;
 
 const DetailsButton = styled.button`
@@ -186,8 +183,13 @@ const DetailsButton = styled.button`
   font: inherit;
   font-size: 0.85rem;
   cursor: pointer;
-  &:hover { text-decoration: underline; }
-  &:focus-visible { outline: 2px solid var(--primary-light); outline-offset: 4px; }
+  &:hover {
+    text-decoration: underline;
+  }
+  &:focus-visible {
+    outline: 2px solid var(--primary-light);
+    outline-offset: 4px;
+  }
 `;
 
 const FocusNote = styled.p`
@@ -195,7 +197,11 @@ const FocusNote = styled.p`
   font-size: 0.85rem;
   line-height: 1.6;
   margin-bottom: 16px;
-  strong { display: block; color: var(--text); margin-bottom: 4px; }
+  strong {
+    display: block;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
 `;
 
 const Technologies = styled.div`
@@ -266,10 +272,6 @@ const ActionMethods = styled.div`
       width: 100%;
     }
   }
-`;
-
-const DisabledButton = styled.span`
-&& { display:inline-flex; align-items:center; gap:6px; padding:8px 0; background:transparent; border:0; color:var(--muted); font-size:12px; font-weight:400; cursor:default; }
 `;
 
 const LastUpdated = styled.p`
