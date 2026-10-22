@@ -391,10 +391,6 @@
     "pt": "Uma plataforma de e-commerce full stack que conecta uma loja Angular a uma API Spring Boot. Desenvolvida com autenticação segura, gestão de produtos e pedidos orientados a eventos.",
     "es": "Una plataforma de comercio electrónico full stack que conecta una tienda Angular a una API Spring Boot. Desarrollada con autenticación segura, gestión de productos y pedidos basados en eventos."
   },
-  "JWT authentication and Kafka order events connect the storefront to the backend. Docker Compose and Kubernetes support deployment. This learning project uses a simplified checkout and some mock data; payment integration remains planned.": {
-    "pt": "A autenticação JWT e os eventos de pedidos do Kafka conectam a loja ao backend. Docker Compose e Kubernetes apoiam a implantação. Este projeto de aprendizado usa checkout simplificado e alguns dados simulados; a integração de pagamentos está planejada.",
-    "es": "La autenticación JWT y los eventos de pedidos de Kafka conectan la tienda con el backend. Docker Compose y Kubernetes permiten el despliegue. Este proyecto de aprendizaje utiliza un checkout simplificado y algunos datos simulados; la integración de pagos está prevista."
-  },
   "Project screenshot": {
     "pt": "Captura do projeto",
     "es": "Captura del proyecto"
@@ -434,5 +430,9 @@
   "Website available online": {
     "pt": "Site disponível online",
     "es": "Sitio disponible en línea"
+  },
+  "A responsive Angular storefront backed by Spring Boot, MySQL and Kafka. Hosted on Render with encrypted database and messaging connections, typed JWT sessions and owner-scoped orders. The illustrated catalog and checkout are a portfolio demonstration without real payments.": {
+    "pt": "Loja Angular responsiva com Spring Boot, MySQL e Kafka. Hospedada no Render com conexões criptografadas ao banco e às mensagens, sessões JWT com tipos distintos e pedidos restritos ao proprietário. O catálogo ilustrado e o checkout são uma demonstração de portfólio, sem pagamentos reais.",
+    "es": "Tienda Angular adaptable con Spring Boot, MySQL y Kafka. Alojada en Render con conexiones cifradas a la base de datos y la mensajería, sesiones JWT con tipos distintos y pedidos restringidos al propietario. El catálogo ilustrado y el checkout son una demostración sin pagos reales."
   }
 }

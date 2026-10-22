@@ -1,18 +1,13 @@
-import { createContext, useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import type { ReactNode } from 'react';
 import translations from './translations.json';
 
-export type Language = 'pt' | 'en' | 'es';
+import { LanguageContext, type Language } from './context';
 const locales = { pt: 'pt-BR', en: 'en-US', es: 'es-ES' };
 const dictionary: Record<string, { pt: string; es: string }> = translations;
 const storageKey = 'portfolio-language';
 const translate = (text: string, language: Language) => language === 'en' ? text : dictionary[text]?.[language] ?? text;
-const LanguageContext = createContext({
-  language: 'en' as Language,
-  locale: locales.en,
-  setLanguage: (_language: Language) => { void _language; },
-  t: (text: string) => text,
-});
+
 
 function initialLanguage(): Language {
   try {
@@ -33,4 +28,4 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   return <LanguageContext.Provider value={{ language, locale: locales[language], setLanguage, t: text => translate(text, language) }}>{children}</LanguageContext.Provider>;
 }
 
-export const useLanguage = () => useContext(LanguageContext);
+

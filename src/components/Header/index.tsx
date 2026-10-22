@@ -1,7 +1,6 @@
 import ThemeToggle from '../ThemeToggle';
 import LanguageSwitcher from '../../i18n/LanguageSwitcher';
 import { useLanguage } from '../../i18n';
-"use client";
 
 import { Folder, GraduationCap, Home, User, Users } from "lucide-react";
 import { useEffect, useState } from "react";
