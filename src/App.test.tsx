@@ -22,7 +22,7 @@ describe('Portfolio', () => {
 
   it('shows the featured projects with their repository destinations', () => {
     render(<App />)
-    for (const title of ['Sankhya', 'TodoApp', 'TaskyHub']) {
+    for (const title of ['ShopEasy', 'TodoApp', 'TaskyHub']) {
       const heading = screen.getByRole('heading', { name: title })
       const card = heading.closest('article')!
       expect(within(card).getByRole('link', { name: 'View repository' })).toHaveAttribute(
