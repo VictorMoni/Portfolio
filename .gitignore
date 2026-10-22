@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Auxiliary repository checkouts and local test runtimes
+.shopeasy-layout/
+.taskyhub-fix/
