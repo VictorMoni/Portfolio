@@ -1,6 +1,4 @@
 import type { ProjectData } from "../types/project";
-import otherProjectImage from "../assets/covers/sankhya-dark.svg";
-import otherProjectImageLight from "../assets/covers/sankhya-light.svg";
 import otherProjectImage3 from "../assets/covers/taskyhub-dark.svg";
 import otherProjectImage3Light from "../assets/covers/taskyhub-light.svg";
 import otherProjectImage2 from "../assets/covers/todoapp-dark.svg";
@@ -28,18 +26,6 @@ export const sideProjects = [
     lastUpdated: "2026-10-22",
     liveLink: "https://shopeasy-victormoni.onrender.com",
     repoLink: "https://github.com/victormoni/ShopEasy",
-  },
-  {
-    cover: otherProjectImage,
-    lightCover: otherProjectImageLight,
-    title: "Sankhya",
-    engineeringFocus:
-      "Connects a locally saved cart to a stock-validated checkout API, with Flyway migrations for reproducible database setup.",
-    description:
-      "Full-stack shopping application built with Angular, Spring Boot, and MySQL. Browse a visual product catalog, manage a cart saved locally, and check out with stock validation. Includes order history, Flyway database migrations, and Docker Compose orchestration.",
-    technologies: ["Angular", "Spring Boot", "MySQL", "Docker"],
-    lastUpdated: "2025-09-20",
-    repoLink: "https://github.com/victormoni/Sankhya",
   },
   {
     cover: otherProjectImage2,

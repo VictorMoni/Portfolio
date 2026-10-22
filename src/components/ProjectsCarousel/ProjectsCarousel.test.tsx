@@ -7,7 +7,7 @@ describe('ProjectsCarousel', () => {
   it('allows keyboard users to scroll projects in both directions', async () => {
     const user = userEvent.setup()
     render(<ProjectsCarousel />)
-    const scrollArea = screen.getByRole('heading', { name: 'Sankhya' }).closest('article')!.parentElement!
+    const scrollArea = screen.getByRole('heading', { name: 'ShopEasy' }).closest('article')!.parentElement!
     vi.spyOn(scrollArea.querySelector('article')!, 'getBoundingClientRect').mockReturnValue({ width: 326 } as DOMRect)
     const scrollBy = vi.fn()
     scrollArea.scrollBy = scrollBy
@@ -22,7 +22,7 @@ describe('ProjectsCarousel', () => {
 
   it('keeps an active drag across rerenders and stops dragging on mouse up', () => {
     const { rerender } = render(<ProjectsCarousel />)
-    const scrollArea = screen.getByRole('heading', { name: 'Sankhya' }).closest('article')!.parentElement!
+    const scrollArea = screen.getByRole('heading', { name: 'ShopEasy' }).closest('article')!.parentElement!
     scrollArea.scrollLeft = 200
     fireEvent.mouseDown(scrollArea, { clientX: 200 })
     rerender(<ProjectsCarousel />)

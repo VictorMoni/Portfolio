@@ -47,7 +47,7 @@ describe('Portfolio languages', () => {
     expect(screen.getByRole('heading', { name: 'Minhas tecnologias' })).toBeVisible();
     expect(screen.getByRole('heading', { name: 'Segurança da Informação' })).toBeVisible();
     expect(screen.getByRole('link', { name: /Ver carta de recomendação:/ })).toHaveAttribute('target', '_blank');
-    expect(screen.getAllByRole('link', { name: 'Ver repositório' })).toHaveLength(4);
+    expect(screen.getAllByRole('link', { name: 'Ver repositório' })).toHaveLength(3);
     const status = screen.getByRole('heading', { name: 'Segurança da Informação' }).closest('article')!;
     expect(within(status).getByText('Em andamento')).toHaveAttribute('data-progress', 'true');
     expect(document.documentElement.lang).toBe('pt-BR');
