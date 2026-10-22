@@ -16,7 +16,7 @@ export const sideProjects = [
     description:
       "A full-stack e-commerce platform connecting an Angular storefront to a Spring Boot API. Built around secure authentication, product management, and event-driven orders.",
     engineeringFocus:
-      "JWT authentication and Kafka order events connect the storefront to the backend. Docker Compose and Kubernetes support deployment. This learning project uses a simplified checkout and some mock data; payment integration remains planned.",
+      "A responsive Angular storefront backed by Spring Boot, MySQL and Kafka. Hosted on Render with encrypted database and messaging connections, typed JWT sessions and owner-scoped orders. The illustrated catalog and checkout are a portfolio demonstration without real payments.",
     technologies: [
       "Angular",
       "Spring Boot",
@@ -25,7 +25,8 @@ export const sideProjects = [
       "Docker",
       "Kubernetes",
     ],
-    lastUpdated: "2025-08-22",
+    lastUpdated: "2026-10-22",
+    liveLink: "https://shopeasy-victormoni.onrender.com",
     repoLink: "https://github.com/victormoni/ShopEasy",
   },
   {
