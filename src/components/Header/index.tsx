@@ -2,7 +2,7 @@ import ThemeToggle from '../ThemeToggle';
 import LanguageSwitcher from '../../i18n/LanguageSwitcher';
 import { useLanguage } from '../../i18n';
 
-import { BriefcaseBusiness, Folder, GraduationCap, Home, Users } from "lucide-react";
+import { Award, BriefcaseBusiness, Folder, GraduationCap, Home, Users } from "lucide-react";
 import { useEffect, useState } from "react";
 import styled, { css } from "styled-components";
 
@@ -11,6 +11,7 @@ const navigationItems = [
     { id: "about", label: "Career", icon: BriefcaseBusiness },
     { id: "education", label: "Education", icon: GraduationCap },
     { id: "projects", label: "Projects", icon: Folder },
+    { id: "courses", label: "Extracurricular Courses", icon: Award },
     { id: "socialmedia", label: "Social media", icon: Users },
 ];
 

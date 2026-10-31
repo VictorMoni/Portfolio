@@ -9,7 +9,7 @@ describe('Portfolio', () => {
     expect(screen.getByRole('link', { name: 'Contact me' })).toHaveAttribute('href', '#socialmedia')
     const links = within(screen.getByRole('navigation')).getAllByRole('link')
     expect(links.map(link => link.getAttribute('href'))).toEqual([
-      '#home', '#about', '#education', '#projects', '#socialmedia',
+      '#home', '#about', '#education', '#projects', '#courses', '#socialmedia',
     ])
     for (const link of links) {
       const id = link.getAttribute('href')!.slice(1)
