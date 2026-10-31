@@ -8,7 +8,7 @@ describe('Header', () => {
     expect(screen.getByRole('navigation', { name: 'Main navigation' })).toBeVisible()
     for (const [name, href] of [
       ['Home', '#home'], ['Career', '#about'],
-      ['Education', '#education'], ['Projects', '#projects'], ['Social media', '#socialmedia'],
+      ['Education', '#education'], ['Projects', '#projects'], ['Extracurricular Courses', '#courses'], ['Social media', '#socialmedia'],
     ]) {
       expect(screen.getByRole('link', { name })).toHaveAttribute('href', href)
     }
