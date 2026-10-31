@@ -434,5 +434,13 @@
   "A responsive Angular storefront backed by Spring Boot, MySQL and Kafka. Hosted on Render with encrypted database and messaging connections, typed JWT sessions and owner-scoped orders. The illustrated catalog and checkout are a portfolio demonstration without real payments.": {
     "pt": "Loja Angular responsiva com Spring Boot, MySQL e Kafka. Hospedada no Render com conexões criptografadas ao banco e às mensagens, sessões JWT com tipos distintos e pedidos restritos ao proprietário. O catálogo ilustrado e o checkout são uma demonstração de portfólio, sem pagamentos reais.",
     "es": "Tienda Angular adaptable con Spring Boot, MySQL y Kafka. Alojada en Render con conexiones cifradas a la base de datos y la mensajería, sesiones JWT con tipos distintos y pedidos restringidos al propietario. El catálogo ilustrado y el checkout son una demostración sin pagos reales."
+  },
+  "An interactive image delivery lab built with Next.js and Cloudinary. Compare original and optimized images, experiment with crops and delivery widths, and inspect transformation URLs.": {
+    "pt": "Um laboratório interativo de entrega de imagens desenvolvido com Next.js e Cloudinary. Compare imagens originais e otimizadas, experimente recortes e larguras de entrega e inspecione URLs de transformação.",
+    "es": "Un laboratorio interactivo de entrega de imágenes desarrollado con Next.js y Cloudinary. Compara imágenes originales y optimizadas, experimenta con recortes y anchos de entrega e inspecciona las URL de transformación."
+  },
+  "Uses responsive images with srcSet and sizes, automatic quality and format selection, and URL-based transformations. Supports public Cloudinary assets without uploads, authentication, or secret keys.": {
+    "pt": "Utiliza imagens responsivas com srcSet e sizes, seleção automática de qualidade e formato e transformações por URL. Aceita imagens públicas do Cloudinary sem uploads, autenticação ou chaves secretas.",
+    "es": "Utiliza imágenes adaptables con srcSet y sizes, selección automática de calidad y formato y transformaciones por URL. Admite imágenes públicas de Cloudinary sin cargas, autenticación ni claves secretas."
   }
 }
