@@ -442,5 +442,61 @@
   "Uses responsive images with srcSet and sizes, automatic quality and format selection, and URL-based transformations. Supports public Cloudinary assets without uploads, authentication, or secret keys.": {
     "pt": "Utiliza imagens responsivas com srcSet e sizes, seleção automática de qualidade e formato e transformações por URL. Aceita imagens públicas do Cloudinary sem uploads, autenticação ou chaves secretas.",
     "es": "Utiliza imágenes adaptables con srcSet y sizes, selección automática de calidad y formato y transformaciones por URL. Admite imágenes públicas de Cloudinary sin cargas, autenticación ni claves secretas."
+  },
+  "Extracurricular Courses": {
+    "pt": "Cursos extracurriculares",
+    "es": "Cursos extracurriculares"
+  },
+  "Continued learning in frontend development, JavaScript, and automation.": {
+    "pt": "Aprendizado contínuo em desenvolvimento frontend, JavaScript e automação.",
+    "es": "Aprendizaje continuo en desarrollo frontend, JavaScript y automatización."
+  },
+  "Previous courses": {
+    "pt": "Cursos anteriores",
+    "es": "Cursos anteriores"
+  },
+  "Next courses": {
+    "pt": "Próximos cursos",
+    "es": "Siguientes cursos"
+  },
+  "Courses carousel": {
+    "pt": "Carrossel de cursos",
+    "es": "Carrusel de cursos"
+  },
+  "View certificate": {
+    "pt": "Ver certificado",
+    "es": "Ver certificado"
+  },
+  "Front End Development Libraries": {
+    "pt": "Bibliotecas de desenvolvimento frontend",
+    "es": "Bibliotecas de desarrollo frontend"
+  },
+  "JavaScript Algorithms and Data Structures": {
+    "pt": "Algoritmos e estruturas de dados em JavaScript",
+    "es": "Algoritmos y estructuras de datos en JavaScript"
+  },
+  "Responsive Web Design": {
+    "pt": "Web design responsivo",
+    "es": "Diseño web adaptable"
+  },
+  "Excel 2016 with VBA": {
+    "pt": "Excel 2016 com VBA",
+    "es": "Excel 2016 con VBA"
+  },
+  "Frontend interfaces built with React, Redux, Bootstrap, jQuery, and Sass.": {
+    "pt": "Interfaces frontend desenvolvidas com React, Redux, Bootstrap, jQuery e Sass.",
+    "es": "Interfaces frontend desarrolladas con React, Redux, Bootstrap, jQuery y Sass."
+  },
+  "JavaScript fundamentals, algorithms, data structures, and object-oriented and functional programming.": {
+    "pt": "Fundamentos de JavaScript, algoritmos, estruturas de dados e programação orientada a objetos e funcional.",
+    "es": "Fundamentos de JavaScript, algoritmos, estructuras de datos y programación orientada a objetos y funcional."
+  },
+  "Responsive layouts with HTML and CSS, including accessibility, Flexbox, and CSS Grid.": {
+    "pt": "Layouts responsivos com HTML e CSS, incluindo acessibilidade, Flexbox e CSS Grid.",
+    "es": "Diseños adaptables con HTML y CSS, incluyendo accesibilidad, Flexbox y CSS Grid."
+  },
+  "A 30-hour course covering Excel automation with VBA macros, forms, and custom functions.": {
+    "pt": "Curso de 30 horas sobre automação no Excel com macros VBA, formulários e funções personalizadas.",
+    "es": "Curso de 30 horas sobre automatización en Excel con macros VBA, formularios y funciones personalizadas."
   }
 }
