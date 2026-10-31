@@ -6,8 +6,7 @@ import otherProjectImage2Light from "../assets/covers/todoapp-light.svg";
 import shopEasyImage from "../assets/covers/shopeasy-dark.svg";
 import shopEasyImageLight from "../assets/covers/shopeasy-light.svg";
 
-import mediaLabImage from "../assets/covers/media-lab-dark.svg";
-import mediaLabImageLight from "../assets/covers/media-lab-light.svg";
+import mediaLabImage from "../assets/covers/media-lab-home.png";
 
 export const sideProjects = [
   {
@@ -58,7 +57,7 @@ export const sideProjects = [
   },
   {
     cover: mediaLabImage,
-    lightCover: mediaLabImageLight,
+    lightCover: mediaLabImage,
     title: "Media Lab",
     description:
       "An interactive image delivery lab built with Next.js and Cloudinary. Compare original and optimized images, experiment with crops and delivery widths, and inspect transformation URLs.",
