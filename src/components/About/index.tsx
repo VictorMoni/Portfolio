@@ -1,5 +1,5 @@
 import { useLanguage } from '../../i18n';
-import { Calendar, ExternalLink } from 'lucide-react';
+import { BriefcaseBusiness, Calendar, ExternalLink } from 'lucide-react';
 import { useState } from "react";
 import styled, { keyframes } from "styled-components";
 
@@ -112,7 +112,7 @@ const About = () => {
     return (
         <AboutSection id="about">
             <Header>
-                <Title>{t("Career")}</Title>
+                <Title className="section-heading"><BriefcaseBusiness size={24} aria-hidden="true" />{t("Career")}</Title>
                 <Subtitle>{t("Enterprise applications, reliable integrations, and a business perspective.")}</Subtitle>
             </Header>
 

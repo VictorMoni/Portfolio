@@ -1,3 +1,4 @@
+import { FolderKanban } from "lucide-react";
 import { useLanguage } from '../../i18n';
 import styled, { keyframes } from "styled-components";
 import MainProject from "../MainProject";
@@ -12,7 +13,7 @@ const Projects = () => {
         <MainProject />
         <OtherProjectsSection>
           <Header>
-            <Title>{t("Side Projects")}</Title>
+            <Title className="section-heading"><FolderKanban size={24} aria-hidden="true" />{t("Side Projects")}</Title>
             <Subtitle>{t("Java and TypeScript projects that complement my enterprise .NET experience")}</Subtitle>
           </Header>
           <ProjectsCarousel />

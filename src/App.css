@@ -78,3 +78,16 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--primary-light);
   html { scroll-behavior: auto; }
   *:not(.tech-track):not(.role-typing), *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
+
+/* Match the icons beside education and course section titles. */
+.section-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.section-heading > svg {
+  flex: 0 0 24px;
+  width: 24px;
+  height: 28px;
+  color: var(--primary-light);
+}

@@ -1,3 +1,4 @@
+import { UsersRound } from "lucide-react";
 import { useLanguage } from '../../i18n';
 import styled from "styled-components"
 import dailydev from '../../assets/daily-dev.svg'
@@ -15,7 +16,7 @@ export const SocialFooter = () => {
             <FooterContainer id="socialmedia">
                 <FooterContent>
                     <SocialSection>
-                        <h2>{t("Social Media")}</h2>
+                        <h2 className="section-heading"><UsersRound size={24} aria-hidden="true" />{t("Social Media")}</h2>
                         <p>{t("Find me on social networks and follow my work")}</p>
 
                         <SocialGrid>
