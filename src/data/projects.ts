@@ -6,6 +6,9 @@ import otherProjectImage2Light from "../assets/covers/todoapp-light.svg";
 import shopEasyImage from "../assets/covers/shopeasy-dark.svg";
 import shopEasyImageLight from "../assets/covers/shopeasy-light.svg";
 
+import mediaLabImage from "../assets/covers/media-lab-dark.svg";
+import mediaLabImageLight from "../assets/covers/media-lab-light.svg";
+
 export const sideProjects = [
   {
     cover: shopEasyImage,
@@ -24,7 +27,7 @@ export const sideProjects = [
       "Kubernetes",
     ],
     lastUpdated: "2026-10-22",
-    liveLink: "https://shopeasy-victormoni.onrender.com",
+    liveLink: "https://shopeasy-vm.onrender.com",
     repoLink: "https://github.com/victormoni/ShopEasy",
   },
   {
@@ -52,5 +55,18 @@ export const sideProjects = [
     lastUpdated: "2025-06-07",
     liveLink: "https://taskyhub.vercel.app",
     repoLink: "https://github.com/victormoni/TaskyHub",
+  },
+  {
+    cover: mediaLabImage,
+    lightCover: mediaLabImageLight,
+    title: "Media Lab",
+    description:
+      "An interactive image delivery lab built with Next.js and Cloudinary. Compare original and optimized images, experiment with crops and delivery widths, and inspect transformation URLs.",
+    engineeringFocus:
+      "Uses responsive images with srcSet and sizes, automatic quality and format selection, and URL-based transformations. Supports public Cloudinary assets without uploads, authentication, or secret keys.",
+    technologies: ["Next.js", "React", "JavaScript", "Cloudinary"],
+    lastUpdated: "2026-10-27",
+    liveLink: "https://media-lab-cloudinary.vercel.app",
+    repoLink: "https://github.com/VictorMoni/media-lab-cloudinary",
   },
 ] satisfies ProjectData[];
