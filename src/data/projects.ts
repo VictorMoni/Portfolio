@@ -1,12 +1,13 @@
 import type { ProjectData } from "../types/project";
-import otherProjectImage3 from "../assets/covers/taskyhub-dark.svg";
-import otherProjectImage3Light from "../assets/covers/taskyhub-light.svg";
-import otherProjectImage2 from "../assets/covers/todoapp-dark.svg";
-import otherProjectImage2Light from "../assets/covers/todoapp-light.svg";
-import shopEasyImage from "../assets/covers/shopeasy-dark.svg";
-import shopEasyImageLight from "../assets/covers/shopeasy-light.svg";
+import otherProjectImage3 from "../assets/covers/taskyhub-home-dark.png";
+import otherProjectImage3Light from "../assets/covers/taskyhub-home-light.png";
+import otherProjectImage2 from "../assets/covers/todoapp-home-dark.png";
+import otherProjectImage2Light from "../assets/covers/todoapp-home-light.png";
+import shopEasyImage from "../assets/covers/shopeasy-home-dark.png";
+import shopEasyImageLight from "../assets/covers/shopeasy-home-light.png";
 
-import mediaLabImage from "../assets/covers/media-lab-home.png";
+import mediaLabImage from "../assets/covers/media-lab-home-dark.png";
+import mediaLabImageLight from "../assets/covers/media-lab-home-light.png";
 
 export const sideProjects = [
   {
@@ -25,7 +26,7 @@ export const sideProjects = [
       "Docker",
       "Kubernetes",
     ],
-    lastUpdated: "2026-10-22",
+    lastUpdated: "2026-10-31",
     liveLink: "https://shopeasy-vm.onrender.com",
     repoLink: "https://github.com/victormoni/ShopEasy",
   },
@@ -38,7 +39,7 @@ export const sideProjects = [
     description:
       "A focused task manager built with React, TypeScript, and Vite. Create, edit, and delete tasks through a straightforward interface that keeps everyday planning simple and puts essential actions within easy reach.",
     technologies: ["React", "TypeScript", "Vite"],
-    lastUpdated: "2025-07-22",
+    lastUpdated: "2026-10-31",
     repoLink: "https://github.com/victormoni/TodoApp",
     liveLink: "https://production-todo.vercel.app",
   },
@@ -51,20 +52,20 @@ export const sideProjects = [
     description:
       "A personal productivity app built with Next.js and TypeScript, with Google sign-in and MongoDB storage. Organize tasks with due dates and recurring schedules, find items with search and filters, and save time with bulk actions and JSON import/export.",
     technologies: ["Next.js", "TypeScript", "MongoDB"],
-    lastUpdated: "2025-06-07",
+    lastUpdated: "2026-10-31",
     liveLink: "https://taskyhub.vercel.app",
     repoLink: "https://github.com/victormoni/TaskyHub",
   },
   {
     cover: mediaLabImage,
-    lightCover: mediaLabImage,
+    lightCover: mediaLabImageLight,
     title: "Media Lab",
     description:
       "An interactive image delivery lab built with Next.js and Cloudinary. Compare original and optimized images, experiment with crops and delivery widths, and inspect transformation URLs.",
     engineeringFocus:
       "Uses responsive images with srcSet and sizes, automatic quality and format selection, and URL-based transformations. Supports public Cloudinary assets without uploads, authentication, or secret keys.",
     technologies: ["Next.js", "React", "JavaScript", "Cloudinary"],
-    lastUpdated: "2026-10-27",
+    lastUpdated: "2026-10-31",
     liveLink: "https://media-lab-cloudinary.vercel.app",
     repoLink: "https://github.com/VictorMoni/media-lab-cloudinary",
   },
