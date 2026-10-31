@@ -1,6 +1,6 @@
 import { useLanguage } from '../../i18n';
 import { useState } from 'react';
-import { Pause, Play } from 'lucide-react';
+import { Code2, Pause, Play } from 'lucide-react';
 import styled, { keyframes } from 'styled-components';
 import angular from "../../assets/angular.svg";
 import azuredevops from "../../assets/azuredevops.svg";
@@ -41,7 +41,7 @@ export const TechSlider = () => {
     <Stack aria-labelledby="stack-title" $paused={paused} $expanded={expanded}>
       <div className="stack-heading">
         <div>
-          <h2 id="stack-title">{t("My technology stack")}</h2>
+          <h2 id="stack-title" className="section-heading"><Code2 size={24} aria-hidden="true" />{t("My technology stack")}</h2>
           <p className="stack-description">{t("Languages, frameworks, and tools I use to build and deliver software.")}</p>
         </div>
         <div className="controls">
