@@ -50,6 +50,8 @@ describe('Portfolio languages', () => {
     expect(screen.getAllByRole('link', { name: 'Ver repositório' })).toHaveLength(4);
     const status = screen.getByRole('heading', { name: 'Segurança da Informação' }).closest('article')!;
     expect(within(status).getByText('Em andamento')).toHaveAttribute('data-progress', 'true');
+    expect(screen.getByRole('heading', { name: 'Cursos extracurriculares' })).toBeVisible();
+    expect(screen.getByRole('link', { name: 'Ver certificado: Excel 2016 com VBA' })).toHaveAttribute('href', 'https://drive.google.com/file/d/1BdgEBuyZhdCB-0D5farGGQDywkCD_uoy/view?usp=sharing');
     expect(document.documentElement.lang).toBe('pt-BR');
     expect(screen.getByRole('link', { name: 'Currículo' })).toHaveAttribute('href', 'https://drive.google.com/file/d/1rNLEny2TgxbY6d6ASpLnipbGo2YWuISH/view?usp=sharing');
     await user.click(screen.getByRole('button', { name: 'Alterar idioma' }));

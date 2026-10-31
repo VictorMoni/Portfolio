@@ -4,6 +4,7 @@ import styled, { keyframes } from 'styled-components';
 import banner from '../../assets/main-banner.webp';
 import About from '../About';
 import Education from '../Education';
+import Courses from '../Courses';
 import Projects from '../Projects';
 import { SocialFooter } from '../SocialMedia';
 import { TechSlider } from '../TechSlider';
@@ -45,6 +46,7 @@ export const Main = () => {
     <About />
     <Education />
     <Projects />
+    <Courses />
     <SocialFooter />
   </>
   );
