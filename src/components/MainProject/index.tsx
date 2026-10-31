@@ -1,4 +1,3 @@
-import { AppWindow } from "lucide-react";
 import { useIsLightTheme } from "../../hooks/useIsLightTheme";
 import { useLanguage } from "../../i18n";
 import ProjectActions from "../ProjectActions";
@@ -31,7 +30,7 @@ export default function MainProject() {
             </Status>
           )}
           <Header>
-            <h2 className="section-heading"><AppWindow size={24} aria-hidden="true" />{content.title}</h2>
+            <h2>{content.title}</h2>
           </Header>
 
           {content.description && (
