@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Victor Moni</title>
+  <defs>
+    <linearGradient id="background" x2="1" y2="1">
+      <stop stop-color="#202e3c"/>
+      <stop offset="1" stop-color="#101214"/>
+    </linearGradient>
+    <linearGradient id="accent" x2="0" y2="1">
+      <stop stop-color="#a4d9f5"/>
+      <stop offset="1" stop-color="#79bce5"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="url(#background)"/>
+  <rect x="1" y="1" width="62" height="62" rx="15" fill="none" stroke="#79bce5" stroke-opacity=".3" stroke-width="2"/>
+  <path d="m10 22 9 23 9-23M35 45V22l9 13 9-13v23" fill="none" stroke="url(#accent)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
