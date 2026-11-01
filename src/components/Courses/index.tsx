@@ -1,5 +1,5 @@
 import { useRef, type KeyboardEvent } from "react";
-import { Award, ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
+import { Award, ExternalLink } from "lucide-react";
 import styled from "styled-components";
 import { courses } from "../../data/courses";
 import { useLanguage } from "../../i18n";
@@ -34,14 +34,6 @@ export default function Courses() {
           <h2 id="courses-title"><Award size={28} aria-hidden="true" />{t("Extracurricular Courses")}</h2>
           <p>{t("Continued learning in frontend development, JavaScript, and automation.")}</p>
         </div>
-        <Controls>
-          <button type="button" aria-label={t("Previous courses")} onClick={() => scroll(-1)}>
-            <ChevronLeft size={20} aria-hidden="true" />
-          </button>
-          <button type="button" aria-label={t("Next courses")} onClick={() => scroll(1)}>
-            <ChevronRight size={20} aria-hidden="true" />
-          </button>
-        </Controls>
       </Header>
       <ScrollArea ref={carouselRef} role="region" aria-label={t("Courses carousel")} tabIndex={0} onKeyDown={handleKeyDown}>
         {courses.map(course => (
@@ -88,28 +80,6 @@ const Header = styled.div`
   h2 svg { color: var(--primary-light); flex-shrink: 0; width: 24px; }
   p { margin: 0; color: var(--muted); line-height: 1.6; }
   @media (max-width: 600px) { flex-direction: column; gap: 20px; }
-`;
-
-const Controls = styled.div`
-  display: flex;
-  flex-shrink: 0;
-  gap: 8px;
-  button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 44px;
-    height: 44px;
-    padding: 8px;
-    border: 1px solid var(--border);
-    border-radius: 50%;
-    background: var(--surface);
-    color: var(--text);
-    cursor: pointer;
-    transition: var(--control-transition);
-    &:hover { background: var(--hover-surface); }
-    &:focus-visible { outline: 2px solid var(--primary-light); outline-offset: 4px; }
-  }
 `;
 
 const ScrollArea = styled.div`
