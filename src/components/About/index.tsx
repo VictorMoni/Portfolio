@@ -12,7 +12,7 @@ const About = () => {
         company: "Sysopen",
         document: { url: "https://drive.google.com/file/d/1rV8BvKmmJaYSEUiLQvAB1eJHN2O3vtAq/view?usp=sharing", label: "View recommendation letter" },
         description:
-            "Developed and enhanced Recupera, an enterprise platform built with C#, VB.NET, ASP.NET WebForms, and Angular. Delivered functional improvements, resolved production incidents, and maintained systems for clients including Ambev, Aegea, Jeitto, and Porto Seguro.\n\nWrote and optimized SQL queries, stored procedures, and scripts in SQL Server and Oracle. Tested REST APIs and SOAP/WCF services with SoapUI, and tracked delivery and source control through Azure DevOps/TFS.",
+            "Enhanced and maintained Recupera, an existing enterprise platform built with C#, VB.NET, ASP.NET WebForms, and Angular. Delivered functional improvements, resolved production incidents, and maintained systems for clients including Ambev, Aegea, Jeitto, and Porto Seguro.\n\nWrote and optimized SQL queries, stored procedures, and scripts in SQL Server and Oracle. Tested REST APIs and SOAP/WCF services with SoapUI, and tracked delivery and source control through Azure DevOps/TFS.",
         date: "10/2025 - 07/2026",
         highlight: "Full Stack Development",
         tags: [
