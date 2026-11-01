@@ -94,6 +94,7 @@ const Controls = styled.div`
   display: flex;
   flex-shrink: 0;
   gap: 8px;
+  @media (max-width: 600px) { display: none; }
   button {
     display: inline-flex;
     align-items: center;
