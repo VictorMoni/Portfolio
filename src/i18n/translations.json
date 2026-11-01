@@ -498,5 +498,13 @@
   "A 30-hour course covering Excel automation with VBA macros, forms, and custom functions.": {
     "pt": "Curso de 30 horas sobre automação no Excel com macros VBA, formulários e funções personalizadas.",
     "es": "Curso de 30 horas sobre automatización en Excel con macros VBA, formularios y funciones personalizadas."
+  },
+  "A focused task manager built with React, TypeScript, and Vite. Create and complete tasks, filter your list, and follow your progress through a responsive interface with light and dark themes. Tasks stay saved in your browser.": {
+    "pt": "Gerenciador de tarefas com React, TypeScript e Vite. Crie e conclua tarefas, filtre sua lista e acompanhe o progresso em uma interface responsiva com temas claro e escuro. As tarefas ficam salvas no navegador.",
+    "es": "Gestor de tareas con React, TypeScript y Vite. Crea y completa tareas, filtra tu lista y sigue tu progreso en una interfaz adaptable con temas claro y oscuro. Las tareas se guardan en el navegador."
+  },
+  "Combines task creation, completion, deletion, and status filters with browser storage, progress tracking, and accessible light and dark themes.": {
+    "pt": "Combina criação, conclusão, exclusão e filtros de tarefas com armazenamento no navegador, acompanhamento de progresso e temas claro e escuro acessíveis.",
+    "es": "Combina creación, finalización, eliminación y filtros de tareas con almacenamiento en el navegador, seguimiento del progreso y temas claro y oscuro accesibles."
   }
 }

@@ -35,9 +35,9 @@ export const sideProjects = [
     lightCover: otherProjectImage2Light,
     title: "TodoApp",
     engineeringFocus:
-      "Keeps task creation, editing, and deletion within a focused React interface, demonstrating essential frontend interaction patterns.",
+      "Combines task creation, completion, deletion, and status filters with browser storage, progress tracking, and accessible light and dark themes.",
     description:
-      "A focused task manager built with React, TypeScript, and Vite. Create, edit, and delete tasks through a straightforward interface that keeps everyday planning simple and puts essential actions within easy reach.",
+      "A focused task manager built with React, TypeScript, and Vite. Create and complete tasks, filter your list, and follow your progress through a responsive interface with light and dark themes. Tasks stay saved in your browser.",
     technologies: ["React", "TypeScript", "Vite"],
     lastUpdated: "2026-10-31",
     repoLink: "https://github.com/victormoni/TodoApp",
