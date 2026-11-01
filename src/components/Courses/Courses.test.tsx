@@ -15,18 +15,18 @@ describe("Courses", () => {
     }
   });
 
-  it("scrolls with the controls and arrow keys without intercepting certificate links", () => {
+  it("scrolls with arrow keys without intercepting certificate links", () => {
     render(<LanguageProvider><Courses /></LanguageProvider>);
     const area = screen.getByRole("region", { name: "Courses carousel" });
     vi.spyOn(area.querySelector("article")!, "getBoundingClientRect")
       .mockReturnValue({ width: 330 } as DOMRect);
     const scrollBy = vi.fn();
     area.scrollBy = scrollBy;
-    fireEvent.click(screen.getByRole("button", { name: "Next courses" }));
+    expect(screen.queryByRole("button", { name: "Next courses" })).not.toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: "Previous courses" })).not.toBeInTheDocument();
+    fireEvent.keyDown(area, { key: "ArrowRight" });
     expect(scrollBy).toHaveBeenLastCalledWith({ left: 350, behavior: "smooth" });
     fireEvent.keyDown(area, { key: "ArrowLeft" });
-    expect(scrollBy).toHaveBeenLastCalledWith({ left: -350, behavior: "smooth" });
-    fireEvent.click(screen.getByRole("button", { name: "Previous courses" }));
     expect(scrollBy).toHaveBeenLastCalledWith({ left: -350, behavior: "smooth" });
     const calls = scrollBy.mock.calls.length;
     fireEvent.keyDown(screen.getByRole("link", { name: "View certificate: Responsive Web Design" }), { key: "ArrowRight" });
