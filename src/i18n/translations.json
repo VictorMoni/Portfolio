@@ -506,5 +506,13 @@
   "Combines task creation, completion, deletion, and status filters with browser storage, progress tracking, and accessible light and dark themes.": {
     "pt": "Combina criação, conclusão, exclusão e filtros de tarefas com armazenamento no navegador, acompanhamento de progresso e temas claro e escuro acessíveis.",
     "es": "Combina creación, finalización, eliminación y filtros de tareas con almacenamiento en el navegador, seguimiento del progreso y temas claro y oscuro accesibles."
+  },
+  "An interactive portrait of São Paulo through 20 photo stories. Discover local culture, build a three-place outing, and create a personalized postcard in Portuguese, English, or Spanish.": {
+    "pt": "Um retrato interativo de São Paulo em 20 histórias fotográficas. Descubra a cultura local, monte um passeio com três lugares e crie um cartão-postal personalizado em português, inglês ou espanhol.",
+    "es": "Un retrato interactivo de São Paulo a través de 20 historias fotográficas. Descubre la cultura local, organiza un paseo con tres lugares y crea una postal personalizada en portugués, inglés o español."
+  },
+  "Built for the Cloudinary Mini-Hack with image transformations prepared once and served locally to protect quota during visits. Includes a before-and-after comparison, Google Maps routes, discovery quizzes, and PNG postcards composed on the device without accounts or secret keys.": {
+    "pt": "Criado para o Cloudinary Mini-Hack, com transformações de imagens preparadas uma vez e servidas pelo próprio app para proteger a quota durante as visitas. Inclui comparador de antes e depois, rotas no Google Maps, quiz de descobertas e cartões PNG criados no dispositivo, sem contas ou chaves secretas.",
+    "es": "Creado para el Cloudinary Mini-Hack, con transformaciones de imágenes preparadas una vez y servidas por la propia aplicación para proteger la cuota durante las visitas. Incluye comparación de antes y después, rutas en Google Maps, preguntas de descubrimiento y postales PNG creadas en el dispositivo, sin cuentas ni claves secretas."
   }
 }
