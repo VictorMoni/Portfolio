@@ -3,6 +3,7 @@ import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import App from '../App';
+import { sideProjects } from '../data/projects';
 import { LanguageProvider, useLanguage } from './index';
 
 function Probe() {
@@ -47,7 +48,7 @@ describe('Portfolio languages', () => {
     expect(screen.getByRole('heading', { name: 'Minhas tecnologias' })).toBeVisible();
     expect(screen.getByRole('heading', { name: 'Segurança da Informação' })).toBeVisible();
     expect(screen.getByRole('link', { name: /Ver carta de recomendação:/ })).toHaveAttribute('target', '_blank');
-    expect(screen.getAllByRole('link', { name: 'Ver repositório' })).toHaveLength(4);
+    expect(screen.getAllByRole('link', { name: 'Ver repositório' })).toHaveLength(sideProjects.filter(project => project.repoLink).length);
     const status = screen.getByRole('heading', { name: 'Segurança da Informação' }).closest('article')!;
     expect(within(status).getByText('Em andamento')).toHaveAttribute('data-progress', 'true');
     expect(screen.getByRole('heading', { name: 'Cursos extracurriculares' })).toBeVisible();

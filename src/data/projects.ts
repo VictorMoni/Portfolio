@@ -1,4 +1,6 @@
 import type { ProjectData } from "../types/project";
+import spLayersImage from "../assets/covers/sp-layers-home-dark.png";
+import spLayersImageLight from "../assets/covers/sp-layers-home-light.png";
 import otherProjectImage3 from "../assets/covers/taskyhub-home-dark.png";
 import otherProjectImage3Light from "../assets/covers/taskyhub-home-light.png";
 import otherProjectImage2 from "../assets/covers/todoapp-home-dark.png";
@@ -10,6 +12,19 @@ import mediaLabImage from "../assets/covers/media-lab-home-dark.png";
 import mediaLabImageLight from "../assets/covers/media-lab-home-light.png";
 
 export const sideProjects = [
+  {
+    cover: spLayersImage,
+    lightCover: spLayersImageLight,
+    title: "SP Layers",
+    description:
+      "An interactive portrait of São Paulo through 20 photo stories. Discover local culture, build a three-place outing, and create a personalized postcard in Portuguese, English, or Spanish.",
+    engineeringFocus:
+      "Built for the Cloudinary Mini-Hack with image transformations prepared once and served locally to protect quota during visits. Includes a before-and-after comparison, Google Maps routes, discovery quizzes, and PNG postcards composed on the device without accounts or secret keys.",
+    technologies: ["JavaScript", "HTML", "CSS", "Cloudinary", "Canvas"],
+    lastUpdated: "2026-11-03",
+    liveLink: "https://sp-layers.vercel.app/",
+    repoLink: "https://github.com/VictorMoni/sao-paulo-in-layers",
+  },
   {
     cover: shopEasyImage,
     lightCover: shopEasyImageLight,
