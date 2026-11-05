@@ -514,5 +514,13 @@
   "Built for the Cloudinary Mini-Hack with image transformations prepared once and served locally to protect quota during visits. Includes a before-and-after comparison, Google Maps routes, discovery quizzes, and PNG postcards composed on the device without accounts or secret keys.": {
     "pt": "Criado para o Cloudinary Mini-Hack, com transformações de imagens preparadas uma vez e servidas pelo próprio app para proteger a quota durante as visitas. Inclui comparador de antes e depois, rotas no Google Maps, quiz de descobertas e cartões PNG criados no dispositivo, sem contas ou chaves secretas.",
     "es": "Creado para el Cloudinary Mini-Hack, con transformaciones de imágenes preparadas una vez y servidas por la propia aplicación para proteger la cuota durante las visitas. Incluye comparación de antes y después, rutas en Google Maps, preguntas de descubrimiento y postales PNG creadas en el dispositivo, sin cuentas ni claves secretas."
+  },
+  "A GitHub repository review tool that turns public project information into a practical improvement plan. Review README coverage, prioritize fixes, and generate a README in Portuguese, English, or Spanish.": {
+    "pt": "Uma ferramenta de revisão de repositórios GitHub que transforma informações públicas dos projetos em um plano prático de melhorias. Avalie a cobertura do README, priorize ajustes e gere um README em português, inglês ou espanhol.",
+    "es": "Una herramienta de revisión de repositorios GitHub que convierte la información pública de los proyectos en un plan práctico de mejoras. Revisa la cobertura del README, prioriza ajustes y genera un README en portugués, inglés o español."
+  },
+  "Built with vanilla JavaScript and the GitHub REST API, with browser-saved selections, Markdown exports, light and dark themes, and keyboard-accessible controls. Public repositories can be reviewed without signing in.": {
+    "pt": "Desenvolvido com JavaScript puro e a API REST do GitHub, com seleções salvas no navegador, exportação em Markdown, temas claro e escuro e controles acessíveis por teclado. Permite revisar repositórios públicos sem fazer login.",
+    "es": "Desarrollado con JavaScript puro y la API REST de GitHub, con selecciones guardadas en el navegador, exportación en Markdown, temas claro y oscuro y controles accesibles por teclado. Permite revisar repositorios públicos sin iniciar sesión."
   }
 }

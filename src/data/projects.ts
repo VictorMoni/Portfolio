@@ -1,3 +1,5 @@
+import repolumeImage from "../assets/covers/repolume-dark.svg";
+import repolumeImageLight from "../assets/covers/repolume-light.svg";
 import type { ProjectData } from "../types/project";
 import spLayersImage from "../assets/covers/sp-layers-home-dark.png";
 import spLayersImageLight from "../assets/covers/sp-layers-home-light.png";
@@ -24,6 +26,17 @@ export const sideProjects = [
     lastUpdated: "2026-11-03",
     liveLink: "https://sp-layers.vercel.app/",
     repoLink: "https://github.com/VictorMoni/sao-paulo-in-layers",
+  },
+  {
+    cover: repolumeImage,
+    lightCover: repolumeImageLight,
+    title: "Repolume",
+    description: "A GitHub repository review tool that turns public project information into a practical improvement plan. Review README coverage, prioritize fixes, and generate a README in Portuguese, English, or Spanish.",
+    engineeringFocus: "Built with vanilla JavaScript and the GitHub REST API, with browser-saved selections, Markdown exports, light and dark themes, and keyboard-accessible controls. Public repositories can be reviewed without signing in.",
+    technologies: ["JavaScript", "HTML", "CSS", "GitHub API"],
+    lastUpdated: "2026-11-05",
+    liveLink: "https://repolume-review.vercel.app",
+    repoLink: "https://github.com/VictorMoni/repolume",
   },
   {
     cover: shopEasyImage,
