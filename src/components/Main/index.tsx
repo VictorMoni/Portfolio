@@ -59,8 +59,8 @@ const typeRole = keyframes`
 `;
 
 const blinkCaret = keyframes`
-  0%, 100% { border-color: transparent; }
-  50% { border-color: var(--primary-light); }
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
 `;
 
 const Introduction = styled.main`
@@ -105,8 +105,19 @@ const Introduction = styled.main`
     inset: 0 auto 0 0;
     overflow: hidden;
     width: 0;
-    border-right: 2px solid var(--primary-light);
-    animation: ${typeRole} 8s steps(24, end) infinite, ${blinkCaret} .8s step-end infinite;
+    min-width: 2px;
+    animation: ${typeRole} 8s steps(24, end) infinite;
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 2px;
+      height: .85em;
+      background: var(--primary-light);
+      animation: ${blinkCaret} .8s step-end infinite;
+    }
   }
   .summary { max-width: 490px; color: var(--hero-summary); font-size: 16px; line-height: 1.85; margin: 24px 0 32px; }
   .actions { display: flex; gap: 12px; flex-wrap: wrap; }
