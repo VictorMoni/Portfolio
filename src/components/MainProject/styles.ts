@@ -4,7 +4,8 @@ export const Section = styled.section`
   position: relative;
   min-height: 100vh;
   min-height: 100svh;
-  padding: max(104px, var(--section-space)) var(--page-gutter)
+  @media (max-width: 760px) { min-height: auto; }
+  padding: var(--section-space) var(--page-gutter)
     var(--section-space);
   background: var(--background);
   border-top: 1px solid var(--border);
