@@ -59,8 +59,8 @@ const typeRole = keyframes`
 `;
 
 const blinkCaret = keyframes`
-  0%, 100% { opacity: 0; }
-  50% { opacity: 1; }
+  0%, 48%, 58%, 68%, 78%, 100% { opacity: 1; }
+  43%, 53%, 63%, 73% { opacity: 0; }
 `;
 
 const Introduction = styled.main`
@@ -101,12 +101,13 @@ const Introduction = styled.main`
   }
   .role-measure { color: transparent; padding-right: 6px; }
   .role-typing {
+    --typing-cycle: 8s;
     position: absolute;
     inset: 0 auto 0 0;
     overflow: hidden;
     width: 0;
     min-width: 2px;
-    animation: ${typeRole} 8s steps(24, end) infinite;
+    animation: ${typeRole} var(--typing-cycle) steps(24, end) infinite;
     &::after {
       content: "";
       position: absolute;
@@ -116,7 +117,7 @@ const Introduction = styled.main`
       width: 2px;
       height: .85em;
       background: var(--primary-light);
-      animation: ${blinkCaret} .8s step-end infinite;
+      animation: ${blinkCaret} var(--typing-cycle) step-end infinite;
     }
   }
   .summary { max-width: 490px; color: var(--hero-summary); font-size: 16px; line-height: 1.85; margin: 24px 0 32px; }
