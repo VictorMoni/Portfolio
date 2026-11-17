@@ -31,13 +31,9 @@
     "pt": "DESENVOLVIMENTO DE SOFTWARE · VISÃO DE NEGÓCIO",
     "es": "DESARROLLO DE SOFTWARE · VISIÓN DE NEGOCIO"
   },
-  ".NET Full Stack Developer": {
-    "pt": "Desenvolvedor Full Stack .NET",
-    "es": "Desarrollador Full Stack .NET"
-  },
-  "Full Stack .NET Developer": {
-    "pt": "Desenvolvedor Full Stack .NET",
-    "es": "Desarrollador Full Stack .NET"
+  "Software Developer": {
+    "pt": "Desenvolvedor de Software",
+    "es": "Desarrollador de software"
   },
   "I build reliable .NET applications with a practical business mindset, while expanding my knowledge of cloud and security.": {
     "pt": "Desenvolvo aplicações .NET confiáveis com uma visão prática de negócio, enquanto aprofundo meus conhecimentos em nuvem e segurança.",

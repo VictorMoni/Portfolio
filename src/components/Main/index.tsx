@@ -24,8 +24,8 @@ export const Main = () => {
         <p className="eyebrow">{t("SOFTWARE DEVELOPMENT · BUSINESS PERSPECTIVE")}</p>
         <h1>Victor Moni</h1>
         <p className="role">
-          <span className="role-measure">{t(".NET Full Stack Developer")}</span>
-          <span className="role-typing" aria-hidden="true">{t(".NET Full Stack Developer")}</span>
+          <span className="role-measure">{t("Software Developer")}</span>
+          <span className="role-typing" aria-hidden="true">{t("Software Developer")}</span>
         </p>
         <p className="summary">{t("I build reliable .NET applications with a practical business mindset, while expanding my knowledge of cloud and security.")}</p>
         <div className="actions">
@@ -150,7 +150,7 @@ const Introduction = styled.main`
     @media (max-width: 760px) {
       grid-template-columns: 1fr;
       gap: 36px;
-      padding-top: 132px;
+      padding-top: 108px;
       padding-bottom: 48px;
       h1 { font-size: clamp(48px, 9vw, 68px); }
       .hero-art { min-height: 0; aspect-ratio: 16 / 9; background-position: center 55%; }
@@ -163,7 +163,9 @@ const Introduction = styled.main`
     }
   }
   @media (max-width: 600px) {
-    min-height: 660px; padding-top: 145px; padding-bottom: 70px;
+    min-height: auto;
+    padding-top: 108px;
+    padding-bottom: var(--section-space);
     padding-inline: 20px;
     .info { width: 100%; min-width: 0; }
     h1, html[data-theme="light"] & h1 {

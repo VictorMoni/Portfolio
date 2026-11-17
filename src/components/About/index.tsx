@@ -8,7 +8,7 @@ const About = () => {
    const experiences = [
     {
         id: 1,
-        title: "Full Stack .NET Developer",
+        title: "Full Stack Developer",
         company: "Sysopen",
         document: { url: "https://drive.google.com/file/d/1rV8BvKmmJaYSEUiLQvAB1eJHN2O3vtAq/view?usp=sharing", label: "View recommendation letter" },
         description:

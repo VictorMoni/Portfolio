@@ -82,7 +82,7 @@ const Track = styled.div<{ $duration: number }>`
 `;
 
 const Stack = styled.section<{ $paused: boolean; $expanded: boolean }>`
-  padding: 28px var(--page-gutter) 60px;
+  padding: 28px var(--page-gutter) var(--section-space);
   background: var(--background);
   .stack-heading { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 32px; flex-wrap: wrap; }
   .stack-description { max-width: 520px; margin-top: 12px; color: var(--muted); font-size: 14px; line-height: 1.7; }

@@ -111,7 +111,7 @@ export const SocialFooter = () => {
                     </SocialSection>
 
                     <FooterBottom>
-                        <p>Victor Moni &middot; {t("Full Stack Developer")} &middot; 2026</p>
+                        <p>Victor Moni &middot; {t("Software Developer")} &middot; 2026</p>
                         <span>{t("Thoughtfully built with React & TypeScript")}</span>
                     </FooterBottom>
                 </FooterContent>
@@ -130,7 +130,7 @@ const SectionTransition = styled.div`
 `;
 
 const FooterContainer = styled.footer`
-background:var(--background); color:var(--text); min-height:100vh; min-height:100svh; padding:max(104px, var(--section-space)) 0 40px; position:relative; border-top:1px solid var(--border);
+background:var(--background); color:var(--text); min-height:100vh; min-height:100svh; padding:var(--section-space) 0 40px; position:relative; border-top:1px solid var(--border);
 `;
 
 const FooterContent = styled.div`
