@@ -78,7 +78,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--primary-light);
 @keyframes fade-up { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  *:not(.tech-track):not(.role-typing), *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  *:not(.tech-track):not(.role-typing), *::before, *:not(.role-typing)::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
 
 /* Match the icons beside education and course section titles. */
