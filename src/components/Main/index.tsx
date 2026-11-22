@@ -27,7 +27,7 @@ export const Main = () => {
           <span className="role-measure">{t("Software Developer")}</span>
           <span className="role-typing" aria-hidden="true">{t("Software Developer")}</span>
         </p>
-        <p className="summary">{t("I build reliable .NET applications with a practical business mindset, while expanding my knowledge of cloud and security.")}</p>
+        <p className="summary">{t("I develop software solutions with a practical business mindset, while expanding my knowledge of cloud and security.")}</p>
         <div className="actions">
           <a className="primary-action" href="#projects">{t("Explore projects")}<ArrowUpRight size={17} aria-hidden="true" /></a>
           <a className="secondary-action" href={resumes[language]} target="_blank" rel="noopener noreferrer">{t("Resume")}<ArrowUpRight size={16} aria-hidden="true" /></a>
