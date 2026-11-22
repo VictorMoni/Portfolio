@@ -61,7 +61,7 @@ export const TechSlider = () => {
           <Track className="tech-track" $duration={58}>
             {[0, 1].map(copy => (
               <ul key={copy} aria-label={copy === 0 ? t("Technologies and tools") : undefined} aria-hidden={copy === 1 ? true : undefined} className={copy === 1 ? 'duplicate' : undefined}>
-                {technologies.map(tech => <li key={tech.name}><img src={tech.icon} alt="" loading="lazy" /><span>{tech.name}</span></li>)}
+                {technologies.map(tech => <li key={tech.name}><img className={tech.name === 'Next.js' ? 'nextjs-logo' : undefined} src={tech.icon} alt="" loading="lazy" /><span>{tech.name}</span></li>)}
               </ul>
             ))}
           </Track>
@@ -97,8 +97,8 @@ const Stack = styled.section<{ $paused: boolean; $expanded: boolean }>`
   li { flex-shrink: 0; display: flex; align-items: center; gap: 10px; padding: 13px 18px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface); color: var(--text); font-size: 13px; white-space: nowrap; transition: var(--control-transition); }
   li:hover { color: var(--text); border-color: #4a5969; }
   img { width: 24px; height: 24px; object-fit: contain; filter: saturate(.7); }
-  html[data-theme="light"] & img[src*="nextjs"] { filter: brightness(0); }
-  html[data-theme="dark"] & img[src*="nextjs"] { filter: brightness(0) invert(1); }
+  html[data-theme="light"] & .nextjs-logo { filter: brightness(0); }
+  html[data-theme="dark"] & .nextjs-logo { filter: brightness(0) invert(1); }
   ${Track} { animation-play-state: ${({ $paused }) => $paused ? 'paused' : 'running'}; }
   .window:hover ${Track}, .window:focus-within ${Track} { animation-play-state: paused; }
   ${({ $expanded }) => $expanded && `
