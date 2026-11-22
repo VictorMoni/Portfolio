@@ -50,7 +50,7 @@ const About = () => {
         company: "Entrepreneur",
         description:
             "Ran my own e-commerce operation across Mercado Livre, Shopee, Amazon, and Magalu. Managed product listings, pricing, invoicing, and day-to-day commercial operations while automating operational processes.\n\nThis experience gave me a practical understanding of business needs and the operational problems that software can help solve.",
-        date: "05/2020 - 01/2024",
+        date: "05/2020 - 01/2023",
         highlight: "Entrepreneurship",
         tags: [
             "Marketplaces",
