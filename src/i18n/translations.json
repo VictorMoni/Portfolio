@@ -35,9 +35,9 @@
     "pt": "Desenvolvedor de Software",
     "es": "Desarrollador de software"
   },
-  "I build reliable .NET applications with a practical business mindset, while expanding my knowledge of cloud and security.": {
-    "pt": "Desenvolvo aplicações .NET confiáveis com uma visão prática de negócio, enquanto aprofundo meus conhecimentos em nuvem e segurança.",
-    "es": "Desarrollo aplicaciones .NET fiables con una visión práctica del negocio, mientras amplío mis conocimientos en la nube y la seguridad."
+  "I develop software solutions with a practical business mindset, while expanding my knowledge of cloud and security.": {
+    "pt": "Desenvolvo soluções de software com uma visão prática de negócio, enquanto aprofundo meus conhecimentos em nuvem e segurança.",
+    "es": "Desarrollo soluciones de software con una visión práctica del negocio, mientras amplío mis conocimientos en la nube y la seguridad."
   },
   "Explore projects": {
     "pt": "Explorar projetos",
@@ -90,10 +90,6 @@
   "Professional Experience": {
     "pt": "Experiência profissional",
     "es": "Experiencia profesional"
-  },
-  "Frontend Developer": {
-    "pt": "Desenvolvedor Frontend",
-    "es": "Desarrollador Frontend"
   },
   "Marketplace Operations": {
     "pt": "Operações em marketplaces",
@@ -271,7 +267,7 @@
     "pt": "Desenvolvido com cuidado usando React e TypeScript",
     "es": "Desarrollado con cuidado usando React y TypeScript"
   },
-  "Full Stack Developer": {
+  "Full-Stack Developer": {
     "pt": "Desenvolvedor Full Stack",
     "es": "Desarrollador Full Stack"
   },
@@ -331,9 +327,9 @@
     "pt": "Atuei no aprimoramento e na manutenção do Recupera, uma plataforma corporativa já existente em C#, VB.NET, ASP.NET WebForms e Angular. Entreguei melhorias funcionais, resolvi incidentes em produção e mantive sistemas para clientes como Ambev, Aegea, Jeitto e Porto Seguro.\n\nEscrevi e otimizei consultas SQL, stored procedures e scripts em SQL Server e Oracle. Testei APIs REST e serviços SOAP/WCF com SoapUI e acompanhei entregas e controle de versão pelo Azure DevOps/TFS.",
     "es": "Trabajé en la mejora y el mantenimiento de Recupera, una plataforma empresarial ya existente en C#, VB.NET, ASP.NET WebForms y Angular. Entregué mejoras funcionales, resolví incidentes en producción y mantuve sistemas para clientes como Ambev, Aegea, Jeitto y Porto Seguro.\n\nEscribí y optimicé consultas SQL, procedimientos almacenados y scripts en SQL Server y Oracle. Probé APIs REST y servicios SOAP/WCF con SoapUI y gestioné entregas y control de versiones con Azure DevOps/TFS."
   },
-  "Built and maintained a Next.js web application with a focus on responsive design, accessibility, and a smooth user experience. Created reusable components and custom hooks, implemented light and dark themes, and integrated Node.js APIs.\n\nConfigured continuous deployment on Vercel and improved code organization and performance to make the application easier to maintain and evolve.": {
-    "pt": "Desenvolvi e mantive uma aplicação web em Next.js com foco em design responsivo, acessibilidade e experiência do usuário. Criei componentes reutilizáveis e hooks personalizados, implementei temas claro e escuro e integrei APIs Node.js.\n\nConfigurei a implantação contínua na Vercel e melhorei a organização e o desempenho do código para facilitar a manutenção e a evolução da aplicação.",
-    "es": "Desarrollé y mantuve una aplicación web en Next.js centrada en el diseño adaptable, la accesibilidad y la experiencia de usuario. Creé componentes reutilizables y hooks personalizados, implementé temas claro y oscuro e integré APIs Node.js.\n\nConfiguré el despliegue continuo en Vercel y mejoré la organización y el rendimiento del código para facilitar el mantenimiento y la evolución de la aplicación."
+  "Developed the Search Price MVP front end in Next.js, including the login and main screens. Used a mobile-first approach and focused on responsive design, accessibility, and user experience. Built reusable components and custom hooks, implemented light and dark themes, and integrated the application with APIs.\n\nContributed to back-end development in Node.js and configured continuous deployment on Vercel. Applied best practices for code organization, performance, and component reuse.": {
+    "pt": "Desenvolvi o front-end do MVP da Search Price em Next.js, incluindo as telas de login e principal. Adotei abordagem mobile-first, com foco em responsividade, acessibilidade e experiência do usuário. Criei componentes reutilizáveis e hooks personalizados, implementei temas claro e escuro e integrei a aplicação a APIs.\n\nTambém contribuí para o desenvolvimento do back-end em Node.js e configurei a implantação contínua na Vercel. Apliquei boas práticas de organização do código, desempenho e reutilização de componentes.",
+    "es": "Desarrollé el front-end del MVP de Search Price con Next.js, incluidas las pantallas de inicio de sesión y principal. Apliqué un enfoque mobile-first, con atención al diseño adaptable, la accesibilidad y la experiencia de usuario. Creé componentes reutilizables y hooks personalizados, implementé temas claro y oscuro e integré la aplicación con APIs.\n\nTambién contribuí al desarrollo del back-end con Node.js y configuré el despliegue continuo en Vercel. Apliqué buenas prácticas de organización del código, rendimiento y reutilización de componentes."
   },
   "Ran my own e-commerce operation across Mercado Livre, Shopee, Amazon, and Magalu. Managed product listings, pricing, invoicing, and day-to-day commercial operations while automating operational processes.\n\nThis experience gave me a practical understanding of business needs and the operational problems that software can help solve.": {
     "pt": "Gerenciei minha própria operação de e-commerce no Mercado Livre, Shopee, Amazon e Magalu. Cuidei de anúncios, preços, emissão de notas fiscais e rotinas comerciais, além de automatizar processos operacionais.\n\nEssa experiência me deu uma visão prática das necessidades do negócio e dos problemas operacionais que o software pode ajudar a resolver.",

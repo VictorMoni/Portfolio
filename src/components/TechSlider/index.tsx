@@ -12,6 +12,7 @@ import git from "../../assets/git.svg";
 import java from "../../assets/java.svg";
 import spring from "../../assets/spring.svg";
 import microsoftsqlserver from "../../assets/microsoftsqlserver.svg";
+import nextjs from "../../assets/nextjs.svg";
 import oracle from "../../assets/oracle.svg";
 import swagger from "../../assets/swagger.svg";
 import typescript from "../../assets/typescript.svg";
@@ -22,6 +23,7 @@ const technologies = [
   { name: 'Java', icon: java },
   { name: 'Spring', icon: spring },
   { name: 'Angular', icon: angular },
+  { name: 'Next.js', icon: nextjs },
   { name: 'TypeScript', icon: typescript },
   { name: 'Entity Framework', icon: entityframeworkcore },
   { name: 'SQL Server', icon: microsoftsqlserver },
@@ -95,6 +97,8 @@ const Stack = styled.section<{ $paused: boolean; $expanded: boolean }>`
   li { flex-shrink: 0; display: flex; align-items: center; gap: 10px; padding: 13px 18px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface); color: var(--text); font-size: 13px; white-space: nowrap; transition: var(--control-transition); }
   li:hover { color: var(--text); border-color: #4a5969; }
   img { width: 24px; height: 24px; object-fit: contain; filter: saturate(.7); }
+  img[src*="nextjs"] { filter: none; }
+  html:not([data-theme="light"]) & img[src*="nextjs"] { filter: brightness(0) invert(1); }
   ${Track} { animation-play-state: ${({ $paused }) => $paused ? 'paused' : 'running'}; }
   .window:hover ${Track}, .window:focus-within ${Track} { animation-play-state: paused; }
   ${({ $expanded }) => $expanded && `

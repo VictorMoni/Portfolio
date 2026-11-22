@@ -8,7 +8,7 @@ const About = () => {
    const experiences = [
     {
         id: 1,
-        title: "Full Stack Developer",
+        title: "Full-Stack Developer",
         company: "Sysopen",
         document: { url: "https://drive.google.com/file/d/1rV8BvKmmJaYSEUiLQvAB1eJHN2O3vtAq/view?usp=sharing", label: "View recommendation letter" },
         description:
@@ -29,11 +29,11 @@ const About = () => {
     },
     {
         id: 2,
-        title: "Frontend Developer",
+        title: "Full-Stack Developer",
         company: "Search Price",
         description:
-            "Built and maintained a Next.js web application with a focus on responsive design, accessibility, and a smooth user experience. Created reusable components and custom hooks, implemented light and dark themes, and integrated Node.js APIs.\n\nConfigured continuous deployment on Vercel and improved code organization and performance to make the application easier to maintain and evolve.",
-        date: "02/2024 - 07/2025",
+            "Developed the Search Price MVP front end in Next.js, including the login and main screens. Used a mobile-first approach and focused on responsive design, accessibility, and user experience. Built reusable components and custom hooks, implemented light and dark themes, and integrated the application with APIs.\n\nContributed to back-end development in Node.js and configured continuous deployment on Vercel. Applied best practices for code organization, performance, and component reuse.",
+        date: "02/2023 - 09/2025",
         highlight: "Frontend Development",
         tags: [
             "JavaScript",
