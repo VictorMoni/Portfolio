@@ -1,7 +1,7 @@
 import { useLanguage } from '../../i18n';
 import { ArrowUpRight, Github, Linkedin, MessageCircle } from 'lucide-react';
 import styled, { keyframes } from 'styled-components';
-import banner from '../../assets/main-banner.webp';
+import banner from '../../assets/hero/main-banner.webp';
 import About from '../About';
 import Education from '../Education';
 import Courses from '../Courses';

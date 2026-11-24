@@ -1,11 +1,11 @@
-import ProjectImage1 from "../assets/searchprice-home.jpg";
-import ProjectImage2 from "../assets/searchprice-testimonials.jpg";
-import ProjectImage3 from "../assets/searchprice-about.jpg";
-import ProjectImage4 from "../assets/searchprice-advantages.jpg";
-import LightProjectImage1 from "../assets/searchprice-home-light.jpg";
-import LightProjectImage2 from "../assets/searchprice-testimonials-light.jpg";
-import LightProjectImage3 from "../assets/searchprice-about-light.jpg";
-import LightProjectImage4 from "../assets/searchprice-advantages-light.jpg";
+import ProjectImage1 from "../assets/projects/search-price/searchprice-home.jpg";
+import ProjectImage2 from "../assets/projects/search-price/searchprice-testimonials.jpg";
+import ProjectImage3 from "../assets/projects/search-price/searchprice-about.jpg";
+import ProjectImage4 from "../assets/projects/search-price/searchprice-advantages.jpg";
+import LightProjectImage1 from "../assets/projects/search-price/searchprice-home-light.jpg";
+import LightProjectImage2 from "../assets/projects/search-price/searchprice-testimonials-light.jpg";
+import LightProjectImage3 from "../assets/projects/search-price/searchprice-about-light.jpg";
+import LightProjectImage4 from "../assets/projects/search-price/searchprice-advantages-light.jpg";
 
 export const featuredProject = {
   title: "SearchPrice",

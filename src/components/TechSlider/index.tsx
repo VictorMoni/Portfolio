@@ -2,20 +2,20 @@ import { useLanguage } from '../../i18n';
 import { useState } from 'react';
 import { Code2, Pause, Play } from 'lucide-react';
 import styled, { keyframes } from 'styled-components';
-import angular from "../../assets/angular.svg";
-import azuredevops from "../../assets/azuredevops.svg";
-import csharp from "../../assets/csharp.svg";
-import docker from "../../assets/docker.svg";
-import dotnetcore from "../../assets/dotnetcore.svg";
-import entityframeworkcore from "../../assets/entityframeworkcore.svg";
-import git from "../../assets/git.svg";
-import java from "../../assets/java.svg";
-import spring from "../../assets/spring.svg";
-import microsoftsqlserver from "../../assets/microsoftsqlserver.svg";
-import nextjs from "../../assets/nextjs.svg";
-import oracle from "../../assets/oracle.svg";
-import swagger from "../../assets/swagger.svg";
-import typescript from "../../assets/typescript.svg";
+import angular from "../../assets/icons/technologies/angular.svg";
+import azuredevops from "../../assets/icons/technologies/azuredevops.svg";
+import csharp from "../../assets/icons/technologies/csharp.svg";
+import docker from "../../assets/icons/technologies/docker.svg";
+import dotnetcore from "../../assets/icons/technologies/dotnetcore.svg";
+import entityframeworkcore from "../../assets/icons/technologies/entityframeworkcore.svg";
+import git from "../../assets/icons/technologies/git.svg";
+import java from "../../assets/icons/technologies/java.svg";
+import spring from "../../assets/icons/technologies/spring.svg";
+import microsoftsqlserver from "../../assets/icons/technologies/microsoftsqlserver.svg";
+import nextjs from "../../assets/icons/technologies/nextjs.svg";
+import oracle from "../../assets/icons/technologies/oracle.svg";
+import swagger from "../../assets/icons/technologies/swagger.svg";
+import typescript from "../../assets/icons/technologies/typescript.svg";
 
 const technologies = [
   { name: 'C#', icon: csharp },
