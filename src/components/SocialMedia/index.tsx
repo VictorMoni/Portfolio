@@ -1,12 +1,12 @@
 import { UsersRound } from "lucide-react";
 import { useLanguage } from '../../i18n';
 import styled from "styled-components"
-import dailydev from '../../assets/daily-dev.svg'
-import discord from '../../assets/discord.svg'
-import github from '../../assets/github.svg'
-import googledev from '../../assets/googledev.svg'
-import linkedin from '../../assets/linkedin.png'
-import stackoverflow from '../../assets/stackoverflow.svg'
+import dailydev from '../../assets/icons/social/daily-dev.svg'
+import discord from '../../assets/icons/social/discord.svg'
+import github from '../../assets/icons/social/github.svg'
+import googledev from '../../assets/icons/social/googledev.svg'
+import linkedin from '../../assets/icons/social/linkedin.png'
+import stackoverflow from '../../assets/icons/social/stackoverflow.svg'
 
 export const SocialFooter = () => {
     const { t } = useLanguage();
